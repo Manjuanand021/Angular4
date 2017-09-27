@@ -4,7 +4,7 @@ import {
 import template from './app.component.html'
 
 @Component({
-    selector: 'root',
+    selector: 'app-root',
     template: template
     // styleUrls: ['./app.component.css']
 })

@@ -1,0 +1,37 @@
+<div class="jumbotron">
+    <h1 class="display-3">Justice League</h1>
+    <p class="lead">The Justice League, is a fictional superhero team appearing in American comic books published by DC Comics. </p>
+    <hr class="my-4">
+    <p>Fueled by his restored faith in humanity and inspired by Superman's (Henry Cavill) selfless act, Bruce Wayne (Ben Affleck)
+        enlists newfound ally Diana Prince to face an even greater threat. Together, Batman and Wonder Woman work quickly
+        to recruit a team to stand against this newly awakened enemy. Despite the formation of an unprecedented league of
+        heroes -- Batman, Wonder Woman, Aquaman, Cyborg and the Flash -- it may be too late to save the planet from an assault
+        of catastrophic proportions.
+    </p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+</div>
+<h1 class="display-4">who's WHO</h1>
+<div class="row">
+    <div class="col">
+        <ul>
+            <li *ngFor="let member of coreMembers">
+                <a href="#">
+                    <p class="lead">{{member.name}}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <!--<div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>-->
+    </div>
+</div>
