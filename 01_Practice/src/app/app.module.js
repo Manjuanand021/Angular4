@@ -4,24 +4,50 @@ import {
 import {
     NgModule
 } from '@angular/core';
+// import {
+//     HttpModule
+// } from '@angular/http';
 import {
-    AppComponent
-} from './app.component';
-import HeaderComponent from './header/header.component';
-import JusticeLeagueComponent from './justiceleague/justiceleague.component';
-import JLMemberComponent from './justiceleague/jlmember/jlmember.component';
+    FormsModule
+} from '@angular/forms';
+import {
+    HttpClientModule
+} from '@angular/common/http';
+import SharedModule from './components/shared/shared.module';
+import JusticeLeagueModule from './components/justiceleague/justiceleague.module';
+import AppComponent from './components/root/app.component';
+import AppRoutingModule from './app.routing';
+import HeaderComponent from './components/header/header.component';
+import PageNotFoundErrorComponent from './components/pagenotfound/pagenotfound.component';
+// import JusticeLeagueComponent from './components/justiceleague/justiceleague.component';
+// import JLMemberComponent from './components/justiceleague/jlmember/jlmember.component';
+// import HighlightDirective from './directives/highlight.directive';
+// import AuthService from './services/authService';
+// import AuthGuardService from './services/auth-guard.service';
+// import JusticeLeagueMembersService from './services/jLeague-members.service';
+// import UserService from './services/users.service';
+
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        JusticeLeagueComponent,
-        JLMemberComponent
+        PageNotFoundErrorComponent
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        JusticeLeagueModule,
+        SharedModule
     ],
-    providers: [],
+    // providers: [
+    //     AuthService,
+    //     AuthGuardService,
+    //     JusticeLeagueMembersService,
+    //     UserService
+    // ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,0 +1,15 @@
+<div class="jumbotron">
+    <h1 class="display-3">Justice League</h1>
+    <p class="lead">The Justice League, is a fictional superhero team appearing in American comic books published by DC Comics. </p>
+    <hr class="my-4">
+    <p>Fueled by his restored faith in humanity and inspired by Superman's (Henry Cavill) selfless act, Bruce Wayne (Ben Affleck)
+        enlists newfound ally Diana Prince to face an even greater threat. Together, Batman and Wonder Woman work quickly
+        to recruit a team to stand against this newly awakened enemy.
+    </p>
+</div>
+<!--<ng-content></ng-content>-->
+<div class="row">
+    <div class="view-content" style="font-size: .9em;color: #3f3f3f;">
+        <member *ngFor="let member of coreMembers" [member-info]="member" (member-selected)="onMemberSelect($event)"></member>
+    </div>
+</div>

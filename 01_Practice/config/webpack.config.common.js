@@ -3,9 +3,14 @@ const webpack = require('webpack'),
     cleanWebpackPlugin = require('clean-webpack-plugin'),
     htmlWebpackPlugin = require('html-webpack-plugin'),
     copyWebpackPlugin = require('copy-webpack-plugin'),
+    extractTxtPlugin = require('extract-text-webpack-plugin'),
     babelPlugins = ['__coverage__'],
     helpers = require('./helpers');
-console.log(path.resolve(__dirname, 'dist'));
+
+const extractSass = new extractTxtPlugin({
+    filename: 'assets/css/main.css'
+});
+
 module.exports = {
     entry: {
         polyfill: './src/polyfill.js',
@@ -14,20 +19,45 @@ module.exports = {
     },
     module: {
         loaders: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            //since we have set context
-            exclude: /(node_modules)/,
-            query: {
-                //for decorators feature
-                presets: ['env', 'angular2'],
-                plugins: babelPlugins
+                test: /\.js$/,
+                loader: 'babel-loader',
+                //since we have set context
+                exclude: /(node_modules)/,
+                query: {
+                    //for decorators feature
+                    presets: ['env', 'angular2'],
+                    plugins: babelPlugins
+                }
+            }, {
+                test: /\.scss$/,
+                use: extractSass.extract({
+                    use: ['css-loader', 'sass-loader', 'resolve-url-loader'],
+                    // use style-loader in development
+                    fallback: "style-loader"
+                })
+            }, {
+                //incude partials in the byndle itself
+                test: /\.html$/,
+                use: 'html-loader'
+            }, {
+                test: /\.(jpeg|jpg|png|gif)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'assets/images'
+                    }
+                }]
+            },
+            {
+                test: /\.(ttf|otf|eot|svg)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'assets/fonts/'
+                    }
+                }]
             }
-        }, {
-            //incude partials in the byndle itself
-            test: /\.html$/,
-            use: 'raw-loader'
-        }]
+        ]
     },
     plugins: [
         new cleanWebpackPlugin(['dist']),
@@ -38,6 +68,7 @@ module.exports = {
             helpers.root('../src'), // location of your src
             {} // a map of your routes
         ),
+        extractSass,
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfill']
         }),

@@ -1,0 +1,125 @@
+//********************************
+//Reference - http://codeguide.co/
+//********************************
+.declaration-order {
+    /* Positioning */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    /* Box-model */
+    display: block;
+    float: right;
+    width: 100px;
+    height: 100px;
+    /* Typography */
+    font: normal 13px "Helvetica Neue", sans-serif;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    /* Visual */
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    /* Misc */
+    opacity: 1;
+}
+
+
+/* VENDOR - Default fall-backs and external files.
+========================================================================== */
+
+// @import 'vendor/_normalize.scss';
+
+/* BASE - Base Variable file along with starting point Mixins and Placeholders.
+========================================================================== */
+
+@import './base/_variables.scss';
+@import './base/_mixins.scss';
+@import './base/_placeholders.scss';
+
+/* FRAMEWORK - Structure and layout files.
+========================================================================== */
+
+// @import 'framework/_grid.scss';
+// @import 'framework/_breakpoints.scss';
+// @import 'framework/_layout.scss';
+
+/* MODULES - Re-usable site elements.
+========================================================================== */
+
+@import './modules/_grid.scss';
+@import './modules/_headers.scss';
+@import './modules/_paragraph.scss';
+// @import './modules/_button.scss';
+// @import './modules/_link.scss';
+// @import './modules/_ul.scss';
+
+/* Applies to all elements on page
+============================================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Root element style
+============================================================================*/
+
+html,
+body {
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+    font-family: $font-stack;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $mine-shaft;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* Header style
+============================================================================*/
+
+header {
+    letter-spacing: 2px;
+}
+
+.hero-logo {
+    height: 4em;
+    width: 4em;
+    vertical-align: middle;
+}
+
+.grow {
+    margin-right: 15px;
+    transition: all .2s ease-in-out;
+    &:hover {
+        border-bottom: 2px solid;
+        transform: scale(1.1);
+    }
+}
+
+
+/* Navbar style
+============================================================================*/
+
+.navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.navbar-nav {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    & .nav-item {
+        // flex: 1;
+        align-items: baseline;
+    }
+}
