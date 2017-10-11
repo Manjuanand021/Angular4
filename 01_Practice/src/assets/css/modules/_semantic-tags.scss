@@ -1,0 +1,24 @@
+header {}
+
+nav {}
+
+main {
+    // flex: 1;
+}
+
+article {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+section {}
+
+aside {}
+
+footer {
+    display: flex;
+    padding: 1em 2em;
+    background-color: $mine-shaft;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

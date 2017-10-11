@@ -18,6 +18,12 @@
     shadow: none;
 }
 
+%headers {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
 // .image-one {
 //     @extend %bg-image;
 //     background-image: url(/img/image-one.jpg");

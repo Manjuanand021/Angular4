@@ -1,18 +1,13 @@
 .row {
     display: flex;
     flex-flow: row wrap;
+    align-items: stretch;
 }
 
 .col {
     flex: 1;
-    margin: 10px;
-    padding: 15px;
-    background: linear-gradient(to right, #f2994a, #f2c94c);
+    margin-right: 1em; // padding: 15px; // background: linear-gradient(to right, #f2994a, #f2c94c);
+    &:last-child {
+        margin: 0;
+    }
 }
-
-// @media #{$md} {
-//     .row {
-//         display: flex;
-//         flex-flow: row wrap;
-//     }
-// }

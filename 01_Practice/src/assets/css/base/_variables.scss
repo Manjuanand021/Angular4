@@ -6,14 +6,18 @@ $font-stack: 'Lato',
 'sans-serif';
 $font-size: 16px;
 $font-weight:300;
+$line-height:170%;
 
 /* colors
 ====================================================*/
 
 $orange: #ffa600;
-$grey: #f3f3f3;
+$grey: #868686;
 $blue: #82d2e5;
 $mine-shaft:#3f3f3f;
+$azure-radiance: #0282F9;
+$astronaut-blue:#003F5E;
+$porcelain:#ECEEEF;
 
 /*link colors
 ====================================================*/
@@ -28,10 +32,11 @@ $link-tertiary: $grey;
 $radius-button: 5px;
 $radius-tab: 5px;
 
-/* minimum viewport width
+/* minimum viewport width and height
 ====================================================*/
 
-$max-viewport-width:1000px;
+$max-viewport-width:1285px;
+$min-height:100vh;
 
 /* Media queries 
 // Extra small devices (portrait phones, less than 576px)

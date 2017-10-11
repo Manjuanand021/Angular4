@@ -18,6 +18,7 @@ import JusticeLeagueModule from './components/justiceleague/justiceleague.module
 import AppComponent from './components/root/app.component';
 import AppRoutingModule from './app.routing';
 import HeaderComponent from './components/header/header.component';
+import FooterComponent from './components/footer/footer.component';
 import PageNotFoundErrorComponent from './components/pagenotfound/pagenotfound.component';
 // import JusticeLeagueComponent from './components/justiceleague/justiceleague.component';
 // import JLMemberComponent from './components/justiceleague/jlmember/jlmember.component';
@@ -32,6 +33,7 @@ import PageNotFoundErrorComponent from './components/pagenotfound/pagenotfound.c
     declarations: [
         AppComponent,
         HeaderComponent,
+        FooterComponent,
         PageNotFoundErrorComponent
     ],
     imports: [
