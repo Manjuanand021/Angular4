@@ -1,0 +1,23 @@
+header {}
+
+nav {}
+
+main {
+    // flex: 1;
+}
+
+article {
+    @extend %center-content;
+    margin-bottom: 2em;
+}
+
+section {}
+
+aside {}
+
+footer {
+    background-color: $mine-shaft;
+    &>p {
+        text-align: center;
+    }
+}

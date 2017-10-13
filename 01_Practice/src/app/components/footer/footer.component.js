@@ -8,5 +8,7 @@ import template from './footer.template.html';
     template: template
 })
 export default class FooterComponent {
-
+    constructor() {
+        this.currentYear = new Date().getFullYear();
+    }
 };

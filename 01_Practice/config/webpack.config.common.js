@@ -44,7 +44,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        outputPath: 'assets/images'
+                        outputPath: '/assets/images/'
                     }
                 }]
             },
@@ -53,14 +53,14 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        outputPath: 'assets/fonts/'
+                        outputPath: '/assets/fonts/'
                     }
                 }]
             }
         ]
     },
     plugins: [
-        new cleanWebpackPlugin(['dist']),
+        new cleanWebpackPlugin(['./dist']),
         // Workaround for angular/angular#11580
         new webpack.ContextReplacementPlugin(
             // The (\\|\/) piece accounts for path separators in *nix and Windows

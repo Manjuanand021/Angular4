@@ -31,9 +31,7 @@ import UserService from '../../services/users.service';
 
 @Component({
     selector: 'league',
-    template: template,
-    styles: [`
-    p{text-align:justify;}`]
+    template: template
 })
 export default class JusticeLeagueComponent {
     memberSelectSubscription: Subscription;

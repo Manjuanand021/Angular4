@@ -1,3 +1,8 @@
+%center-content {
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+}
+
 %bg-image {
     width: 100%;
     background-position: center center;
@@ -20,8 +25,14 @@
 
 %headers {
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     text-transform: uppercase;
+}
+
+%grid-padding {
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
 }
 
 // .image-one {

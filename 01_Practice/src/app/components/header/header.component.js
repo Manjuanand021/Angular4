@@ -8,12 +8,7 @@ import Member from '../../models/member.model';
 
 @Component({
     selector: 'app-header',
-    template: template,
-    styles: [`
-    .active{
-        border-bottom: 2px solid;    
-    }
-    `]
+    template: template
 })
 export default class HeaderComponent {
     // @Input('member-name') name;

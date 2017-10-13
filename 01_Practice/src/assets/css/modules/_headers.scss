@@ -1,9 +1,10 @@
 h2 {
-    @extend %headers;
     color: $azure-radiance;
+    @extend %headers;
 }
 
 h4 {
-    color: $astronaut-blue;
+    margin-top: 0;
+    color: $white;
     @extend %headers;
 }
