@@ -10,7 +10,7 @@ import '@angular/router';
 import 'rxjs';
 
 //jqeury
-// import 'jquery';
+import 'jquery';
 
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
