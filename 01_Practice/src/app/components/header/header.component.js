@@ -1,6 +1,9 @@
 import {
     Component,
-    Input
+    Input,
+    ViewChild,
+    ElementRef,
+    Renderer2
 } from '@angular/core';
 import template from './header.template.html';
 import JusticeLeagueMembersService from '../../services/jLeague-members.service';
@@ -8,12 +11,18 @@ import Member from '../../models/member.model';
 
 @Component({
     selector: 'app-header',
-    template: template
+    template: template,
+    styles: [`
+    .active{
+        border-bottom: 2px solid;    
+    }
+    `]
 })
 export default class HeaderComponent {
-    // @Input('member-name') name;
-    constructor(justiceLeagueMembersService: JusticeLeagueMembersService) {
+    @ViewChild('sideNavBar') sideNavBar: ElementRef;
+    constructor(justiceLeagueMembersService: JusticeLeagueMembersService, renderer: Renderer2) {
         this._justiceLeagueMembersService = justiceLeagueMembersService;
+        this._renderer = renderer;
     }
     addFlash() {
         this._justiceLeagueMembersService.addNewHero.next(new Member('The Flash',
@@ -41,5 +50,14 @@ export default class HeaderComponent {
             'Dark Knight. Caped Crusader. World’s Greatest Detective. Whatever you know him as, wherever you know him from—the blockbuster movies, TV shows, video games, cartoons, or millions of comics—Batman is proof you don’t need superpowers to be a superhero… and the poster boy for what a bad childhood can do to you.',
             'http://www.dccomics.com/sites/default/files/styles/whos_who/public/ww_cyborg_588c0bec1db114.91404563_589111406dd3c2.36803058.jpg?itok=E9zlLUra',
             '/characters/cyborg'));
+    }
+
+    openOverLay() {
+        this._renderer.setStyle(this.sideNavBar.nativeElement, 'width', '100%');
+        console.log('open');
+    }
+    closeOverLay() {
+        console.log('CLOSE');
+        this._renderer.setStyle(this.sideNavBar.nativeElement, 'width', '0');
     }
 }

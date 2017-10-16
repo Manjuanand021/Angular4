@@ -1,0 +1,18 @@
+//border-radius
+@mixin rounded-corner($arc) {
+    -moz-border-radius: $arc;
+    -webkit-border-radius: $arc;
+    border-radius: $arc;
+}
+
+
+/* BUTTON MIXIN 
+============================================= */
+
+@mixin btn-background($btn-background) {
+    @extend %btn;
+    background-color: $btn-background;
+    &:hover {
+        background-color: lighten($btn-background, 10%);
+    }
+}

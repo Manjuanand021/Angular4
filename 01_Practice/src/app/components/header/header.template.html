@@ -1,19 +1,33 @@
-<header class="site-header">
-    <nav class="navbar">
-        <ul class="navbar-nav">
-            <li>
-                <a class="navbar-brand" href="#">
-                    <img class="nav-logo" src="../../../assets/images/logo.png">
-                </a>
-            </li>
-            <li routerLinkActive="active"><a class="nav-item" href="#">HOME</a></li>
-            <li><a class="nav-item" href="#">SUPERMAN</a></li>
-            <li><a class="nav-item" href="#">BATMAN</a></li>
-            <li><a class="nav-item" href="#">WONDER WOMAN</a></li>
-            <li><a class="nav-item" href="#">GREEN LANTERN</a></li>
-            <li><a class="nav-item" href="#">THE FLASH</a></li>
-            <li><a class="nav-item" href="#">AQUAMAN</a></li>
-            <!--<li><a class="nav-item" href="#">CYBORG</a></li>-->
-        </ul>
-    </nav>
-</header>
+<nav>
+    <div class="top-navbar">
+        <a class="menu-icon" href="javascript:void(0);" (click)="openOverLay()">&#9776;</a>
+        <a href="#">
+            <img class="nav-logo" src="../../../assets/images/logo.png">
+        </a>
+        <a href="#">HOME</a>
+        <a href="#">SUPERMAN</a>
+        <a href="#">BATMAN</a>
+        <a href="#">WONDER WOMAN</a>
+        <a href="#">GREEN LANTERN</a>
+        <a href="#">THE FLASH</a>
+        <a href="#">AQUAMAN</a>
+        <a href="#">CYBORG</a>
+    </div>
+    <div class="overlay" #sideNavBar>
+        <!-- Button to close the overlay navigation -->
+        <!--<a class="close-btn" href="javascript:void(0)"  (click)="openOverLay()">&times;</a>-->
+        <div class="overlay-content">
+            <a class="cross-icon" href="javascript:void(0);" (click)="closeOverLay()">&times;</a>
+            <!--<a href="#">
+                <img class="nav-logo" src="../../../assets/images/logo.png">
+            </a>-->
+            <a class="nav-item" href="#">SUPERMAN</a>
+            <a class="nav-item" href="#">BATMAN</a>
+            <a class="nav-item" href="#">WONDER WOMAN</a>
+            <a class="nav-item" href="#">GREEN LANTERN</a>
+            <a class="nav-item" href="#">THE FLASH</a>
+            <a class="nav-item" href="#">AQUAMAN</a>
+            <a class="nav-item" href="#">CYBORG</a>
+        </div>
+    </div>
+</nav>
