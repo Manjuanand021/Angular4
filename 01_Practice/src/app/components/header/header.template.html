@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
     <div class="top-navbar">
         <a class="menu-icon" href="javascript:void(0);" (click)="openOverLay()">&#9776;</a>
         <a href="#">
@@ -14,13 +14,8 @@
         <a href="#">CYBORG</a>
     </div>
     <div class="overlay" #sideNavBar>
-        <!-- Button to close the overlay navigation -->
-        <!--<a class="close-btn" href="javascript:void(0)"  (click)="openOverLay()">&times;</a>-->
         <div class="overlay-content">
-            <a class="cross-icon" href="javascript:void(0);" (click)="closeOverLay()">&times;</a>
-            <!--<a href="#">
-                <img class="nav-logo" src="../../../assets/images/logo.png">
-            </a>-->
+            <a class="cross-icon" href="javascript:void(0);" (click)="closeOverLay()">&times;</a>            
             <a class="nav-item" href="#">SUPERMAN</a>
             <a class="nav-item" href="#">BATMAN</a>
             <a class="nav-item" href="#">WONDER WOMAN</a>
@@ -29,5 +24,47 @@
             <a class="nav-item" href="#">AQUAMAN</a>
             <a class="nav-item" href="#">CYBORG</a>
         </div>
+    </div>
+</nav> -->
+
+<nav>
+    <div class="fixed-navbar">
+        <a class="nav-item icon-medium" href="#" (click)="toggleOverlay()">
+            <i class="ion-ios-close-outline" *ngIf="isOverLayVisible; else closeIcon"></i>
+            <ng-template #closeIcon>
+                <i class="ion-ios-keypad-outline"></i>
+            </ng-template>
+        </a>
+        <a class="nav-item" href="#">
+            <img class="nav-logo" src="../../../assets/images/logo.png">
+        </a>
+        <a class="nav-item icon-medium" href="#">
+            <i class="ion-ios-search"></i>
+        </a>
+        <!-- <div class="search-league">
+            <input class="nav-item search-input" type="seach" placeholder="enter here...">
+            <a class="nav-item icon-medium cross-over" href="#">
+                <i class="ion-ios-search"></i>
+            </a>
+        </div> -->
+    </div>
+    <div class="top-navbar">
+        <a class="nav-item nav-brand" href="#">
+            <img class="nav-logo" src="../../../assets/images/logo.png">
+        </a>
+        <a class="nav-item" href="#">Superman</a>
+        <a class="nav-item" href="#">Batman</a>
+        <a class="nav-item" href="#">Wonder Woman</a>
+        <a class="nav-item" href="#">Green Lantern</a>
+        <a class="nav-item" href="#">The Flash</a>
+        <a class="nav-item" href="#">Aquaman</a>
+    </div>
+    <div class="overlay" #sideNavBar>
+        <a class="nav-item" href="#">Superman</a>
+        <a class="nav-item" href="#">Batman</a>
+        <a class="nav-item" href="#">Wonder Woman</a>
+        <a class="nav-item" href="#">Green Lantern</a>
+        <a class="nav-item" href="#">The Flash</a>
+        <a class="nav-item" href="#">Aquaman</a>
     </div>
 </nav>

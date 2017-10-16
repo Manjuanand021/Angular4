@@ -23,6 +23,7 @@ export default class HeaderComponent {
     constructor(justiceLeagueMembersService: JusticeLeagueMembersService, renderer: Renderer2) {
         this._justiceLeagueMembersService = justiceLeagueMembersService;
         this._renderer = renderer;
+        this.isOverLayVisible = false;
     }
     addFlash() {
         this._justiceLeagueMembersService.addNewHero.next(new Member('The Flash',
@@ -51,13 +52,12 @@ export default class HeaderComponent {
             'http://www.dccomics.com/sites/default/files/styles/whos_who/public/ww_cyborg_588c0bec1db114.91404563_589111406dd3c2.36803058.jpg?itok=E9zlLUra',
             '/characters/cyborg'));
     }
+    toggleOverlay() {
+        this.isOverLayVisible = !this.isOverLayVisible;
+        if (this.isOverLayVisible)
+            this._renderer.setStyle(this.sideNavBar.nativeElement, 'width', '100%');
+        else
+            this._renderer.setStyle(this.sideNavBar.nativeElement, 'width', '0');
 
-    openOverLay() {
-        this._renderer.setStyle(this.sideNavBar.nativeElement, 'width', '100%');
-        console.log('open');
-    }
-    closeOverLay() {
-        console.log('CLOSE');
-        this._renderer.setStyle(this.sideNavBar.nativeElement, 'width', '0');
     }
 }

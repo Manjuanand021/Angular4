@@ -44,7 +44,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        outputPath: 'assets/images'
+                        outputPath: '/assets/images/'
                     }
                 }]
             },
@@ -53,7 +53,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        outputPath: 'assets/fonts/'
+                        outputPath: '/assets/fonts/'
                     }
                 }]
             }

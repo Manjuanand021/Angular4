@@ -1,7 +1,13 @@
-h2 {
-    @extend %headers;
+h1,
+h2,
+h3,
+h4 {
+    margin-top: .5em;
+    margin-bottom: .5em;
+    color: $astronaut-blue;
+    font-weight: 400;
 }
 
-h4 {
-    @extend %headers;
+h1 {
+    letter-spacing: 3px;
 }

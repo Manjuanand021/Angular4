@@ -1,12 +1,19 @@
-header {}
+header {
+    border-bottom: 1px solid $porcelain;
+}
 
-nav {}
+nav {
+    @extend %center-items;
+    height: 4.5em;
+}
 
 main {}
 
 article {}
 
-section{}
+section {
+    // margin-bottom: 3em;
+}
 
 aside {}
 

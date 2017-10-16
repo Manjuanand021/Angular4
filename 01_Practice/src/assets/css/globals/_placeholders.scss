@@ -19,8 +19,7 @@
 }
 
 %headers {
-    color: $bright-grey;
-    text-transform: uppercase;
+    // text-transform: uppercase;
 }
 
 // .image-one {
@@ -51,8 +50,11 @@
 %center-items {
     max-width: $max-viewport-width;
     margin: 0 auto;
-    &:hover,
-    &:focus {
-        color: $rolling-stone;
-    }
+}
+
+%center-mobile {
+    padding-top: 2em;
+    padding-right: 1em;
+    padding-bottom: 2em;
+    padding-left: 1em;
 }
