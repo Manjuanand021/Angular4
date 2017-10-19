@@ -28,17 +28,17 @@
 </nav> -->
 
 <nav>
-    <div class="fixed-navbar">
-        <a class="nav-item icon-medium" href="#" (click)="toggleOverlay()">
+    <div class="fixed-navbar" (click)="toggleOverlay()">
+        <a class="nav-item icon-medium">
             <i class="ion-ios-close-outline" *ngIf="isOverLayVisible; else closeIcon"></i>
             <ng-template #closeIcon>
                 <i class="ion-ios-keypad-outline"></i>
             </ng-template>
         </a>
-        <a class="nav-item" href="#">
+        <a class="nav-item" routerLink="/">
             <img class="nav-logo" src="../../../assets/images/logo.png">
         </a>
-        <a class="nav-item icon-medium" href="#">
+        <a class="nav-item icon-medium">
             <i class="ion-ios-search"></i>
         </a>
         <!-- <div class="search-league">
@@ -52,19 +52,19 @@
         <a class="nav-item nav-brand" href="#">
             <img class="nav-logo" src="../../../assets/images/logo.png">
         </a>
-        <a class="nav-item" href="#">Superman</a>
-        <a class="nav-item" href="#">Batman</a>
-        <a class="nav-item" href="#">Wonder Woman</a>
-        <a class="nav-item" href="#">Green Lantern</a>
-        <a class="nav-item" href="#">The Flash</a>
-        <a class="nav-item" href="#">Aquaman</a>
+        <a class="nav-item" routerLink="/superman">Superman</a>
+        <a class="nav-item" routerLink="/batman">Batman</a>
+        <a class="nav-item" routerLink="/wonder-woman">Wonder Woman</a>
+        <a class="nav-item" routerLink="/green-lantern">Green Lantern</a>
+        <a class="nav-item" routerLink="/flash">The Flash</a>
+        <a class="nav-item" routerLink="/aquaman">Aquaman</a>
     </div>
-    <div class="overlay" #sideNavBar>
-        <a class="nav-item" href="#">Superman</a>
-        <a class="nav-item" href="#">Batman</a>
-        <a class="nav-item" href="#">Wonder Woman</a>
-        <a class="nav-item" href="#">Green Lantern</a>
-        <a class="nav-item" href="#">The Flash</a>
-        <a class="nav-item" href="#">Aquaman</a>
+    <div class="overlay" #sideNavBar (click)="toggleOverlay()">
+        <a class="nav-item" routerLink="/superman">Superman</a>
+        <a class="nav-item" routerLink="/batman">Batman</a>
+        <a class="nav-item" routerLink="/wonder-woman">Wonder Woman</a>
+        <a class="nav-item" routerLink="/green-lantern">Green Lantern</a>
+        <a class="nav-item" routerLink="/flash">The Flash</a>
+        <a class="nav-item" routerLink="/aquaman">Aquaman</a>
     </div>
 </nav>

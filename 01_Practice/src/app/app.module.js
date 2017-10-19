@@ -20,13 +20,12 @@ import AppRoutingModule from './app.routing';
 import HeaderComponent from './components/header/header.component';
 import FooterComponent from './components/footer/footer.component';
 import PageNotFoundErrorComponent from './components/pagenotfound/pagenotfound.component';
-// import JusticeLeagueComponent from './components/justiceleague/justiceleague.component';
-// import JLMemberComponent from './components/justiceleague/jlmember/jlmember.component';
-// import HighlightDirective from './directives/highlight.directive';
-// import AuthService from './services/authService';
-// import AuthGuardService from './services/auth-guard.service';
-// import JusticeLeagueMembersService from './services/jLeague-members.service';
-// import UserService from './services/users.service';
+import SupermanComponent from './components/justiceleague/superman/superman.component';
+import BatmanComponent from './components/justiceleague/batman/batman.component';
+import WonderWomanComponent from './components/justiceleague/wonderwoman/wonder-woman.component';
+import GreenLanternComponent from './components/justiceleague/greenlantern/green-lantern.component';
+import FlashComponent from './components/justiceleague/flash/flash.component';
+import AquamanComponent from './components/justiceleague/aquaman/aquaman.component';
 
 
 @NgModule({
@@ -34,7 +33,13 @@ import PageNotFoundErrorComponent from './components/pagenotfound/pagenotfound.c
         AppComponent,
         HeaderComponent,
         FooterComponent,
-        PageNotFoundErrorComponent
+        PageNotFoundErrorComponent,
+        SupermanComponent,
+        BatmanComponent,
+        WonderWomanComponent,
+        GreenLanternComponent,
+        FlashComponent,
+        AquamanComponent
     ],
     imports: [
         BrowserModule,
