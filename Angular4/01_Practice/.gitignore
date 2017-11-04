@@ -1,0 +1,18 @@
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# VSCode related
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Dependencies
+/node_modules
+
+# e2e
+/e2e/*.js
+/e2e/*.map
