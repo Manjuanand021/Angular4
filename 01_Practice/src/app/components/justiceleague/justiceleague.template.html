@@ -1,40 +1,13 @@
-<!--<div class="jumbotron">
-    <h1 class="display-3">Justice League</h1>
-    <p class="lead">The Justice League, is a fictional superhero team appearing in American comic books published by DC Comics. </p>
-    <hr class="my-4">
-    <p>Fueled by his restored faith in humanity and inspired by Superman's (Henry Cavill) selfless act, Bruce Wayne (Ben Affleck)
-        enlists newfound ally Diana Prince to face an even greater threat. Together, Batman and Wonder Woman work quickly
-        to recruit a team to stand against this newly awakened enemy.
-    </p>
-</div>
-<!--<ng-content></ng-content>-->
-<!--<div class="row">
-    <div class="view-content" style="font-size: .9em;color: #3f3f3f;">
-        <member *ngFor="let member of coreMembers" [member-info]="member" (member-selected)="onMemberSelect($event)"></member>
-    </div>
-</div>-->
-<section class="hero-section">
-    <div class="hero-cover">
-        <header>
-            <h1 class="hero-header">Justice League</h1>
-            <p class="lead">
-                The Justice League, is a fictional superhero team appearing in American comic books published by DC Comics.
-            </p>
-        </header>
-        <!-- <hr class="hero-line"> -->
-        <p class="hero-subheader">
-            Fueled by his restored faith in humanity and inspired by Superman's (Henry Cavill) selfless act, Bruce Wayne (Ben Affleck) enlists newfound ally Diana Prince to face an even greater threat. Together, Batman and Wonder Woman work quickly to recruit a team
-            to stand against this newly awakened enemy. Despite the formation of an unprecedented league of heroes -- Batman, Wonder Woman, Aquaman, Cyborg and the Flash -- it may be too late to save the planet from an assault of catastrophic proportions
-        </p>
-    </div>
-</section>
+<jumbotron gradient-class="league" [header]="header" [lead]="leadTxt" [sub-header]="subHeader"></jumbotron>
 <section class="pl-section">
     <div class="plt-cover">
         <h1>Plot Summary</h1>
         <div class="plt-content">
             <div class="plt-tile">
                 <p class="plt-txt">
-                    Elit ut pariatur cupidatat velit commodo id aliqua sunt ut eiusmod. Ad proident officia ullamco anim elit cillum ex duis dolore fugiat deserunt sunt irure excepteur. Elit voluptate non esse excepteur aliquip elit in nulla mollit eu mollit culpa ad reprehenderit.
+                    Elit ut pariatur cupidatat velit commodo id aliqua sunt ut eiusmod. Ad proident officia ullamco anim elit cillum ex duis
+                    dolore fugiat deserunt sunt irure excepteur. Elit voluptate non esse excepteur aliquip elit in nulla
+                    mollit eu mollit culpa ad reprehenderit.
                 </p>
                 <p class="plt-author">
                     Jack Duff
@@ -42,7 +15,8 @@
             </div>
             <div class="plt-tile">
                 <p class="plt-txt">
-                    Ea do ipsum aliqua ad veniam dolor reprehenderit quis in tempor labore sit elit. Commodo exercitation consectetur deserunt cillum et qui aliqua ea. Consequat laboris occaecat nostrud ex mollit. In eu tempor anim ipsum id.
+                    Ea do ipsum aliqua ad veniam dolor reprehenderit quis in tempor labore sit elit. Commodo exercitation consectetur deserunt
+                    cillum et qui aliqua ea. Consequat laboris occaecat nostrud ex mollit. In eu tempor anim ipsum id.
                 </p>
                 <p class="plt-author">
                     Nikhilesh Chhakkar
@@ -50,8 +24,10 @@
             </div>
             <div class="plt-tile">
                 <p class="plt-txt">
-                    Ipsum eu elit veniam minim sit culpa anim elit pariatur. Occaecat eiusmod labore magna in aliquip magna in cillum mollit. Lorem nulla elit irure sit incididunt quis. Ea sit est ut nostrud irure nulla ad anim. Culpa aliqua est culpa amet. Esse ad dolore
-                    esse proident ipsum irure. Aliqua ipsum eiusmod Lorem laborum veniam do consequat duis.
+                    Ipsum eu elit veniam minim sit culpa anim elit pariatur. Occaecat eiusmod labore magna in aliquip magna in cillum mollit.
+                    Lorem nulla elit irure sit incididunt quis. Ea sit est ut nostrud irure nulla ad anim. Culpa aliqua est
+                    culpa amet. Esse ad dolore esse proident ipsum irure. Aliqua ipsum eiusmod Lorem laborum veniam do consequat
+                    duis.
                 </p>
                 <p class="plt-author">
                     priba_dj
@@ -60,82 +36,93 @@
         </div>
     </div>
 </section>
-<!--<article>
-    <h2>plot summary</h2>
-    <div class="row">
-        <section class="col plot-tile">
-            <h4>nikhilesh chhakkar</h4>
-            <p class="tile-content">In the wake of Clark Kent Supermans death at the hands of Doomsday in BvS , vigilante Bruce Wayne Batman reevaluates
-                his extreme methods and begins reaching out to extraordinary heroes to assemble a team of crime fighters
-                to defend earth from all kinds of threats. They face off against Steppenwolf, the herald and second in command
-                to alien warlord Darkseid , who is charged by Darkseid with hunting down three artifacts hidden on Earth.</p>
-        </section>
-        <section class="col plot-tile">
-            <h4>jack duff</h4>
-            <p class="tile-content">After the events of Doomsday, Bruce and Diana search the world only to find three extraordinary meta-humans.
-                As new enemies arise Batman, Wonder Woman, the Flash, Cyborg, and Aquaman must form the well known alliance
-                Justice League to save the world from mount destruction.</p>
-        </section>
-        <section class="col plot-tile">
-            <h4>priba dj</h4>
-            <p class="tile-content">Months after the events of Batman v Superman: Dawn of Justice and inspired by Superman's apparent sacrifice for
-                humanity, Bruce Wayne and Diana Prince assemble a team of meta-humans consisting of Barry Allen, Arthur Curry,
-                and Victor Stone to face the catastrophic threat of Steppenwolf and his army of Parademons who are on the
-                hunt for three Mother Boxes on Earth.</p>
-        </section>
-        <section class="col plot-tile">
-            <h4>Someone else</h4>
-            <p class="tile-content">Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help
-                of his newfound ally, Diana Prince, to face an even greater enemy. Pradeep Ramanathan Raju & Dr. Arnab Sarkar
-                unite to form the deadly army of zoonama, Earth's mightiest superheroes must now combine forces to save the
-                planet and their lethal invasion plans.</p>
-        </section>
+<section class="ww-section">
+    <div class="ww-cover">
+        <h1>Who's who</h1>
+        <div class="ww-content">
+            <!--<hero-tile *ngFor="let member of coreMembers" [details]="member"></hero-tile>-->
+            <div class="ww-tile">
+                <figure>
+                    <img src="../../../assets/images/superman_logo.png" alt="superman logo">
+                </figure>
+                <p>Look! Up in the sky! It’s a bird! It’s a plane! It’shero-…Well, you know how it ends, don’t you? It’s a sentence
+                    so iconic, there are probably kids shouting it in Swahili as you read this. Man of Steel - When a young
+                    boy discovers that he has extraordinary powers, he decides to find out about his origin. He then learns
+                    to fight for Earth when it gets attacked by members of his own race</p>
+                <a class="icon-medium" routerLink="/superman">
+                    <i class="ion-ios-fastforward-outline"></i>                    
+                </a>
+            </div>
+            <div class="ww-tile">
+                <figure>
+                    <img src="../../../assets/images/batman_logo.png" alt="superman logo">
+                </figure>
+                <p>
+                    Dark Knight. Caped Crusader. World’s Greatest Detective. Whatever you know him as, wherever you know him from—the blockbuster
+                    movies, TV shows, video games, cartoons, or millions of comics—Batman is proof you don’t need superpowers
+                    to be a superhero… and the poster boy for what a bad childhood can do to you.
+                </p>
+                <a class="icon-medium" routerLink="/batman">
+                    <i class="ion-ios-fastforward-outline"></i>
+                </a>
+            </div>
+            <div class="ww-tile">
+                <figure>
+                    <img src="../../../assets/images/wonderwoman_logo.png" alt="superman logo">
+                </figure>
+                <p>
+                    OK, let’s just come out and say it: Wonder Woman is the most famous heroine of all time. No offense to the Lara Crofts, Buffys,
+                    or Disney princesses of the world, but none of them have been plastered on as many magazine covers, adorned
+                    as many T-shirts, or sold the countless comics, dolls, and action figures that Wonder Woman has. The
+                    full package of beauty, brains, and brawn, she’s been a feminist icon since her star-spangled intro in
+                    1941.
+                </p>
+                <a class="icon-medium" routerLink="/wonder-woman">
+                    <i class="ion-ios-fastforward-outline"></i>
+                </a>
+            </div>
+            <div class="ww-tile">
+                <figure>
+                    <img src="../../../assets/images/green_lantern_logo.png" alt="superman logo">
+                </figure>
+                <p>
+                    Imagine if the ring on your finger was more than a piece of gaudy jewelry. Instead, it’s the universe’s most powerful weapon.
+                    It can create whatever you wish out of pure energy, its might limited only by your imagination and will.
+                    And with it comes exclusive membership to an exclusive intergalactic police force with alien officers
+                    spanning the cosmos.
+                </p>
+                <a class="icon-medium" routerLink="/green-lantern">
+                    <i class="ion-ios-fastforward-outline"></i>
+                </a>
+            </div>
+            <div class="ww-tile">
+                <figure>
+                    <img src="../../../assets/images/flash_logo.png" alt="superman logo">
+                </figure>
+                <p>
+                    Indy cars, bullet trains, supersonic aircraft… The Flash leaves them all in the dust. Barry Allen, a forensic scientist with
+                    the Central City police force, is struck by lightning in a freak accident. When he wakes up after nine
+                    months, he discovers that he can achieve great speeds.
+                </p>
+                <a class="icon-medium" routerLink="/flash">
+                    <i class="ion-ios-fastforward-outline"></i>
+                </a>
+            </div>
+            <div class="ww-tile">
+                <figure>
+                    <img src="../../../assets/images/aquaman2_logo.png" alt="superman logo">
+                </figure>
+                <p>
+                    Make all the sushi jokes, YouTube spoofs, and SNL sketches you want, Aquaman’s been an icon for over seventy years. The King
+                    of the Seven Seas. Reluctant ruler of Atlantis. A man who holds his own against heroes like Superman
+                    and Wonder Woman. He’s so recognizable that when officials speak about the perils of sea pollution, they’ll
+                    whip out Aquaman references to sound hip.
+                </p>
+                <a class="icon-medium" routerLink="/aquaman">
+                    <i class="ion-ios-fastforward-outline"></i>
+                </a>
+            </div>
+        </div>
     </div>
-</article>
-<article>
-    <h2>Who's Who</h2>
-    <div class="whoswho-cover">
-        <a href="#">
-            <figure class="whoswho-thumb">
-                <img class="shrink" src="../../../assets/images/superman.jpg" alt="">
-                <figcaption>superman</figcaption>
-            </figure>
-        </a>
-        <a href="#">
-            <figure class="whoswho-thumb">
-                <img src="../../../assets/images/batman.jpg" alt="">
-                <figcaption>batman</figcaption>
-            </figure>
-        </a>
-        <a href="#">
-            <figure class="whoswho-thumb">
-                <img src="../../../assets/images/wonderwoman.jpg" alt="">
-                <figcaption>wonderwoman</figcaption>
-            </figure>
-        </a>
-        <a href="#">
-            <figure class="whoswho-thumb">
-                <img src="../../../assets/images/greenlantern.jpg" alt="">
-                <figcaption>green lantern</figcaption>
-            </figure>
-        </a>
-        <a href="#">
-            <figure class="whoswho-thumb">
-                <img src="../../../assets/images/flash.jpg" alt="">
-                <figcaption>the flash</figcaption>
-            </figure>
-        </a>
-        <a href="#">
-            <figure class="whoswho-thumb">
-                <img src="../../../assets/images/aquaman.jpg" alt="">
-                <figcaption>aquaman</figcaption>
-            </figure>
-        </a>
-        <a href="#">
-            <figure class="whoswho-thumb">
-                <img src="../../../assets/images/cyborg.jpg" alt="">
-                <figcaption>cyborg</figcaption>
-            </figure>
-        </a>
-    </div>
-</article>-->
+
+</section>

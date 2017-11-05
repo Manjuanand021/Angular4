@@ -1,362 +1,426 @@
-    //********************************
-    //Reference - http://codeguide.co/
-    //********************************
-    .declaration-order {
-        /* Positioning */
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 100;
-        /* Box-model */
-        display: block;
-        float: right;
-        width: 100px;
-        height: 100px;
-        /* Typography */
-        font: normal 13px "Helvetica Neue", sans-serif;
-        line-height: 1.5;
-        color: #333;
-        text-align: center;
-        /* Visual */
-        background-color: #f5f5f5;
-        border: 1px solid #e5e5e5;
-        border-radius: 3px;
-        /* Misc */
-        opacity: 1;
-    }
-    /* VENDOR - Default fall-backs and external files.
+//********************************
+//Reference - http://codeguide.co/
+//********************************
+.declaration-order {
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  /* Box-model */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+  /* Typography */
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+  /* Visual */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  /* Misc */
+  opacity: 1;
+}
+
+
+/* VENDOR - Default fall-backs and external files.
 ========================================================================== */
-    
-    // @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
-    /* BASE - Base Variable file along with starting point Mixins and Placeholders.
+
+//@import './vendor/animate.css'; @
+// @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+/* BASE - Base Variable file along with starting point Mixins and Placeholders.
 ========================================================================== */
-    
-    @import './globals/_variables.scss';
-    @import './globals/_mixins.scss';
-    @import './globals/_placeholders.scss';
-    /* FRAMEWORK - Structure and layout files.
+
+@import "./globals/_@font-face.scss";
+@import "./globals/_variables.scss";
+@import "./globals/_mixins.scss";
+@import "./globals/_placeholders.scss";
+
+/* FRAMEWORK - Structure and layout files.
 ========================================================================== */
-    
-    // @import 'framework/_grid.scss';
-    // @import 'framework/_breakpoints.scss';
-    // @import 'framework/_layout.scss';
-    /* MODULES - Re-usable site elements.
+
+// @import 'framework/_grid.scss';
+// @import 'framework/_breakpoints.scss';
+// @import 'framework/_layout.scss';
+
+/* MODULES - Re-usable site elements.
 ========================================================================== */
-    
-    @import './globals/_grid.scss';
-    @import './globals/_semantic-tags.scss';
-    @import './globals/_headers.scss';
-    @import './globals/_paragraph.scss';
-    // @import './globals/_button.scss';
-    // @import './globals/_link.scss';
-    @import './globals/_ul.scss';
-    /* Applies to all elements on page
+
+@import "./globals/_grid.scss";
+@import "./globals/_semantic-tags.scss";
+@import "./globals/_headers.scss";
+@import "./globals/_paragraph.scss"; // @import './globals/_button.scss';
+// @import './globals/_link.scss';
+@import "./globals/_ul.scss";
+@import "./globals/_animations.scss";
+
+/* Applies to all elements on page
 ============================================================================*/
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    /* Root element style
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Root element style
 ============================================================================*/
-    
-    html,
-    body {
-        font-family: $font-stack;
-        font-size: $font-size;
-        font-weight: $font-weight;
-        line-height: $line-height;
-        letter-spacing: 1px;
-        color: $oslo-grey;
-        text-rendering: optimizeLegibility;
-    }
-    /* overlay navigation bar style
+
+html,
+body {
+  font-family: $font-stack;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: 1px;
+  color: $oslo-grey;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* top navigation bar style
 ============================================================================*/
-    
-    // .nav-logo {
-    //     height: 2.5em;
-    //     width: 2.5em;
-    //     vertical-align: middle;
-    //     transition: 0.5s;
-    // }
-    // .overlay {
-    //     position: fixed;
-    //     top: 0;
-    //     left: 0;
-    //     height: 100%;
-    //     width: 0;
-    //     /* Black fallback color */
-    //     background-color: $white;
-    //     /* Black w/opacity */
-    //     // background-color: rgba(0, 0, 0, 0.9);
-    //     overflow-x: hidden;
-    //     z-index: 1;
-    //     /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-    //     transition: 0.5s;
-    //     & a {
-    //         display: block;
-    //         @extend %nav-tem;
-    //     }
-    // }
-    // /* Position the content inside the overlay */
-    // .overlay-content {
-    //     position: relative;
-    //     text-align: center;
-    //     & a:first-child {
-    //         margin: 0; // margin-bottom: 1em;
-    //         text-align: left;
-    //         border-bottom: 1px solid $porcelain;
-    //     }
-    // }
-    // .cross-icon {
-    //     position: relative;
-    //     top: 0;
-    //     left: 0;
-    //     @extend %menu-icon;
-    //     font-size: 2.5em;
-    // }
-    /* top navigation bar style
-============================================================================*/
-    
-    // .top-navbar {
-    //     overflow: hidden;
-    //     & a:not(:first-child) {
-    //         display: none;
-    //     }
-    //     & a:first-child {
-    //         margin: 0;
-    //         margin-bottom: 1em;
-    //         border-bottom: 1px solid $porcelain;
-    //     }
-    // }
-    // @media #{$lg} {
-    //     nav {
-    //         border-bottom: 1px solid $porcelain;
-    //     }
-    //     .top-navbar {
-    //         max-width: $max-viewport-width;
-    //         margin: 0 auto;
-    //     }
-    // }
-    // .menu-icon {
-    //     @extend %menu-icon;
-    //     font-size: 2em;
-    //     @extend %nav-tem;
-    //     &:hover {
-    //         text-decoration: none;
-    //     }
-    // }
-    // @media #{$lg} {
-    //     .menu-icon {
-    //         display: none;
-    //     }
-    //     .top-navbar {
-    //         & a:not(:first-child) {
-    //             display: inline-block;
-    //             font-weight: 600; // color: $rolling-stone;
-    //             padding: .6em;
-    //             text-decoration: none;
-    //             text-transform: uppercase;
-    //             transition: 0.3s;
-    //             &:hover,
-    //             &:focus {
-    //                 color: $endeavour;
-    //                 border-bottom: 0.3em solid $azure-radiance;
-    //             }
-    //         }
-    //     }
-    //     .nav-logo {
-    //         height: 3em;
-    //         width: 3em;
-    //         vertical-align: middle;
-    //     }
-    // }    
-    .nav-logo {
-        height: 2.2em;
-        width: 2.2em;
-        vertical-align: middle;
+
+.nav-logo {
+  height: 2.2em;
+  width: 2.2em;
+  vertical-align: middle;
+}
+
+@media #{$lg} {
+  .nav-logo {
+    height: 3em;
+    width: 3em;
+  }
+}
+
+.nav-item {
+  display: inline-block;
+  color: $azure-radiance;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  padding: 0.5em;
+  transition: 0.3s;
+  &:hover,
+  &:focus {
+    color: $light-blue; // border-bottom: .2em solid $azure-radiance;
+  }
+}
+
+.top-navbar {
+  display: none;
+}
+
+@media #{$lg} {
+  .top-navbar {
+    display: block;
+    & .nav-item {
+      display: inline-block;
+      padding: 1em;
     }
-    
-    @media #{$lg} {
-        .nav-logo {
-            height: 3em;
-            width: 3em;
-        }
-    }
-    
-    .nav-item {
-        display: inline-block;
-        color: $azure-radiance;
-        font-weight: 500;
-        text-decoration: none;
-        letter-spacing: .1em;
-        padding: .5em;
-        transition: .3s;
-        &:hover,
-        &:focus {
-            color: $light-blue;
-            // border-bottom: .2em solid $azure-radiance;
-        }
-    }
-    
-    .top-navbar {
-        display: none;
-    }
-    
-    @media #{$lg} {
-        .top-navbar {
-            display: block;
-            & .nav-item {
-                display: inline-block;
-                padding: 1em;
-            }
-        }
-    }
-    
-    .icon-medium {
-        font-size: 2em;
-        vertical-align: middle;
-    }
-    
-    .cross-over {
-        margin-left: -1.5em;
-    }
-    
-    .fixed-navbar {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        & a {}
-    }
-    
-    @media #{$lg} {
-        .fixed-navbar {
-            display: none;
-        }
-    }
-    
-    .search-league {
-        width: 10em;
-    }
-    
-    .search-input {
-        border: 0;
-        outline: none;
-        color: $oslo-grey;
-        border-bottom: 1.5px solid $azure-radiance;
-        padding-left: 0.7em;
-        padding-bottom: 0.8em;
-        transition: .9s;
-        &:focus {
-            color: $oslo-grey;
-            border-bottom: 1.5px solid $light-blue;
-        }
-    }
-    /* Overlay styles
+  }
+}
+
+.icon-medium {
+  font-size: 2em;
+  vertical-align: middle;
+}
+
+.cross-over {
+  margin-left: -1.5em;
+}
+
+.fixed-navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  & a {}
+}
+
+@media #{$lg} {
+  .fixed-navbar {
+    display: none;
+  }
+}
+
+.search-league {
+  width: 10em;
+}
+
+.search-input {
+  border: 0;
+  outline: none;
+  color: $oslo-grey;
+  border-bottom: 1.5px solid $azure-radiance;
+  padding-left: 0.7em;
+  padding-bottom: 0.8em;
+  transition: 0.9s;
+  &:focus {
+    color: $oslo-grey;
+    border-bottom: 1.5px solid $light-blue;
+  }
+}
+
+
+/* Overlay styles
 **********************************************/
-    
-    .overlay {
-        position: fixed;
-        top: 4.58em;
-        left: 0;
-        // display: none;
-        height: 100%;
-        width: 0;
-        overflow-x: hidden;
-        background-color: $white;
-        padding-top: 2em;
-        z-index: 1;
-        transition: .5s;
-        & .nav-item {
-            display: block;
-            text-align: center;
-            // padding: .em;
-        }
-    }
-    
-    @media #{$lg} {
-        .overlay {
-            display: none;
-        }
-    }
-    /* hero-section styles
+
+.overlay {
+  position: fixed;
+  top: 4.58em;
+  left: 0; // display: none;
+  height: 100%;
+  width: 0;
+  overflow-x: hidden;
+  background-color: $white;
+  padding-top: 2em;
+  z-index: 111;
+  transition: 0.5s;
+  & .nav-item {
+    display: block;
+    text-align: center; // padding: .em;
+  }
+}
+
+@media #{$lg} {
+  .overlay {
+    display: none;
+  }
+}
+
+
+/* hero-section styles
 **********************************************/
-    
-    .hero-section {
-        background-color: $light-blue;
-        & header {
-            padding-bottom: 0.7em;
-            border-bottom: 1px solid $white;
-        }
-    }
-    
-    .hero-header {
-        color: $white;
-    }
-    
-    .hero-cover {
-        color: $white;
-        @extend %center-mobile;
-    }
-    
-    @media #{$lg} {
-        .hero-cover {
-            max-width: $max-viewport-width;
-            margin: 0 auto;
-        }
-    }
-    
-    @media #{$lg} {
-        // .hero-cover {
-        //     @extend %center-items;
-        // }
-    }
-    
-    .lead {
-        font-size: 1.01em;
-    }
-    
-    .hero-subheader {
-        padding-top: .7em;
-    }
-    /* plot summary styles
+
+.hero-header {
+  border-bottom: 1px solid $porcelain;
+}
+
+.header-txt {
+  color: $white;
+}
+
+.hero-cover {
+  color: $white;
+  @extend %center-mobile;
+}
+
+@media #{$lg} {
+  .hero-cover {
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+  }
+}
+
+@media #{$lg} {
+  // .hero-cover {
+  //     @extend %center-items;
+  // }
+}
+
+.lead {
+  font-size: 1.01em;
+}
+
+.hero-subheader {
+  padding-top: 0.7em;
+}
+
+
+/* plot summary styles
     ****************************/
-    
-    .plt-cover {
-        @extend %center-mobile;
-    }
-    
-    .plt-content {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 1em;
-    }
-    
-    @media #{$lg} {
-        .plt-cover {
-            max-width: $max-viewport-width;
-            margin: 0 auto;
-        }
-        .plt-content {
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 2em;
-        }
-    }
-    
-    .plt-tile {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-    }
-    
-    .plt-author {
-        align-self: flex-end;
-        text-transform: lowercase;
-        &::before {
-            content: '- ';
-        }
-    }
+
+.plt-cover {
+  @extend %center-mobile;
+}
+
+.plt-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+}
+
+@media #{$lg} {
+  .plt-cover {
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+  }
+  .plt-content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+  }
+}
+
+.plt-tile {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.plt-author {
+  align-self: flex-end;
+  text-transform: lowercase;
+  &::before {
+    content: "- ";
+  }
+}
+
+
+/* whos-who styles
+    ****************************/
+
+.ww-section {
+  background-color: $aqua-haze;
+}
+
+.ww-cover {
+  @extend %center-mobile;
+}
+
+.ww-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2em;
+}
+
+.ww-tile {
+  display: flex;
+  flex-flow: column nowrap;
+  & figure {
+    align-self: center;
+  }
+  & p {
+    flex: 1;
+  }
+  & a {
+    align-self: flex-end;
+    font-size: 1.5em;
+    color: $light-blue;
+  }
+}
+
+@media #{$lg} {
+  .ww-cover {
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+  }
+  .ww-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* hero specific styles
+    ****************************/
+
+.league {
+  background: #56ccf2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2f80ed, #56ccf2);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2f80ed, #56ccf2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sup {
+  background: #ff4b1f;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff4b1f, #ff9068);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff4b1f, #ff9068);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bat {
+  background: #f1c40f;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f1c40f, #f5d44f);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f1c40f, #f5d44f);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.glt {
+  background: #56ab2f;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #56ab2f, #a8e063);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #56ab2f, #a8e063);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.aqua {
+  // background-color: $light-blue;
+  background: #56ccf2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2f80ed, #56ccf2);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2f80ed, #56ccf2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* hero-content styles
+ ****************************/
+
+.hc-section {}
+
+.hc-cover {
+  @extend %center-mobile;
+}
+
+@media #{$lg} {
+  .hc-cover {
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+  }
+}
+
+
+/* hero-power styles
+    ****************************/
+
+.hp-section {
+  background-color: $aqua-haze;
+}
+
+.hp-cover {
+  // color: $white;
+  @extend %center-mobile;
+}
+
+.hp-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2em;
+}
+
+@media #{$lg} {
+  .hp-cover {
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+  }
+  .hp-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.hp-tile {
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 0.9em;
+  & p:first-child {
+    color: $astronaut-blue;
+    font-weight: 500;
+    margin-right: 1em;
+  }
+}
