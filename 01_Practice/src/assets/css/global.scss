@@ -115,6 +115,11 @@ body {
   }
 }
 
+.active {
+  color: $light-blue;
+  border: 0;
+}
+
 .top-navbar {
   display: none;
 }
@@ -294,6 +299,7 @@ body {
 
 .ww-tile {
   display: flex;
+  height: 100%;
   flex-flow: column nowrap;
   & figure {
     align-self: center;

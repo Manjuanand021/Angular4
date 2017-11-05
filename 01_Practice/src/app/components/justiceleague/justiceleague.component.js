@@ -14,6 +14,7 @@ import {
   Renderer2
 } from "@angular/core";
 import {
+  Router,
   ActivatedRoute
 } from "@angular/router";
 import {
@@ -27,6 +28,10 @@ import {
   Input
 } from "@angular/common/http";
 import "rxjs/Rx";
+import {
+  Store
+} from '@ngrx/store';
+
 import template from "./justiceleague.template.html";
 import JusticeLeagueMembersService from "../../services/jLeague-members.service";
 import UserService from "../../services/users.service";
@@ -40,19 +45,13 @@ import UserService from "../../services/users.service";
   ]
 })
 export default class JusticeLeagueComponent {
-  memberSelectSubscription: Subscription;
-  numberSubscription: Subscription;
-  myObservableSubscription: Subscription;
-  constructor(
-    leaguemembersService: JusticeLeagueMembersService,
-    router: ActivatedRoute,
-    userService: UserService,
-    renderer: Renderer2
-  ) {
-    this._leagueMembersService = leaguemembersService;
-    this._router = router;
-    this._userService = userService;
+  _customSubscription: Subscription;
+  storeCoreMembers: Observable;
+  constructor(renderer: Renderer2, router: Router, activatedRoute: ActivatedRoute, store: Store) {
     this._renderer = renderer;
+    this._router = router;
+    this._activatedRoute = activatedRoute;
+    this.leagueMembers = [];
     this.header = `Justice League`;
     this.leadTxt = `The Justice League, is a fictional superhero team appearing in American comic books published by DC Comics.`;
     this.subHeader = `Fueled by his restored faith in humanity and inspired by Superman's (Henry Cavill) selfless act, Bruce Wayne (Ben Affleck)
@@ -61,7 +60,47 @@ export default class JusticeLeagueComponent {
             of heroes -- Batman, Wonder Woman, Aquaman, Cyborg and the Flash -- it may be too late to save the planet from
             an assault of catastrophic proportions`;
     this.coreMembers = [];
+    this._store = store;
   }
-  ngOnInit() {}
-  ngOnDestroy() {}
+  ngOnInit() {
+    this.storeCoreMembers = this._store.select('jLeagueCoreMembers');
+    this._activatedRoute.data.subscribe((data) => {
+      this.leagueMembers = data.coreLeagueMembers;
+    }, (error) => {
+      console.log('Error occured...');
+    }, () => {
+      console.log('Observable completed...');
+    });
+
+    /*Observable
+     ********************* */
+    // const numbers = Observable.interval(1000);
+    // numbers.subscribe(num => {
+    //   console.log(num);
+    // });
+    // this._customSubscription = Observable.create((observer: Observer) => {
+    //   setInterval(() => {
+    //     observer.next(10)
+    //   }, 1000);
+    //   setInterval(() => {
+    //     observer.error('some error')
+    //   }, 2000);
+    //   setInterval(() => {
+    //     observer.complete();
+    //   }, 3000);
+    //   setInterval(() => {
+    //     observer.next(20);
+    //   }, 3000);
+    // });
+    // myObserver.subscribe((data) => {
+    //   console.log(data);
+    // }, (error) => {
+    //   console.log('error occured', error);
+    // }, () => {
+    //   console.log('completed');
+    // });
+  }
+  ngOnDestroy() {
+    // this._customSubscription.unsubscribe();
+  }
 }

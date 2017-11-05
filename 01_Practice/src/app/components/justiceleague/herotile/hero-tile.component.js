@@ -10,7 +10,9 @@ import template from './hero-tile.template.html';
 })
 export default class HeroTileComponent {
     @Input('details') heroDetails;
-    constructor() {
-
+    constructor() {}
+    returnLogoPath(logoPath) {
+        // require(`${logoPath}`)
+        return logoPath;
     }
 }
