@@ -1,6 +1,5 @@
 import {
     Directive,
-    OnInit,
     ElementRef,
     Renderer2,
     HostListener,
@@ -14,7 +13,9 @@ import {
 export default class HighlightDirective {
     @Input('default-color') defaultColor = 'black';
     @Input('highlight') highLightColor = 'blue';
-    @HostBinding('style.color') color;
+    @HostBinding('style.color') color: any;
+    element: ElementRef;
+    renderer: Renderer2;
     constructor(_element: ElementRef, _renderer: Renderer2) {
         this.element = _element;
         this.renderer = _renderer;

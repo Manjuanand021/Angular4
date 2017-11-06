@@ -1,25 +1,23 @@
-//Import core modules
+// Import core modules
 import {
   NgModule
-} from "@angular/core";
+} from '@angular/core';
 import {
-  Routes,
   RouterModule
 } from '@angular/router';
 
-//Import feature modules
-import JusticeLeagueRoutingModule from "./justiceleague.routing";
-import SharedModule from "../shared/shared.module";
+// Import feature modules
+import JusticeLeagueRoutingModule from './justiceleague.routing';
+import SharedModule from '../shared/shared.module';
 
-//Import components
-import JusticeLeagueComponent from "./justiceleague.component";
+// Import components
+import JusticeLeagueComponent from './justiceleague.component';
 import HeroTileComponent from '../hero-tile/hero-tile.component';
 import PlotTileComponent from '../plot-tile/plot-tile.component';
 
-//Import services
+// Import services
 import AuthGuardService from '../services/auth-guard.service';
 import JusticeLeagueMembersService from '../services/jLeague-members.service';
-import UserService from '../services/users.service';
 
 @NgModule({
   declarations: [
@@ -35,8 +33,7 @@ import UserService from '../services/users.service';
   exports: [],
   providers: [
     AuthGuardService,
-    JusticeLeagueMembersService,
-    UserService
+    JusticeLeagueMembersService
   ]
 })
 export default class JusticeLeagueModule { }

@@ -1,16 +1,16 @@
 import {
   Component,
   Input
-} from "@angular/core";
+} from '@angular/core';
 
 @Component({
-  selector: "jumbotron",
+  selector: 'jumbotron',
   template: './jumbotron.template.html'
 })
 export default class JumbotronComponent {
-  @Input('header') header;
-  @Input('sub-header') subHeader;
-  @Input('lead') lead;
-  @Input('gradient-class') gradientClass;
+  @Input('header') header: any;
+  @Input('sub-header') subHeader: any;
+  @Input('lead') lead: any;
+  @Input('gradient-class') gradientClass: any;
   constructor() { }
 }

@@ -1,5 +1,5 @@
 export default class AuthService {
-    isLoggedIn = false;
+    isLoggedIn: boolean = false;
     login() {
         const promise = new Promise((resolve, reject) => {
             setInterval(() => {

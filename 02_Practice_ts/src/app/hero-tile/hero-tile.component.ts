@@ -5,13 +5,9 @@ import {
 
 @Component({
     selector: 'hero-tile',
-    template: './hero-tile.template.html'
+    templateUrl: './hero-tile.template.html'
 })
 export default class HeroTileComponent {
-    @Input('details') heroDetails;
+    @Input('details') heroDetails: any;
     constructor() { }
-    returnLogoPath(logoPath) {
-        // require(`${logoPath}`)
-        return logoPath;
-    }
 }

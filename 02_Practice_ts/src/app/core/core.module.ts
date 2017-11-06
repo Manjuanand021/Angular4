@@ -12,14 +12,14 @@ import {
     HttpClientModule
 } from '@angular/common/http';
 
-//Import modules
+// Import modules
 import AppRoutingModule from '../app.routing';
 
-//Import components
+// Import components
 import HeaderComponent from './header/header.component';
 import FooterComponent from './footer/footer.component';
 
-//Import services
+// Import services
 
 @NgModule({
     declarations: [

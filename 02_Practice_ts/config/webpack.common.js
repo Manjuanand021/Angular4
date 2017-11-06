@@ -28,6 +28,10 @@ module.exports = {
                 }, 'angular2-template-loader']
             },
             {
+                test: /\.html$/,
+                loader: 'html-loader'
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                 loader: 'file-loader?name=assets/images/[name].[hash].[ext]'
 
@@ -39,17 +43,17 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: scss.options
-            },
-            {
-                //incude partials in the bundle itself
-                test: /\.html$/,
-                use: [{
-                    loader: 'html-loader',
-                    options: {
-                        minimize: true
-                    }
-                }]
             }
+            // {
+            //     //incude partials in the bundle itself
+            //     test: /\.html$/,
+            //     use: [{
+            //         loader: 'html-loader',
+            //         options: {
+            //             minimize: true
+            //         }
+            //     }]
+            // }
         ]
     },
     plugins: [

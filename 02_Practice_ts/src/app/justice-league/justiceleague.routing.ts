@@ -1,17 +1,18 @@
-//Import core modules
+// Import core modules
 import {
     NgModule
 } from '@angular/core';
 import {
+    Routes,
     RouterModule
 } from '@angular/router';
 
-//Import feature modules
+// Import feature modules
 
-//Import components
+// Import components
 import JusticeLeagueComponent from './justiceleague.component';
 
-//Import services
+// Import services
 import JusticeLeagueMembersService from '../services/jLeague-members.service';
 
 const routes: Routes = [{

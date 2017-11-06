@@ -5,12 +5,12 @@ import {
     CommonModule
 } from '@angular/common';
 
-//Import feature modules
-import SupermanRoutingModule from "./superman.routing";
-import SharedModule from "../shared/shared.module";
+// Import feature modules
+import SupermanRoutingModule from './superman.routing';
+import SharedModule from '../shared/shared.module';
 
 
-//Import components
+// Import components
 import SupermanComponent from './superman.component';
 
 @NgModule({
@@ -20,7 +20,7 @@ import SupermanComponent from './superman.component';
         SupermanRoutingModule,
         SharedModule
     ],
-    exportS: [SupermanComponent]
+    exports: [SupermanComponent]
 })
 export default class SupermanModule {
 

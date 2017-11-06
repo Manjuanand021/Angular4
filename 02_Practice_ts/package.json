@@ -5,7 +5,7 @@
     "description": "Example project from an angular.io guide.",
     "scripts": {
         "start": "webpack-dev-server --open --inline --config config/webpack.dev.js",
-        "devbuild": "rimraf dist && webpack --config config/webpack.dev.js --progress --profile --bail",
+        "dev-build": "rimraf dist && webpack --config config/webpack.dev.js --progress --profile --bail",
         "test": "karma start",
         "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
     },

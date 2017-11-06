@@ -5,23 +5,17 @@ import {
     NgForm
 } from '@angular/forms';
 
+const template = require('./app.component.html');
+
+
 @Component({
     selector: 'app-root',
-    template: './app.component.html'
+    template: template
     // styleUrls: ['./app.component.css']
 })
 export default class AppComponent {
-    constructor() {
-        this.title = 'First Angular App';
-        this.subHeader = 'who\'s WHO';
-    }
-    onMemberSelected(memberName) {
-        console.log(memberName);
-        this.memberName = memberName;
-    }
-
-    onFormSubmit(form: NgForm) {
-        console.log(form);
-        console.log('submitted');
-    }
+    title: string = 'First Angular App';
+    subHeader: string = 'who\'s WHO';
+    memberName: string;
+    constructor() { }
 }

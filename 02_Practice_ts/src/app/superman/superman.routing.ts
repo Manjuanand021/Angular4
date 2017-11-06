@@ -1,14 +1,14 @@
-//Import core modules
+// Import core modules
 import {
     NgModule
 } from '@angular/core';
 import {
-    RouterModule
+    RouterModule, Routes
 } from '@angular/router';
 
-//Import feature modules
+// Import feature modules
 
-//Import components
+// Import components
 import SupermanComponent from './superman.component';
 
 const routes: Routes = [{
