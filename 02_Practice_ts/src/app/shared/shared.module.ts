@@ -1,23 +1,22 @@
-import {
-    NgModule
-} from '@angular/core';
-import {
-    CommonModule
-} from '@angular/common';
-import HighlightDirective from '../directives/highlight.directive';
-import JumbotronComponent from './jumbotron/jumbotron.component';
+// import core libs
+import { NgModule } from '@angular/core';
+
+// import components
+import WizardComponent from './wizard/wizard.component';
+import HeaderComponent from './header/header.component';
+
 @NgModule({
-    declarations: [
-        HighlightDirective,
-        JumbotronComponent
+    imports: [
     ],
-    imports: [CommonModule],
+    declarations: [
+        WizardComponent,
+        HeaderComponent],
     exports: [
-        CommonModule,
-        HighlightDirective,
-        JumbotronComponent
-    ]
+        WizardComponent
+    ],
+    providers: [],
 })
 export default class SharedModule {
 
 };
+

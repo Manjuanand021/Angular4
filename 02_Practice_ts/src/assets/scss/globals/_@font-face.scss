@@ -1,13 +1,6 @@
 @font-face {
-  font-family: "Manuale";
-  src: url("../fonts/Manuale/Manuale-Regular.ttf") format("opentype"),
-    url("../fonts/Manuale/Manuale-Medium.ttf") format("opentype"),
-    url("../fonts/Manuale/Manuale-Italic.ttf") format("opentype"),
-    url("../fonts/Manuale/Manuale-MediumItalic.ttf") format("opentype"),
-    url("../fonts/Manuale/Manuale-Bold.ttf") format("opentype"),
-    url("../fonts/Manuale/Manuale-BoldItalic.ttf") format("opentype"),
-    url("../fonts/Manuale/Manuale-SemiBold.ttf") format("opentype"),
-    url("../fonts/Manuale/Manuale-SemiBoldItalic.ttf") format("opentype");
-  font-weight: normal;
+  font-family: "Muli";
+  src: url("../fonts/Muli/Muli-Black.ttf") format("opentype"), url("../fonts/Muli/Muli-BlackItalic.ttf") format("opentype"), url("../fonts/Muli/Muli-Bold.ttf") format("opentype"), url("../fonts/Muli/Muli-BoldItalic.ttf") format("opentype"), url("../fonts/Muli/Muli-ExtraBold.ttf") format("opentype"), url("../fonts/Muli/Muli-ExtraBoldItalic.ttf") format("opentype"), url("../fonts/Muli/Muli-ExtraLight.ttf") format("opentype"), url("../fonts/Muli/Muli-ExtraLightItalic.ttf") format("opentype"), url("../fonts/Muli/Muli-Regular.ttf") format("opentype"), url("../fonts/Muli/Muli-SemiBold.ttf") format("opentype");
+  font-weight: 400;
   font-style: normal;
 }
