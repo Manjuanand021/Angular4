@@ -19,9 +19,9 @@ import {
 //     state,
 //     style
 // } from '@angular/animations';
-// import {
-//     StoreModule
-// } from '@ngrx/store';
+import {
+    StoreModule
+} from '@ngrx/store';
 
 // Import feature modules
 import ShippingModule from './features/feaure.module';
@@ -33,6 +33,7 @@ import PageNotFoundErrorComponent from './pagenotfound/pagenotfound.component';
 // Import services
 
 // Import reducers
+import ShoppingLabelReducer from './store/shipping.reducers';
 
 
 @NgModule({
@@ -43,7 +44,10 @@ import PageNotFoundErrorComponent from './pagenotfound/pagenotfound.component';
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        ShippingModule
+        ShippingModule,
+        StoreModule.forRoot({
+            shippingLabel: ShoppingLabelReducer
+        })
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -2,29 +2,29 @@
 //Reference - http://codeguide.co/
 //********************************
 .declaration-order {
-  /* Positioning */
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-  /* Box-model */
-  display: block;
-  float: right;
-  width: 100px;
-  height: 100px;
-  /* Typography */
-  font: normal 13px "Helvetica Neue", sans-serif;
-  line-height: 1.5;
-  color: #333;
-  text-align: center;
-  /* Visual */
-  background-color: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  border-radius: 3px;
-  /* Misc */
-  opacity: 1;
+    /* Positioning */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    /* Box-model */
+    display: block;
+    float: right;
+    width: 100px;
+    height: 100px;
+    /* Typography */
+    font: normal 13px "Helvetica Neue", sans-serif;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    /* Visual */
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    /* Misc */
+    opacity: 1;
 }
 
 
@@ -55,7 +55,8 @@
 @import "./globals/_grid.scss";
 @import "./globals/_semantic-tags.scss";
 @import "./globals/_headers.scss";
-@import "./globals/_paragraph.scss"; // @import './globals/_button.scss';
+@import "./globals/_paragraph.scss";
+@import './globals/_button.scss';
 // @import './globals/_link.scss';
 @import "./globals/_ul.scss";
 @import "./globals/_animations.scss";
@@ -64,9 +65,9 @@
 ============================================================================*/
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -75,14 +76,14 @@
 
 html,
 body {
-  font-family: $font-stack;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  letter-spacing: 1px;
-  color: $oslo-grey;
-  text-rendering: optimizeLegibility;
-  background-color: $porcelain; // height: 100vw;
+    font-family: $font-stack;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: 1px;
+    color: $oslo-grey;
+    text-rendering: optimizeLegibility;
+    background-color: $porcelain; // height: 100vw;
 }
 
 
@@ -90,16 +91,16 @@ body {
 ============================================================================*/
 
 .wrapper {
-  max-width: $max-viewport-width;
-  margin: 0 auto;
-  margin-top: 5em; // height: 100%;
-  padding: 1em;
-  background-color: $white;
-  @include rounded-corner(.3em);
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+    margin-top: 5em; // height: 100%;
+    padding: 1em;
+    background-color: $white;
+    @include rounded-corner(.3em);
 }
 
 .lead {
-  font-size: 1.01em;
+    font-size: 1.01em;
 }
 
 
@@ -107,21 +108,21 @@ body {
 ============================================================================*/
 
 .nav-bar {
-  margin-top: 1em;
-  display: flex;
-  flex-flow: row nowrap;
-  height: .2em;
-  background-color: $porcelain;
-  @include rounded-corner(.3em);
+    margin-top: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    height: .2em;
+    background-color: $porcelain;
+    @include rounded-corner(.3em);
 }
 
 .nav-item {
-  width: 33.3%;
-  height: 100%;
+    width: 33.3%;
+    height: 100%;
 }
 
 .nav-item:first-child {
-  background-color: $oslo-grey;
+    background-color: $oslo-grey;
 }
 
 // .nav-logo {
