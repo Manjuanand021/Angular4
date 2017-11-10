@@ -2,29 +2,29 @@
 //Reference - http://codeguide.co/
 //********************************
 .declaration-order {
-    /* Positioning */
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-    /* Box-model */
-    display: block;
-    float: right;
-    width: 100px;
-    height: 100px;
-    /* Typography */
-    font: normal 13px "Helvetica Neue", sans-serif;
-    line-height: 1.5;
-    color: #333;
-    text-align: center;
-    /* Visual */
-    background-color: #f5f5f5;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
-    /* Misc */
-    opacity: 1;
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  /* Box-model */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+  /* Typography */
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+  /* Visual */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  /* Misc */
+  opacity: 1;
 }
 
 
@@ -65,9 +65,9 @@
 ============================================================================*/
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
@@ -76,14 +76,14 @@
 
 html,
 body {
-    font-family: $font-stack;
-    font-size: $font-size;
-    font-weight: $font-weight;
-    line-height: $line-height;
-    letter-spacing: 1px;
-    color: $oslo-grey;
-    text-rendering: optimizeLegibility;
-    background-color: $porcelain; // height: 100vw;
+  font-family: $font-stack;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: 1px;
+  color: $oslo-grey;
+  text-rendering: optimizeLegibility;
+  background-color: $porcelain; // height: 100vw;
 }
 
 
@@ -91,16 +91,17 @@ body {
 ============================================================================*/
 
 .wrapper {
-    max-width: $max-viewport-width;
-    margin: 0 auto;
-    margin-top: 5em; // height: 100%;
-    padding: 1em;
-    background-color: $white;
-    @include rounded-corner(.3em);
+  max-width: $max-viewport-width;
+  margin: 0 auto;
+  margin-top: 5em; // height: 100%;
+  padding: 1em;
+  background-color: $white;
+  border-top: .5em solid $astronaut-blue;
+  @include rounded-corner(.3em);
 }
 
 .lead {
-    font-size: 1.01em;
+  font-size: 1.01em;
 }
 
 
@@ -108,21 +109,59 @@ body {
 ============================================================================*/
 
 .nav-bar {
-    margin-top: 1em;
-    display: flex;
-    flex-flow: row nowrap;
-    height: .2em;
-    background-color: $porcelain;
-    @include rounded-corner(.3em);
+  margin-top: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  height: .2em;
+  background-color: $porcelain;
+  @include rounded-corner(.3em);
 }
 
 .nav-item {
-    width: 33.3%;
-    height: 100%;
+  width: 33.3%;
+  height: 100%;
 }
 
-.nav-item:first-child {
-    background-color: $oslo-grey;
+.highlight {
+  background-color: $oslo-grey;
+}
+
+
+/* form style
+============================================================================*/
+
+.control-group {
+  margin-bottom: 1em;
+  & label {
+    display: inline-block;
+    width: 3em;
+  }
+}
+
+.text-input {
+  // margin-left: .3em;
+  width: 25em;
+  padding: .8em;
+  color: $astronaut-blue;
+  color: $astronaut-blue;
+  background: $porcelain;
+  border: 1px solid $porcelain;
+  outline: 0;
+  @include rounded-corner(.2em);
+  &:focus {
+    background-color: $white;
+  }
+}
+
+.horizontal {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.txt-small {
+  width: 10em;
 }
 
 // .nav-logo {

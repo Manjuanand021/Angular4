@@ -1,0 +1,6 @@
+{
+    "sender": "sender-address",
+    "receiver": "receiver-address",
+    "quantity": "shipping-quantity",
+    "coonfirm": "confirm-shipping"
+}

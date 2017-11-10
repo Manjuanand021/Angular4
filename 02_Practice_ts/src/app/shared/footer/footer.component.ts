@@ -2,9 +2,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
+import { Router } from "@angular/router";
+import { Subscription } from "rxjs/Subscription";
 
 // import models
 import { IAppState } from '../../models/appState';
+import { IShippingLabelState } from '../../models/shippingLableState';
+
 
 @Component({
     selector: 'sh-footer',
@@ -12,13 +16,15 @@ import { IAppState } from '../../models/appState';
 })
 
 export default class FooterComponent implements OnInit {
-    _shippingLabelState: Observable<IAppState>;
-    constructor(private _store: Store<any>) { }
+    // private variables
+    private shippingLabelState: Observable<IShippingLabelState>;
+    private _shippingLableSubscription: Subscription;
+
+    // public vadiables
+
+    constructor(private _store: Store<IAppState>, private _router: Router) { }
 
     ngOnInit() {
-        this._shippingLabelState = this._store.select('shippingLabel');
-        this._shippingLabelState.subscribe(data => {
-            console.log(data.nextRoute);
-        });
+        this.shippingLabelState = this._store.select('shippingLabel');
     }
 }

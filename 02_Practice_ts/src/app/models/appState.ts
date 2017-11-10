@@ -1,4 +1,11 @@
+import { IShippingLabelState } from './shippingLableState';
+import { ActionReducerMap } from '@ngrx/store';
+import ShippingLabelReducer from '../store/shipping.reducers';
+
 export interface IAppState {
-    nextRoute: string;
-    previousRoute: string;
+    shippingLabel: IShippingLabelState;
+}
+
+export const reducers: ActionReducerMap<IAppState> = {
+    shippingLabel: ShippingLabelReducer
 }

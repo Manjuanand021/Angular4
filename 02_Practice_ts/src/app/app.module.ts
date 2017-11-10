@@ -33,7 +33,7 @@ import PageNotFoundErrorComponent from './pagenotfound/pagenotfound.component';
 // Import services
 
 // Import reducers
-import ShoppingLabelReducer from './store/shipping.reducers';
+import { reducers } from './models/appState';
 
 
 @NgModule({
@@ -45,9 +45,7 @@ import ShoppingLabelReducer from './store/shipping.reducers';
         FormsModule,
         HttpClientModule,
         ShippingModule,
-        StoreModule.forRoot({
-            shippingLabel: ShoppingLabelReducer
-        })
+        StoreModule.forRoot(reducers)
     ],
     providers: [],
     bootstrap: [AppComponent]
