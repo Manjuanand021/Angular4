@@ -14,6 +14,10 @@ import FooterComponent from './footer/footer.component';
 import SenderAddressComponent from './sender-address/sender-address.component';
 import ReceiverAddressComponent from './receiver-address/receiver-address.component';
 import QuantityComponent from './quantity/quantity.component';
+import ConfirmComponent from './confirm/confirm.component';
+
+// import directives
+import ProgressBarDirective from './directives/progress-bar.directive';
 
 @NgModule({
     imports: [
@@ -23,11 +27,13 @@ import QuantityComponent from './quantity/quantity.component';
     ],
     declarations: [
         WizardComponent,
+        ProgressBarDirective,
         HeaderComponent,
         FooterComponent,
         SenderAddressComponent,
         ReceiverAddressComponent,
-        QuantityComponent
+        QuantityComponent,
+        ConfirmComponent
     ],
     exports: [
         WizardComponent

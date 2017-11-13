@@ -9,6 +9,8 @@ import {
 import SenderAddressComponent from '../sender-address/sender-address.component';
 import ReceiverAddressComponent from '../receiver-address/receiver-address.component';
 import QuantityComponent from '../quantity/quantity.component';
+import ConfirmComponent from '../confirm/confirm.component';
+
 
 // import json
 const definedRoutes = require('../../data/routes.json');
@@ -26,6 +28,10 @@ const routes: Routes = [
     {
         path: definedRoutes.quantity,
         component: QuantityComponent
+    },
+    {
+        path: definedRoutes.confirm,
+        component: ConfirmComponent
     },
     {
         path: '',

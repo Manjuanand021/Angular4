@@ -1,25 +1,25 @@
 <form class="" #address="ngForm">
     <div class="control-group">
         <label for="txtName">Name</label>
-        <input class="text-input" type="text" id="txtName" name="name" placeholder="enter sender's address" ngModel>
+        <input class="text-input" type="text" id="txtName" name="name" placeholder="enter sender's address" ngModel required>
     </div>
     <div class="control-group">
         <label for="txtStreet">Street</label>
-        <input class="text-input" type="text" id="txtStreet" name="street" placeholder="enter street" ngModel>
+        <input class="text-input" type="text" id="txtStreet" name="street" placeholder="enter street" ngModel required>
     </div>
 
     <div class="horizontal">
         <div class="control-group">
             <label for="txtCity">City</label>
-            <input class="text-input txt-small" type="text" id="txtCity" name="city" placeholder="enter city" ngModel>
+            <input class="text-input txt-small" type="text" id="txtCity" name="city" placeholder="enter city" ngModel required>
         </div>
         <div class="control-group">
             <label for="txtState">State</label>
-            <input class="text-input txt-small" type="text" id="txtState" name="state" placeholder="enter state" ngModel>
+            <input class="text-input txt-small" type="text" id="txtState" name="state" placeholder="enter state" ngModel required>
         </div>
         <div class="control-group">
             <label for="txtZip">Zip</label>
-            <input class="text-input txt-small" type="text" id="txtZip" name="zip" placeholder="enter zip code" ngModel>
+            <input class="text-input txt-small" type="text" id="txtZip" name="zip" placeholder="enter zip code" ngModel required>
         </div>
     </div>
 </form>

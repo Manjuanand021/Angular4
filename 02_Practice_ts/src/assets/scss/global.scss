@@ -136,6 +136,9 @@ body {
     display: inline-block;
     width: 3em;
   }
+  & .lbl-big {
+    width: 4.5em;
+  }
 }
 
 .text-input {
@@ -151,6 +154,9 @@ body {
   &:focus {
     background-color: $white;
   }
+  &.ng-invalid.ng-touched {
+    border: 1px solid $pomegranate;
+  }
 }
 
 .horizontal {
@@ -164,6 +170,25 @@ body {
   width: 10em;
 }
 
+
+/* preview screen style
+============================================================================*/
+
+.preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.header {
+  margin-bottom: .5em;
+  font-style: italic;
+}
+
+// .plt-content {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-gap: 1em;
 // .nav-logo {
 //   height: 2.2em;
 //   width: 2.2em;

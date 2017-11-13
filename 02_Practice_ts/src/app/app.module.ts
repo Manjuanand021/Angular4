@@ -30,7 +30,9 @@ import ShippingModule from './features/feaure.module';
 import AppComponent from './root/app.component';
 import PageNotFoundErrorComponent from './pagenotfound/pagenotfound.component';
 
+
 // Import services
+import RouteChannelService from './services/route-channel.service';
 
 // Import reducers
 import { reducers } from './models/appState';
@@ -47,7 +49,7 @@ import { reducers } from './models/appState';
         ShippingModule,
         StoreModule.forRoot(reducers)
     ],
-    providers: [],
+    providers: [RouteChannelService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
