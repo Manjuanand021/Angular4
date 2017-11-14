@@ -15,6 +15,7 @@ import SenderAddressComponent from './sender-address/sender-address.component';
 import ReceiverAddressComponent from './receiver-address/receiver-address.component';
 import QuantityComponent from './quantity/quantity.component';
 import ConfirmComponent from './confirm/confirm.component';
+import ShipingLabelComponent from './shipping-label/shipping-label.component';
 
 // import directives
 import ProgressBarDirective from './directives/progress-bar.directive';
@@ -33,7 +34,8 @@ import ProgressBarDirective from './directives/progress-bar.directive';
         SenderAddressComponent,
         ReceiverAddressComponent,
         QuantityComponent,
-        ConfirmComponent
+        ConfirmComponent,
+        ShipingLabelComponent
     ],
     exports: [
         WizardComponent

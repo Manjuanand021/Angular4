@@ -9,7 +9,8 @@ const initialState: IShippingLabelState = {
     currentStep: ProgressSteps.none,
     senderAddress: null,
     receiverAddress: null,
-    quantity: 0
+    quantity: 0,
+    shippingCost: 0
 };
 
 export default function ShippingLabelReducer(state = initialState,
@@ -40,6 +41,11 @@ export default function ShippingLabelReducer(state = initialState,
             return {
                 ...state,
                 quantity: action.payLoad
+            };
+        case ShippingActions.UPDATE_COST:
+            return {
+                ...state,
+                shippingCost: action.payLoad
             };
         default:
             return state;

@@ -8,6 +8,7 @@ import { Subscription } from "rxjs/Subscription";
 // import models
 import { IAppState } from '../../models/appState';
 import { IShippingLabelState } from '../../models/shippingLableState';
+import { ProgressSteps } from '../../models/progress-step';
 
 // import services
 import RouteChannelService from '../../services/route-channel.service';
@@ -23,6 +24,8 @@ export default class FooterComponent implements OnInit {
     private shippingLabelState: Observable<IShippingLabelState>;
     private _nxtRoute: string;
     private _prevRoute: string;
+    showGenerateLblBtn: boolean;
+    showNavButtons: boolean;
 
     constructor(private _store: Store<IAppState>,
         private _router: Router,
@@ -34,6 +37,12 @@ export default class FooterComponent implements OnInit {
         this.shippingLabelState.subscribe(data => {
             this._nxtRoute = data.nextRoute;
             this._prevRoute = data.previousRoute;
+
+            // if current step is confirm then show generate label button
+            this.showGenerateLblBtn = data.currentStep === ProgressSteps.confirm;
+
+            // if current step is label then do not show generate label button
+            this.showNavButtons = data.currentStep !== ProgressSteps.label;
         });
     }
 

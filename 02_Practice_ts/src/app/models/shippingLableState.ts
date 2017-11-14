@@ -8,4 +8,5 @@ export interface IShippingLabelState {
     senderAddress: IAddress;
     receiverAddress: IAddress;
     quantity: number;
+    shippingCost: number;
 }

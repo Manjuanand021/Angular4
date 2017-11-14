@@ -40,7 +40,7 @@ export default class ReceiverAddressComponent implements OnInit {
 
         // Subscribe to submitForm subject observable
         this._submitformSubscription = this._routeChannelService.submitForm.subscribe(formData => {
-            this._routeChannelService.updateShippingLabelData(ProgressSteps.sender, this._addressForm);
+            this._routeChannelService.updateShippingLabelData(ProgressSteps.reciver, this._addressForm);
         });
     }
 

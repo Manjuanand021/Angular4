@@ -10,6 +10,7 @@ import SenderAddressComponent from '../sender-address/sender-address.component';
 import ReceiverAddressComponent from '../receiver-address/receiver-address.component';
 import QuantityComponent from '../quantity/quantity.component';
 import ConfirmComponent from '../confirm/confirm.component';
+import ShipingLabelComponent from '../shipping-label/shipping-label.component';
 
 
 // import json
@@ -32,6 +33,10 @@ const routes: Routes = [
     {
         path: definedRoutes.confirm,
         component: ConfirmComponent
+    },
+    {
+        path: definedRoutes.label,
+        component: ShipingLabelComponent
     },
     {
         path: '',

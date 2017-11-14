@@ -7,7 +7,6 @@ import SharedModule from '../shared/shared.module';
 
 // import components
 import ShippingLabelMakerComponent from './shipping-label-maker/shipping-label-maker.component';
-import ShippingLabelComponent from './shipping-label/shipping-label.component';
 
 @NgModule({
     imports: [
@@ -15,12 +14,10 @@ import ShippingLabelComponent from './shipping-label/shipping-label.component';
         SharedModule
     ],
     exports: [
-        ShippingLabelMakerComponent,
-        ShippingLabelComponent
+        ShippingLabelMakerComponent
     ],
     declarations: [
-        ShippingLabelMakerComponent,
-        ShippingLabelComponent
+        ShippingLabelMakerComponent
     ],
     providers: [],
 })
