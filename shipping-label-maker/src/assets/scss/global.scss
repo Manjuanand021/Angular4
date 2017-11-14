@@ -1,0 +1,178 @@
+/* BASE - Base Variable file along with starting point Mixins and Placeholders.
+========================================================================== */
+
+@import "./globals/_variables.scss";
+@import "./globals/_mixins.scss";
+@import "./globals/_placeholders.scss";
+
+/* MODULES - Re-usable site elements.
+========================================================================== */
+
+@import "./globals/_semantic-tags.scss";
+@import "./globals/_headers.scss";
+@import "./globals/_paragraph.scss";
+@import './globals/_button.scss';
+
+/* Applies to all elements on page
+============================================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Root element style
+============================================================================*/
+
+html,
+body {
+    font-family: $font-stack;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: 1px;
+    color: $oslo-grey;
+    text-rendering: optimizeLegibility;
+    background-color: $porcelain; // height: 100vw;
+}
+
+
+/* wrapper style
+============================================================================*/
+
+.wrapper {
+    max-width: $max-viewport-width;
+    min-height: 25em;
+    margin: 0 auto;
+    margin-top: 5em; // height: 100%;
+    padding: 1em;
+    background-color: $white;
+    border-top: .5em solid $astronaut-blue;
+    @include rounded-corner(.3em);
+}
+
+.lead {
+    font-size: 1.01em;
+}
+
+
+/* top navigation bar style
+============================================================================*/
+
+.nav-bar {
+    margin-top: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    height: .2em;
+    background-color: $porcelain;
+    @include rounded-corner(.3em);
+}
+
+.nav-item {
+    width: 33.3%;
+    height: 100%;
+}
+
+.highlight {
+    background-color: $oslo-grey;
+}
+
+
+/* form style
+============================================================================*/
+
+.control-group {
+    margin-bottom: 1em;
+    & label {
+        display: inline-block;
+        width: 4em;
+    }
+    & .lbl-big {
+        width: 4.5em;
+    }
+}
+
+.text-input {
+    // margin-left: .3em;
+    width: 25em;
+    padding: .8em;
+    color: $astronaut-blue;
+    color: $astronaut-blue;
+    background: $porcelain;
+    border: 1px solid $porcelain;
+    outline: 0;
+    @include rounded-corner(.2em);
+    &:focus {
+        background-color: $white;
+    }
+    &.ng-invalid.ng-touched {
+        border: 1px solid $pomegranate;
+    }
+}
+
+.horizontal {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.txt-small {
+    width: 10em;
+}
+
+
+/* preview screen style
+============================================================================*/
+
+.preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+}
+
+.header {
+    margin-bottom: .5em;
+    font-style: italic;
+}
+
+
+/* shipping label style
+============================================================================*/
+
+.lbl-cover {
+    max-width: 30em;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+.lbl-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    border-bottom: .1em solid $porcelain;
+}
+
+.lbl-date {
+    align-self: center;
+}
+
+.lbl-logo {
+    font-size: 3em;
+}
+
+.bar-code {
+    text-align: center;
+    & i {
+        font-size: 4em;
+    }
+}
+
+.addr-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    margin-top: 1em;
+}

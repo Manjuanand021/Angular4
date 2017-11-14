@@ -1,0 +1,36 @@
+%bg-image {
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+%btn {
+    display: block;
+    width: 150px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+}
+
+%menu-icon {
+    display: block;
+    color: $rolling-stone;
+}
+
+%center-items {
+    max-width: $max-viewport-width;
+    margin: 0 auto;
+}
+
+%center-mobile {
+    padding-top: 2em;
+    padding-right: 1em;
+    padding-bottom: 2em;
+    padding-left: 1em;
+}
