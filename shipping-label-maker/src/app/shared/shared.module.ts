@@ -13,9 +13,12 @@ import HeaderComponent from './header/header.component';
 import FooterComponent from './footer/footer.component';
 import SenderAddressComponent from './sender-address/sender-address.component';
 import ReceiverAddressComponent from './receiver-address/receiver-address.component';
-import QuantityComponent from './quantity/quantity.component';
+import WeightComponent from './weight/weight.component';
 import ConfirmComponent from './confirm/confirm.component';
 import ShipingLabelComponent from './shipping-label/shipping-label.component';
+
+// Import services
+import RouteChannelService from './services/route-channel.service';
 
 // import directives
 import ProgressBarDirective from './directives/progress-bar.directive';
@@ -33,14 +36,14 @@ import ProgressBarDirective from './directives/progress-bar.directive';
         FooterComponent,
         SenderAddressComponent,
         ReceiverAddressComponent,
-        QuantityComponent,
+        WeightComponent,
         ConfirmComponent,
         ShipingLabelComponent
     ],
     exports: [
         WizardComponent
     ],
-    providers: [],
+    providers: [RouteChannelService],
 })
 export default class SharedModule {
 

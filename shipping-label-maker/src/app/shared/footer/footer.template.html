@@ -1,5 +1,3 @@
-<!--<a class="btn btn-primary" [routerLink]="(shippingLabelState | async).previousRoute">Previous</a>
-<a class="btn btn-primary" [routerLink]="(shippingLabelState | async).nextRoute">Next</a>-->
-<a class="btn btn-primary" (click)="navigate(true)" *ngIf="showNavButtons">Previous</a>
-<a class="btn btn-primary" (click)="navigate(false)" *ngIf="showNavButtons">Next</a>
-<a class="btn btn-primary" routerLink="/shipping-label" *ngIf="showGenerateLblBtn">Generate Shipping Label</a>
+<button class="btn btn-primary" type="button" (click)="navigate(true)" [disabled]="isValidForm" *ngIf="showPreviousBtn && showNavButtons">Previous</button>
+<button class="btn btn-primary" type="button" (click)="navigate(false)" [disabled]="isValidForm" *ngIf="showNextBtn && showNavButtons">Next</button>
+<button class="btn btn-primary" type="button" routerLink="/shipping-label" *ngIf="showGenerateLblBtn">Generate Shipping Label</button>

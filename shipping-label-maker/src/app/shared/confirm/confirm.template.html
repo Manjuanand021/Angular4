@@ -3,29 +3,37 @@
         <p class="header">
             Sender's address:
         </p>
-        <!--Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
-        {{shippingData.senderAddress?.name}},<br>{{shippingData.senderAddress?.street}},<br> {{shippingData.senderAddress?.city}},{{shippingData.senderAddress?.state}}
-        -{{shippingData.senderAddress?.zip}}
+        <p class="dt-lead">
+            <!--Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
+            {{shippingData.senderAddress?.name}},<br>{{shippingData.senderAddress?.street}},<br> {{shippingData.senderAddress?.city}},{{shippingData.senderAddress?.state}}
+            -{{shippingData.senderAddress?.zip}}
+        </p>
 
     </div>
     <div>
         <p class="header">
             Receiver's address:
         </p>
-        <!--Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
-        {{shippingData.receiverAddress?.name}},<br>{{shippingData.receiverAddress?.street}},<br> {{shippingData.receiverAddress?.city}},{{shippingData.receiverAddress?.state}}
-        -{{shippingData.receiverAddress?.zip}}
+        <p class="dt-lead">
+            <!--Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
+            {{shippingData.receiverAddress?.name}},<br>{{shippingData.receiverAddress?.street}},<br> {{shippingData.receiverAddress?.city}},{{shippingData.receiverAddress?.state}}
+            -{{shippingData.receiverAddress?.zip}}
+        </p>
     </div>
     <div>
         <p class="header">
-            Quantity:
+            Weight:
         </p>
-        {{shippingData.quantity}}
+        <p class="dt-lead">
+            {{shippingData.weight}}
+        </p>
     </div>
     <div>
         <p class="header">
             Shipping Cost:
         </p>
-        (50 * quantity) + (courier charges) = {{shippingData?.shippingCost}}
+        <p class="dt-lead">
+            (50 * weight) + (courier charges) = {{shippingData?.shippingCost}}
+        </p>
     </div>
 </section>

@@ -5,30 +5,24 @@ import { Store } from '@ngrx/store';
 import { NgForm } from '@angular/forms';
 
 // import models
-import { ProgressSteps } from '../models/progress-step';
-import { IAppState } from '../models/appState';
-import { IAddress } from '../models/address';
+import { ProgressSteps } from '../../models/progress-step';
+import { IAppState } from '../../models/appState';
+import { IAddress } from '../../models/address';
 
 // import actions and reducers
-import * as ShippingActions from '../store/shipping.actions';
+import * as ShippingActions from '../../store/shipping.actions';
 
 @Injectable()
 export default class RouteChannelService {
     shippingDataUpdateBus$ = new Subject<any>();
-
+    formValidation$ = new Subject<any>();
     constructor(private _store: Store<IAppState>) { }
 
     navigate() {
         this.shippingDataUpdateBus$.next();
     }
 
-    // updateShippingData(step: ProgressSteps, formData: NgForm) {
-    //     return this.shippingDataUpdateBus$.subscribe(() => {
-    //         this.updateStore(step, formData);
-    //     });
-    // }
-
-    updateStore(step: ProgressSteps, form: NgForm) {
+    updateStore(step: ProgressSteps, form: NgForm = null, cost: number = 0) {
         // check stpe and fire respective actions
         switch (step) {
             case ProgressSteps.sender:
@@ -40,13 +34,16 @@ export default class RouteChannelService {
                     state: form.value.state,
                     zip: form.value.zip
                 };
-                console.log('addr', address);
-                console.log('step', step);
                 step === ProgressSteps.sender ? this._store.dispatch(new ShippingActions.UpdateFromAddress(address)) :
                     this._store.dispatch(new ShippingActions.UpdateToAddress(address));
                 break;
-            case ProgressSteps.quantity:
-                this._store.dispatch(new ShippingActions.UpdateQuantity(form.value.quantity));
+            case ProgressSteps.weight:
+                this._store.dispatch(new ShippingActions.UpdateWeight(form.value.weight));
+                break;
+            case ProgressSteps.confirm:
+                console.log('trying to update the cost here', cost);
+                // update store with shipping cost calculated
+                this._store.dispatch(new ShippingActions.UpdateCost(cost));
                 break;
             default:
                 break;

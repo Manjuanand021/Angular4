@@ -35,7 +35,7 @@ export default class ShipingLabelComponent implements OnInit, OnDestroy {
       locale = 'en-us',
       month = dt.toLocaleString(locale, { month: 'long' });
     this.todayDate = {
-      day: dt.getDay(),
+      day: dt.getDate(),
       month: month,
       year: dt.getFullYear()
     };

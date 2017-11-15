@@ -2,8 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { Router, ActivatedRoute } from "@angular/router";
-import { Subscription } from "rxjs/Subscription";
+import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 // import models
 import { IAppState } from '../../models/appState';
@@ -11,7 +11,7 @@ import { IShippingLabelState } from '../../models/shippingLableState';
 import { ProgressSteps } from '../../models/progress-step';
 
 // import services
-import RouteChannelService from '../../services/route-channel.service';
+import RouteChannelService from '../services/route-channel.service';
 
 
 @Component({
@@ -26,11 +26,15 @@ export default class FooterComponent implements OnInit {
     private _prevRoute: string;
     showGenerateLblBtn: boolean;
     showNavButtons: boolean;
-
+    showNextBtn: boolean;
+    showPreviousBtn: boolean;
+    isValidForm: boolean;
     constructor(private _store: Store<IAppState>,
         private _router: Router,
         private _currentRoute: ActivatedRoute,
-        private _routeChannelService: RouteChannelService) { }
+        private _routeChannelService: RouteChannelService) {
+
+    }
 
     ngOnInit() {
         this.shippingLabelState = this._store.select('shippingLabel');
@@ -38,17 +42,29 @@ export default class FooterComponent implements OnInit {
             this._nxtRoute = data.nextRoute;
             this._prevRoute = data.previousRoute;
 
-            // if current step is confirm then show generate label button
+            // show generate label button only in shipping-label step
             this.showGenerateLblBtn = data.currentStep === ProgressSteps.confirm;
 
-            // if current step is label then do not show generate label button
+            // show previous button in all the steps except first and shipping-label step
+            this.showPreviousBtn = data.currentStep !== ProgressSteps.sender
+
+            // show previous button in all the steps cofnim and shipping-label step
+            this.showNextBtn = data.currentStep !== ProgressSteps.confirm
+
+            // if current step is shipping-label then hide all the buttons
             this.showNavButtons = data.currentStep !== ProgressSteps.label;
+        });
+
+        // subscribe to form validation bus
+        this._routeChannelService.formValidation$.subscribe((formState: boolean) => {
+            this.isValidForm = formState;
         });
     }
 
     navigate(previous: boolean) {
-        // Dispatch an event which will later update store and navigate
+        // Dispatch an event which will later updates store and navigate
         this._routeChannelService.navigate();
+
         // Navigate to next/previous route
         const route = previous ? this._prevRoute : this._nxtRoute;
         this._router.navigate([route],

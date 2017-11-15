@@ -1,7 +1,7 @@
 import * as ShippingActions from './shipping.actions';
 import { IShippingLabelState } from '../models/shippingLableState';
 import { ProgressSteps } from '../models/progress-step';
-import { UPDATE_QUANTITY } from './shipping.actions';
+import { UPDATE_WEIGHT } from './shipping.actions';
 
 const initialState: IShippingLabelState = {
     nextRoute: '/receiver-route',
@@ -9,7 +9,7 @@ const initialState: IShippingLabelState = {
     currentStep: ProgressSteps.none,
     senderAddress: null,
     receiverAddress: null,
-    quantity: 0,
+    weight: 0,
     shippingCost: 0
 };
 
@@ -37,10 +37,10 @@ export default function ShippingLabelReducer(state = initialState,
                 ...state,
                 receiverAddress: action.payLoad
             };
-        case ShippingActions.UPDATE_QUANTITY:
+        case ShippingActions.UPDATE_WEIGHT:
             return {
                 ...state,
-                quantity: action.payLoad
+                weight: action.payLoad
             };
         case ShippingActions.UPDATE_COST:
             return {

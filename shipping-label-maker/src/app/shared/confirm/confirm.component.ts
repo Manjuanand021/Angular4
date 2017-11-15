@@ -2,7 +2,7 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-
+import 'rxjs/add/operator/take';
 // import models
 import { IAppState } from '../../models/appState';
 
@@ -11,7 +11,7 @@ import * as ShippingActions from '../../store/shipping.actions';
 import { IShippingLabelState } from '../../models/shippingLableState';
 
 // import services
-import RouteChannelService from '../../services/route-channel.service';
+import RouteChannelService from '../services/route-channel.service';
 import { Subscription } from 'rxjs/Subscription';
 import { ProgressSteps } from '../../models/progress-step';
 
@@ -35,7 +35,7 @@ export default class ConfirmComponent implements OnInit, OnDestroy {
         // Dispatch UPDATE_ROUTES action
         this._store.dispatch(new ShippingActions.UpdateRoutes({
             nextRoute: definedRoutes.confirm,
-            previousRoute: definedRoutes.quantity
+            previousRoute: definedRoutes.weight
         }));
 
         // Dispatch UPDATE_STEP action
@@ -45,13 +45,14 @@ export default class ConfirmComponent implements OnInit, OnDestroy {
         this._shippingLabelState = this._store.select('shippingLabel');
 
         // Subscribe to shippingLabel data
-        this._shippingDataSubscription = this._shippingLabelState.subscribe((data: IShippingLabelState) => {
+        this._shippingDataSubscription = this._shippingLabelState.take(1).subscribe((data: IShippingLabelState) => {
             // calculate shipping cost            
             this.shippingData = data;
-            this.shippingData.shippingCost = (this.shippingData.quantity * 100) + 1000;
+            this.shippingData.shippingCost = (this.shippingData.weight * 100) + 1000;
 
             // update store with shipping cost calculated
             // this._store.dispatch(new ShippingActions.UpdateCost(this.shippingData.shippingCost));
+            this._routeChannelService.updateStore(ProgressSteps.confirm, null, this.shippingData.shippingCost);
         });
     }
 

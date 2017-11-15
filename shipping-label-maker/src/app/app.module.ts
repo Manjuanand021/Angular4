@@ -21,11 +21,9 @@ import ShippingModule from './features/feaure.module';
 // Import Components
 import AppComponent from './root/app.component';
 
-// Import services
-import RouteChannelService from './services/route-channel.service';
 
 // Import reducers
-import { reducers } from './models/appState';
+import { reducers } from './store/app.reduce';
 
 
 @NgModule({
@@ -39,7 +37,7 @@ import { reducers } from './models/appState';
         ShippingModule,
         StoreModule.forRoot(reducers)
     ],
-    providers: [RouteChannelService],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

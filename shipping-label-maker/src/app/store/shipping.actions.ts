@@ -5,7 +5,7 @@ export const UPDATE_ROUTES = 'UPDATE_ROUTES';
 export const UPDATE_STEP = 'UPDATE_STEP';
 export const UPDATE_FROM_ADDRESS = 'UPDATE_FROM_ADDRESS';
 export const UPDATE_TO_ADDRESS = 'UPDATE_TO_ADDRESS';
-export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
+export const UPDATE_WEIGHT = 'UPDATE_WEIGHT';
 export const UPDATE_COST = 'UPDATE_COST';
 
 export class UpdateRoutes implements Action {
@@ -24,8 +24,8 @@ export class UpdateToAddress implements Action {
     readonly type = UPDATE_TO_ADDRESS;
     constructor(public payLoad: IAddress) { }
 };
-export class UpdateQuantity implements Action {
-    readonly type = UPDATE_QUANTITY;
+export class UpdateWeight implements Action {
+    readonly type = UPDATE_WEIGHT;
     constructor(public payLoad: number) { }
 };
 export class UpdateCost implements Action {
@@ -37,6 +37,6 @@ export type ShippingActions = UpdateRoutes |
     UpdateStep |
     UpdateFromAddress |
     UpdateToAddress |
-    UpdateQuantity |
+    UpdateWeight |
     UpdateCost;
 

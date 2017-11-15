@@ -8,7 +8,7 @@ import {
 // import components
 import SenderAddressComponent from '../sender-address/sender-address.component';
 import ReceiverAddressComponent from '../receiver-address/receiver-address.component';
-import QuantityComponent from '../quantity/quantity.component';
+import WeightComponent from '../weight/weight.component';
 import ConfirmComponent from '../confirm/confirm.component';
 import ShipingLabelComponent from '../shipping-label/shipping-label.component';
 
@@ -28,8 +28,8 @@ const routes: Routes = [
         component: ReceiverAddressComponent
     },
     {
-        path: definedRoutes.quantity,
-        component: QuantityComponent
+        path: definedRoutes.weight,
+        component: WeightComponent
     },
     {
         path: definedRoutes.confirm,

@@ -7,6 +7,6 @@ export interface IShippingLabelState {
     currentStep: ProgressSteps;
     senderAddress: IAddress;
     receiverAddress: IAddress;
-    quantity: number;
+    weight: number;
     shippingCost: number;
 }

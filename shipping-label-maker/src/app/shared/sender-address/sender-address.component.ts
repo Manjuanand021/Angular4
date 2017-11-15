@@ -2,6 +2,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, AfterViewInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/add/operator/take';
 
 // import models
 import { IAppState } from '../../models/appState';
@@ -10,7 +11,7 @@ import { IAppState } from '../../models/appState';
 import * as ShippingActions from '../../store/shipping.actions';
 
 // import services
-import RouteChannelService from '../../services/route-channel.service';
+import RouteChannelService from '../services/route-channel.service';
 import { NgForm } from '@angular/forms';
 
 // import models
@@ -30,7 +31,7 @@ const definedRoutes = <any>routes;
 export default class SenderAddressComponent implements OnInit, OnDestroy, AfterViewInit {
     private _submitformSubscription: Subscription;
     private _shippingLabelSubscription: Subscription;
-
+    isFormValid: boolean;
     @ViewChild('address') _addressForm: NgForm;
     senderAddress: IAddress;
     constructor(private _store: Store<IAppState>,
@@ -46,12 +47,14 @@ export default class SenderAddressComponent implements OnInit, OnDestroy, AfterV
         // Dispatch UPDATE_STEP action
         this._store.dispatch(new ShippingActions.UpdateStep(1));
 
-        // Update shipping data - connect to shippingDataUpdateBus$ bus
-        // this._submitformSubscription = this._routeChannelService.updateShippingData(ProgressSteps.sender, this._addressForm);
-
 
         this._submitformSubscription = this._routeChannelService.shippingDataUpdateBus$.subscribe(formData => {
             this._routeChannelService.updateStore(ProgressSteps.sender, this._addressForm);
+        });
+
+        // update formstate using formValidation bus   
+        this._addressForm.valueChanges.subscribe(data => {
+            this._routeChannelService.formValidation$.next(this._addressForm.invalid);
         });
     }
     ngAfterViewInit() {
@@ -60,11 +63,15 @@ export default class SenderAddressComponent implements OnInit, OnDestroy, AfterV
     }
 
     private prePopulateForm() {
-        this._shippingLabelSubscription = this._store.select('shippingLabel').subscribe((data: IShippingLabelState) => {
+        this._shippingLabelSubscription = this._store.select('shippingLabel').take(1).subscribe((data: IShippingLabelState) => {
             setInterval(() => {
                 this.senderAddress = data.senderAddress;
             });
         });
+    }
+
+    updateFormState(formState: boolean) {
+        this.isFormValid = formState;
     }
 
     ngOnDestroy() {

@@ -4,7 +4,7 @@
 .btn {
     display: inline-block;
     margin-right: 10px;
-    padding: .3em 1em;
+    padding: .6em 1em;
     @include rounded-corner(.6em);
     color: $white;
     text-decoration: none;
@@ -18,4 +18,9 @@
         color: $rolling-stone;
         background-color: $porcelain;
     }
+}
+
+button:disabled {
+    color: $rolling-stone;
+    background-color: $porcelain;
 }

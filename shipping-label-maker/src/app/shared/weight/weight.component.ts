@@ -1,6 +1,7 @@
 // import core libs
 import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import 'rxjs/add/operator/take';
 
 // import models
 import { IAppState } from '../../models/appState';
@@ -13,7 +14,7 @@ import { ProgressSteps } from '../../models/progress-step';
 import { IShippingLabelState } from '../../models/shippingLableState';
 
 // import services
-import RouteChannelService from '../../services/route-channel.service';
+import RouteChannelService from '../services/route-channel.service';
 
 // import json
 // import json
@@ -21,16 +22,16 @@ import * as routes from '../../data/routes.json';
 const definedRoutes = <any>routes;
 
 @Component({
-    selector: 'sh-quantity',
-    templateUrl: './quantity.template.html'
+    selector: 'sh-weight',
+    templateUrl: './weight.template.html'
 })
 
-export default class QuantityComponent implements OnInit, OnDestroy, AfterViewInit {
+export default class WeightComponent implements OnInit, OnDestroy, AfterViewInit {
     private _submitformSubscription: Subscription;
     private _shippingLabelSubscription: Subscription;
 
-    @ViewChild('quantity') _quantityForm: NgForm;
-    quantityVal: number;
+    @ViewChild('weight') _weightForm: NgForm;
+    weightVal: number;
 
     constructor(private _store: Store<IAppState>,
         private _routeChannelService: RouteChannelService) { }
@@ -45,32 +46,34 @@ export default class QuantityComponent implements OnInit, OnDestroy, AfterViewIn
         // Dispatch UPDATE_STEP action
         this._store.dispatch(new ShippingActions.UpdateStep(3));
 
-        // Update shipping data - connect to shippingDataUpdateBus$ bus
-        // this._submitformSubscription = this._routeChannelService.updateShippingData(ProgressSteps.reciver, this._quantityForm);
 
         this._submitformSubscription = this._routeChannelService.shippingDataUpdateBus$.subscribe(formData => {
-            this._routeChannelService.updateStore(ProgressSteps.quantity, this._quantityForm);
+            this._routeChannelService.updateStore(ProgressSteps.weight, this._weightForm);
+        });
+
+        // update formstate using formValidation bus   
+        this._weightForm.valueChanges.subscribe(data => {
+            this._routeChannelService.formValidation$.next(data.weight <= 0);
         });
     }
 
     ngAfterViewInit() {
         // pre-populate sender's address
-        // this.prePopulateForm();
+        this.prePopulateForm();
     }
 
-    // private prePopulateForm() {
-    //     this._shippingLabelSubscription = this._store.select('shippingLabel').subscribe((data: IShippingLabelState) => {
-    //         setInterval(() => {
-    //             this.quantityVal = data.quantity;
-    //             console.log('quantity', this.quantityVal);
-    //         });
-    //     });
-    // }
+    private prePopulateForm() {
+        this._shippingLabelSubscription = this._store.select('shippingLabel').take(1).subscribe((data: IShippingLabelState) => {
+            setTimeout(() => {
+                this.weightVal = data.weight;
+            });
+        });
+    }
 
     ngOnDestroy() {
         this._submitformSubscription.unsubscribe();
-        // if (this._shippingLabelSubscription) {
-        //     this._shippingLabelSubscription.unsubscribe();
-        // }
+        if (this._shippingLabelSubscription) {
+            this._shippingLabelSubscription.unsubscribe();
+        }
     }
 }

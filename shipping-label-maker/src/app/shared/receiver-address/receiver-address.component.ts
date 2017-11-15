@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
 import { NgForm } from '@angular/forms';
+import 'rxjs/add/operator/take';
 
 // import models
 import { IAppState } from '../../models/appState';
@@ -12,7 +13,7 @@ import * as ShippingActions from '../../store/shipping.actions';
 import { ProgressSteps } from '../../models/progress-step';
 
 // import services
-import RouteChannelService from '../../services/route-channel.service';
+import RouteChannelService from '../services/route-channel.service';
 
 // import models
 import { IAddress } from '../../models/address';
@@ -39,19 +40,20 @@ export default class ReceiverAddressComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         // Dispatch UPDATE_ROUTES action
         this._store.dispatch(new ShippingActions.UpdateRoutes({
-            nextRoute: definedRoutes.quantity,
+            nextRoute: definedRoutes.weight,
             previousRoute: definedRoutes.sender
         }));
 
         // Dispatch UPDATE_STEP action
         this._store.dispatch(new ShippingActions.UpdateStep(2));
 
-        // Update shipping data - connect to shippingDataUpdateBus$ bus
-        // this._submitformSubscription = this._routeChannelService.updateShippingData(ProgressSteps.reciver, this._addressForm);
-
         this._submitformSubscription = this._routeChannelService.shippingDataUpdateBus$.subscribe(formData => {
-            console.log('adddddd', this._addressForm);
             this._routeChannelService.updateStore(ProgressSteps.reciver, this._addressForm);
+        });
+
+        // update formstate using formValidation bus   
+        this._addressForm.valueChanges.subscribe(data => {
+            this._routeChannelService.formValidation$.next(this._addressForm.invalid);
         });
     }
 
@@ -61,7 +63,7 @@ export default class ReceiverAddressComponent implements OnInit, AfterViewInit {
     }
 
     private prePopulateForm() {
-        this._shippingLabelSubscription = this._store.select('shippingLabel').subscribe((data: IShippingLabelState) => {
+        this._shippingLabelSubscription = this._store.select('shippingLabel').take(1).subscribe((data: IShippingLabelState) => {
             setInterval(() => {
                 this.receiverAddress = data.receiverAddress;
             });
