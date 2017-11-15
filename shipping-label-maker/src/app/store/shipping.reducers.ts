@@ -2,6 +2,7 @@ import * as ShippingActions from './shipping.actions';
 import { IShippingLabelState } from '../models/shippingLableState';
 import { ProgressSteps } from '../models/progress-step';
 import { UPDATE_WEIGHT } from './shipping.actions';
+import { ShippingOption } from '../models/shipping-option';
 
 const initialState: IShippingLabelState = {
     nextRoute: '/receiver-route',
@@ -10,7 +11,8 @@ const initialState: IShippingLabelState = {
     senderAddress: null,
     receiverAddress: null,
     weight: 0,
-    shippingCost: 0
+    shippingCost: 0,
+    shippingOption: ShippingOption.Ground
 };
 
 export default function ShippingLabelReducer(state = initialState,
@@ -46,6 +48,11 @@ export default function ShippingLabelReducer(state = initialState,
             return {
                 ...state,
                 shippingCost: action.payLoad
+            };
+        case ShippingActions.UPDATE_SSHIPPING_OPTION:
+            return {
+                ...state,
+                shippingOption: action.payLoad
             };
         default:
             return state;

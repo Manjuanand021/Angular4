@@ -23,12 +23,10 @@ export default class ShipingLabelComponent implements OnInit, OnDestroy {
     // Dispatch UPDATE_STEP action
     this._store.dispatch(new ShippingActions.UpdateStep(ProgressSteps.label));
 
-
     // Subscribe to shippingLabel data
     this._shippingDataSubscription = this._store.select('shippingLabel').subscribe((data: IShippingLabelState) => {
       this.shippingData = data;
     });
-
 
     // get today's date
     const dt = new Date(),

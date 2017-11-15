@@ -33,7 +33,6 @@ export default class FooterComponent implements OnInit {
         private _router: Router,
         private _currentRoute: ActivatedRoute,
         private _routeChannelService: RouteChannelService) {
-
     }
 
     ngOnInit() {

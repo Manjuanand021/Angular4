@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { IAddress } from '../models/address';
+import { ShippingOption } from '../models/shipping-option';
 
 export const UPDATE_ROUTES = 'UPDATE_ROUTES';
 export const UPDATE_STEP = 'UPDATE_STEP';
@@ -7,6 +8,7 @@ export const UPDATE_FROM_ADDRESS = 'UPDATE_FROM_ADDRESS';
 export const UPDATE_TO_ADDRESS = 'UPDATE_TO_ADDRESS';
 export const UPDATE_WEIGHT = 'UPDATE_WEIGHT';
 export const UPDATE_COST = 'UPDATE_COST';
+export const UPDATE_SSHIPPING_OPTION = 'UPDATE_SSHIPPING_OPTION';
 
 export class UpdateRoutes implements Action {
     readonly type = UPDATE_ROUTES;
@@ -28,6 +30,10 @@ export class UpdateWeight implements Action {
     readonly type = UPDATE_WEIGHT;
     constructor(public payLoad: number) { }
 };
+export class UpdateShippingOption implements Action {
+    readonly type = UPDATE_SSHIPPING_OPTION;
+    constructor(public payLoad: ShippingOption) { }
+};
 export class UpdateCost implements Action {
     readonly type = UPDATE_COST;
     constructor(public payLoad: number) { }
@@ -38,5 +44,6 @@ export type ShippingActions = UpdateRoutes |
     UpdateFromAddress |
     UpdateToAddress |
     UpdateWeight |
+    UpdateShippingOption |
     UpdateCost;
 

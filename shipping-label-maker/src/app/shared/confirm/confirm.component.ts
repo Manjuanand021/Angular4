@@ -17,6 +17,7 @@ import { ProgressSteps } from '../../models/progress-step';
 
 // import json
 import * as routes from '../../data/routes.json';
+import { ShippingOption } from '../../models/shipping-option';
 const definedRoutes = <any>routes;
 
 @Component({
@@ -46,9 +47,13 @@ export default class ConfirmComponent implements OnInit, OnDestroy {
 
         // Subscribe to shippingLabel data
         this._shippingDataSubscription = this._shippingLabelState.take(1).subscribe((data: IShippingLabelState) => {
-            // calculate shipping cost            
             this.shippingData = data;
-            this.shippingData.shippingCost = (this.shippingData.weight * 100) + 1000;
+
+            // calculate shipping cost            
+            const shippingRate = 0.40;
+            this.shippingData.shippingCost = (data.weight * shippingRate) * (data.shippingOption === ShippingOption.Ground ? 1 : 1.5);
+
+            console.log('calculated cost', this.shippingData.shippingCost);
 
             // update store with shipping cost calculated
             // this._store.dispatch(new ShippingActions.UpdateCost(this.shippingData.shippingCost));

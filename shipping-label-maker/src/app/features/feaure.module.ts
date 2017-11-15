@@ -7,6 +7,7 @@ import SharedModule from '../shared/shared.module';
 
 // import components
 import ShippingLabelMakerComponent from './shipping-label-maker/shipping-label-maker.component';
+import LoginComponent from './login/login.component';
 
 @NgModule({
     imports: [
@@ -14,9 +15,11 @@ import ShippingLabelMakerComponent from './shipping-label-maker/shipping-label-m
         SharedModule
     ],
     exports: [
+        LoginComponent,
         ShippingLabelMakerComponent
     ],
     declarations: [
+        LoginComponent,
         ShippingLabelMakerComponent
     ],
     providers: [],

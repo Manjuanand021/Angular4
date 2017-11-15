@@ -40,8 +40,10 @@ export default class RouteChannelService {
             case ProgressSteps.weight:
                 this._store.dispatch(new ShippingActions.UpdateWeight(form.value.weight));
                 break;
+            case ProgressSteps.option:
+                this._store.dispatch(new ShippingActions.UpdateShippingOption(form.value.option));
+                break;
             case ProgressSteps.confirm:
-                console.log('trying to update the cost here', cost);
                 // update store with shipping cost calculated
                 this._store.dispatch(new ShippingActions.UpdateCost(cost));
                 break;

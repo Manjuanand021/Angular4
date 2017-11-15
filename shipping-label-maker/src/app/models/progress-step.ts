@@ -3,6 +3,7 @@ export enum ProgressSteps {
     sender = 1,
     reciver = 2,
     weight = 3,
-    confirm = 4,
-    label = 5
+    option = 4,
+    confirm = 5,
+    label = 6
 }

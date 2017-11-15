@@ -16,6 +16,7 @@ import ReceiverAddressComponent from './receiver-address/receiver-address.compon
 import WeightComponent from './weight/weight.component';
 import ConfirmComponent from './confirm/confirm.component';
 import ShipingLabelComponent from './shipping-label/shipping-label.component';
+import ShippingOptionComponent from './shipping-option/shipping-option.component';
 
 // Import services
 import RouteChannelService from './services/route-channel.service';
@@ -38,6 +39,7 @@ import ProgressBarDirective from './directives/progress-bar.directive';
         ReceiverAddressComponent,
         WeightComponent,
         ConfirmComponent,
+        ShippingOptionComponent,
         ShipingLabelComponent
     ],
     exports: [

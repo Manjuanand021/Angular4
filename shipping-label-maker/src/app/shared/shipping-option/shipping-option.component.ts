@@ -18,42 +18,43 @@ import RouteChannelService from '../services/route-channel.service';
 
 // import json
 import * as routes from '../../data/routes.json';
+import { ShippingOption } from '../../models/shipping-option';
 const definedRoutes = <any>routes;
 
 @Component({
-    selector: 'sh-weight',
-    templateUrl: './weight.template.html'
+    selector: 'sh-option',
+    templateUrl: './shipping-option.template.html'
 })
 
-export default class WeightComponent implements OnInit, OnDestroy, AfterViewInit {
+export default class ShippingOptionComponent implements OnInit, OnDestroy, AfterViewInit {
+    shippingOption: string;
+    @ViewChild('option') _optionForm: NgForm;
     private _submitformSubscription: Subscription;
     private _shippingLabelSubscription: Subscription;
-
-    @ViewChild('weight') _weightForm: NgForm;
-    weightVal: number;
-
     constructor(private _store: Store<IAppState>,
-        private _routeChannelService: RouteChannelService) { }
+        private _routeChannelService: RouteChannelService) {
+        this.shippingOption = 'ground';
+    }
 
     ngOnInit() {
         // Dispatch UPDATE_ROUTES action
         this._store.dispatch(new ShippingActions.UpdateRoutes({
-            nextRoute: definedRoutes.option,
-            previousRoute: definedRoutes.receiver
+            nextRoute: definedRoutes.confirm,
+            previousRoute: definedRoutes.weight
         }));
 
         // Dispatch UPDATE_STEP action
-        this._store.dispatch(new ShippingActions.UpdateStep(ProgressSteps.weight));
+        this._store.dispatch(new ShippingActions.UpdateStep(ProgressSteps.option));
 
 
         this._submitformSubscription = this._routeChannelService.shippingDataUpdateBus$.subscribe(formData => {
-            this._routeChannelService.updateStore(ProgressSteps.weight, this._weightForm);
+            this._routeChannelService.updateStore(ProgressSteps.option, this._optionForm);
         });
 
         // update formstate using formValidation bus   
-        this._weightForm.valueChanges.subscribe(data => {
-            this._routeChannelService.formValidation$.next(data.weight <= 0);
-        });
+        // this._optionForm.valueChanges.subscribe(data => {
+        //     this._routeChannelService.formValidation$.next(data.weight <= 0);
+        // });
     }
 
     ngAfterViewInit() {
@@ -64,7 +65,7 @@ export default class WeightComponent implements OnInit, OnDestroy, AfterViewInit
     private prePopulateForm() {
         this._shippingLabelSubscription = this._store.select('shippingLabel').take(1).subscribe((data: IShippingLabelState) => {
             setTimeout(() => {
-                this.weightVal = data.weight;
+                this.shippingOption = data.shippingOption === ShippingOption.Ground ? 'ground' : 'prority';
             });
         });
     }

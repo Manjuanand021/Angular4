@@ -11,6 +11,8 @@ import ReceiverAddressComponent from '../receiver-address/receiver-address.compo
 import WeightComponent from '../weight/weight.component';
 import ConfirmComponent from '../confirm/confirm.component';
 import ShipingLabelComponent from '../shipping-label/shipping-label.component';
+import ShippingOptionComponent from '../shipping-option/shipping-option.component';
+
 
 
 // import json
@@ -32,6 +34,10 @@ const routes: Routes = [
         component: WeightComponent
     },
     {
+        path: definedRoutes.option,
+        component: ShippingOptionComponent
+    },
+    {
         path: definedRoutes.confirm,
         component: ConfirmComponent
     },
@@ -44,11 +50,6 @@ const routes: Routes = [
         pathMatch: 'full',
         redirectTo: `/${definedRoutes.sender}`
     }
-    //Catch all route
-    // {
-    //     path: '**',
-    //     redirectTo: '/not-found'
-    // }
 ];
 
 @NgModule({

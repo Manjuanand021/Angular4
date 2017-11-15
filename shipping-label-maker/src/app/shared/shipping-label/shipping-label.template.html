@@ -4,7 +4,7 @@
             <i class="ion-ios-cart-outline"></i>
         </div>
         <div class="lbl-date">
-            Shipping date: {{todayDate.day}} {{todayDate.month}}, {{todayDate.year}}
+            Total shipping cost - {{shippingData?.shippingCost | number : '1.2-2'}} (INR)
         </div>
     </div>
     <div class="addr-content">

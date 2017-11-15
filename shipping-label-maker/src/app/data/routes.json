@@ -2,6 +2,7 @@
     "sender": "sender-address",
     "receiver": "receiver-address",
     "weight": "shipping-weight",
+    "option": "shipping-option",
     "confirm": "confirm-shipping",
     "label": "shipping-label"
 }
