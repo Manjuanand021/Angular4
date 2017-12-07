@@ -1,0 +1,28 @@
+<h2>To</h2>
+<form class="" #address="ngForm">
+    <div class="control-group">
+        <label for="txtName">Name</label>
+        <input class="text-input" type="text" id="txtName" name="name" placeholder="enter sender's address" [ngModel]="to?.name"
+            required>
+    </div>
+    <div class="control-group">
+        <label for="txtStreet">Street</label>
+        <input class="text-input" type="text" id="txtStreet" name="street" placeholder="enter street" [ngModel]="to?.street" required>
+    </div>
+
+    <div class="horizontal">
+        <div class="control-group">
+            <label for="txtCity">City</label>
+            <input class="text-input txt-small" type="text" id="txtCity" name="city" placeholder="enter city" [ngModel]="to?.city" required>
+        </div>
+        <div class="control-group">
+            <label for="txtState">State</label>
+            <input class="text-input txt-small" type="text" id="txtState" name="state" placeholder="enter state" [ngModel]="to?.state"
+                required>
+        </div>
+        <div class="control-group">
+            <label for="txtZip">Zip</label>
+            <input class="text-input txt-small" type="text" id="txtZip" name="zip" placeholder="enter zip code" [ngModel]="to?.zip" required>
+        </div>
+    </div>
+</form>

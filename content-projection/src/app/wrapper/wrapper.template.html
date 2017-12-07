@@ -1,0 +1,13 @@
+<h1>wrapper</h1>
+<button type="button" (click)="showOrHide()">show/hide</button>
+<!--<div *ngFor="let data of dummyData">
+  <ng-container [ngTemplateOutlet]="template" *ngIf="active"></ng-container>
+</div>-->
+<div>
+  first
+  <ng-container [ngTemplateOutlet]="template"></ng-container>
+</div>
+<div>
+  second
+  <ng-container [ngTemplateOutlet]="template"></ng-container>
+</div>
