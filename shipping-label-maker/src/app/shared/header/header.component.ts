@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './header.template.html'
 })
 
-export class HeaderComponent implements OnInit {
+export default class HeaderComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }

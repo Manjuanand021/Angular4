@@ -14,16 +14,17 @@ import {
 import {
     StoreModule
 } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // Import feature modules
-import { FeaturesModule } from './features/feature.module';
+import ShippingModule from './features/feaure.module';
 
 // Import Components
 import AppComponent from './root/app.component';
 
-// Import reducers and effects
+
+// Import reducers
+import { reducers } from './store/app.reduce';
+
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import AppComponent from './root/app.component';
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        FeaturesModule
+        ShippingModule,
+        StoreModule.forRoot(reducers)
     ],
     providers: [],
     bootstrap: [AppComponent]

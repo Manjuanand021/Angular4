@@ -38,7 +38,7 @@
             <sh-wz-step *ngSwitchCase="2">
                 <div class="control-group">
                     <label for="txtName">Name</label>
-                    <input class="text-input" type="text" id="txtName" name="name" placeholder="enter sender's address" [ngModel]="to?.name"
+                    <input class="text-input" type="text" id="txtName" name="name" placeholder="enter receiver's address" [ngModel]="to?.name"
                         required>
                 </div>
                 <div class="control-group">
@@ -60,6 +60,19 @@
                         <label for="txtZip">Zip</label>
                         <input class="text-input txt-small" type="text" id="txtZip" name="zip" placeholder="enter zip code" [ngModel]="to?.zip" required>
                     </div>
+                </div>
+            </sh-wz-step>
+            <sh-wz-step *ngSwitchCase="3">
+                <div class="control-group">
+                    <label class="lbl-big" for="txtWeight">Weight</label>
+                    <input class="text-input" type="text" id="txtWeight" name="weight" placeholder="enter weight" [ngModel]="weightVal" required>(kgs)
+                </div>
+            </sh-wz-step>
+            <sh-wz-step *ngSwitchCase="4">
+                <div class="control-group">
+                    <label class="lbl-ext-big" for="txtOption">Shipping Option</label>
+                    <input type="radio" name="option" value="ground" [ngModel]="shippingOptions?.option"> <span class="rd-option">Ground</span>
+                    <input type="radio" name="option" value="priority" [ngModel]="shippingOptions?.option"><span class="rd-option">Priority</span>
                 </div>
             </sh-wz-step>
         </ng-container>

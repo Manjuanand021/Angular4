@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 
+import FormControls from './services/form-controls.service';
+
 @NgModule({
     imports: [
         FormsModule,
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     exports: [
         WizardComponent,
         WizardStepComponent
-    ]
+    ],
+    providers: [FormControls]
 })
 export default class SharedModule {
 

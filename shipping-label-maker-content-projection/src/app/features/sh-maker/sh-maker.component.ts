@@ -6,9 +6,9 @@ import { WizardAction } from '../../shared/models/wz-action';
 import { NgForm } from '@angular/forms';
 import { IAddress } from '../../models/address';
 import Address from '../../models/address';
-
+let instance = 0;
 @Component({
-  selector: 'app-sh-maker',
+  selector: 'sh-maker',
   templateUrl: './sh-maker.template.html',
   styles: [],
   encapsulation: ViewEncapsulation.None
@@ -16,12 +16,16 @@ import Address from '../../models/address';
 export class ShMakerComponent implements OnInit {
   shippingInfo: IShState
   step: ShStep;
-  constructor(private shUtilityServie: ShUtilityService) { }
+  constructor(private shUtilityServie: ShUtilityService) {
+    instance++;
+  }
 
   ngOnInit() {
     //set intial state
     this.shippingInfo = this.shUtilityServie.shippingInfo;
     this.step = ShStep.FROM;
+
+    console.log('sh-maker', instance);
   }
 
   changeStep(shippingContext: { context: NgForm, action: WizardAction }) {
@@ -57,7 +61,7 @@ export class ShMakerComponent implements OnInit {
       default:
         break;
     }
-    console.log('shippingInfo obj', this.shippingInfo);
+    console.log('shippingInfo obj sh-maker', this.shippingInfo);
   }
 
   private updateAddress(context: NgForm) {
