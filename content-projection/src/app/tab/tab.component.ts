@@ -10,6 +10,7 @@ import { TabsComponent } from '../tabs/tabs.component';
 export class TabComponent implements OnInit {
     @Input() title: string;
     active: boolean;
+    @Input() template;
     constructor() {
     }
     ngOnInit() {

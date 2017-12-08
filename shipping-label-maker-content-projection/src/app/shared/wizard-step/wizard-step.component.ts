@@ -1,5 +1,17 @@
-import { Component, OnInit, ViewChild, ContentChildren, QueryList, Output, EventEmitter, AfterContentInit } from '@angular/core';
-import { NgForm, NgModel } from '@angular/forms';
+import {
+    Component,
+    OnInit,
+    ViewChild,
+    ContentChildren,
+    QueryList,
+    Output,
+    EventEmitter,
+    AfterContentInit
+} from '@angular/core';
+import {
+    NgForm,
+    NgModel
+} from '@angular/forms';
 import FormControls from '../services/form-controls.service';
 
 let instance = 0;
@@ -11,7 +23,9 @@ let instance = 0;
 
 export class WizardStepComponent implements OnInit, AfterContentInit {
     @ContentChildren(NgModel) private _models: QueryList<NgModel>;
-    constructor(private formCtrlService: FormControls) {
+    @ViewChild('wzstpForm') wzstpForm: NgForm;
+
+    constructor() {
         instance++;
     }
 
@@ -20,7 +34,11 @@ export class WizardStepComponent implements OnInit, AfterContentInit {
     }
 
     ngAfterContentInit() {
-        console.log('pushing next set of controls');
-        this.formCtrlService.formControls$.next(this._models);
+        // !! converts a truthy expression to its respecitve boolena value
+        if (!!this._models) {
+            const ngModelControls = this._models.forEach(model => {
+                this.wzstpForm.addControl(model);
+            });
+        }
     }
 }

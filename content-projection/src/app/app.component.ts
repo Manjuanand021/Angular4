@@ -18,13 +18,15 @@ import { TemplateRef } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('tmpl', {read:TemplateRef}) tmpl;
+  @ViewChild('tmpl', { read: TemplateRef }) tmpl;
   // @ViewChild('hook', { read: ViewContainerRef }) hook;
   @ViewChild(TabsComponent) tabsComponent: TabsComponent;
+  content: string;
   constructor(private vc: ViewContainerRef, private resolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
-    console.log(this.tabsComponent);
+    // console.log(this.tabsComponent);
+    this.content = 'this is dynamic content';
   }
 
   ngAfterViewInit() {
@@ -34,6 +36,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     // const factory: ComponentFactory<TabComponent> = this.resolver.resolveComponentFactory(TabComponent);
     // const componentRef: ComponentRef<TabComponent> = this.hook.createComponent(factory);
     // (componentRef.instance).title = 'foo';
+  }
+
+  addTab() {
+    this.tabsComponent.addTab(this.tmpl);
+  }
+  closeTab() {
+    this.tabsComponent.closeTab();
   }
 }
 

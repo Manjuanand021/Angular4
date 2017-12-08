@@ -4,7 +4,7 @@
     <p class="lead">Shipping Label Maker is an application that collects shipping information from the user and prints a shipping label.</p>
 </section>
 <section id="content">
-    <sh-wizard [shipping-info]="shippingInfo" (step-change)="changeStep($event)">
+    <sh-wizard [shipping-info]="shippingInfo" (step-change)="changeStep($event)" *ngIf="!showLblInfo; else lblInfo">
         <ng-container [ngSwitch]="step">
             <sh-wz-step *ngSwitchCase="1">
                 <div class="control-group">
@@ -65,16 +65,60 @@
             <sh-wz-step *ngSwitchCase="3">
                 <div class="control-group">
                     <label class="lbl-big" for="txtWeight">Weight</label>
-                    <input class="text-input" type="text" id="txtWeight" name="weight" placeholder="enter weight" [ngModel]="weightVal" required>(kgs)
+                    <input class="text-input" type="text" id="txtWeight" name="weight" placeholder="enter weight" [ngModel]="weight" required>(kgs)
                 </div>
             </sh-wz-step>
             <sh-wz-step *ngSwitchCase="4">
                 <div class="control-group">
                     <label class="lbl-ext-big" for="txtOption">Shipping Option</label>
-                    <input type="radio" name="option" value="ground" [ngModel]="shippingOptions?.option"> <span class="rd-option">Ground</span>
-                    <input type="radio" name="option" value="priority" [ngModel]="shippingOptions?.option"><span class="rd-option">Priority</span>
+                    <input type="radio" name="option" value="Ground" [ngModel]="shippingOptions?.option"> <span class="rd-option">Ground</span>
+                    <input type="radio" name="option" value="Priority" [ngModel]="shippingOptions?.option"><span class="rd-option">Priority</span>
                 </div>
+            </sh-wz-step>
+            <sh-wz-step *ngSwitchCase="5">
+                <section class="preview">
+                    <div>
+                        <p class="header">
+                            Sender's address:
+                        </p>
+                        <p class="dt-lead">
+                            <!--Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
+                            {{shippingInfo.from?.name}},<br>{{shippingInfo.from?.street}},<br> {{shippingInfo.from?.city}},{{shippingInfo.from?.state}}
+                            -{{shippingInfo.from?.zip}}
+                        </p>
+
+                    </div>
+                    <div>
+                        <p class="header">
+                            Receiver's address:
+                        </p>
+                        <p class="dt-lead">
+                            <!--Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
+                            {{shippingInfo.to?.name}},<br>{{shippingInfo.to?.street}},<br> {{shippingInfo.to?.city}},{{shippingInfo.to?.state}}
+                            -{{shippingInfo.to?.zip}}
+                        </p>
+                    </div>
+                    <div>
+                        <p class="header">
+                            Weight:
+                        </p>
+                        <p class="dt-lead">
+                            {{shippingInfo.weight}}
+                        </p>
+                    </div>
+                    <div>
+                        <p class="header">
+                            Shipping Option:
+                        </p>
+                        <p class="dt-lead">
+                            {{shippingInfo?.option}}
+                        </p>
+                    </div>
+                </section>
             </sh-wz-step>
         </ng-container>
     </sh-wizard>
+    <ng-template #lblInfo>
+        <sh-label [shipping-info]="shippingInfo"></sh-label>
+    </ng-template>
 </section>

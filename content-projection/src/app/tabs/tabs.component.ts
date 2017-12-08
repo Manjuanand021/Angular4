@@ -9,6 +9,7 @@ import {
     ComponentFactoryResolver
 } from '@angular/core';
 import { TabComponent } from '../tab/tab.component';
+import { Input } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -19,7 +20,6 @@ import { TabComponent } from '../tab/tab.component';
 export class TabsComponent implements OnInit, AfterContentInit {
     @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
     @ViewChild('vc', { read: ViewContainerRef }) vc;
-
     constructor(private _componentFactoryResolver: ComponentFactoryResolver) {
 
     }
@@ -34,8 +34,17 @@ export class TabsComponent implements OnInit, AfterContentInit {
     }
 
     addTab(tmpl) {
-        this.vc.clear();
+        console.log('template', tmpl);
+        // this.vc.clear();
         const compoFactory = this._componentFactoryResolver.resolveComponentFactory(TabComponent);
         const compoRef = this.vc.createComponent(compoFactory);
+        const tabInstance: TabComponent = compoRef.instance as TabComponent;
+        // set the props
+        tabInstance.title = 'dynamic';
+        tabInstance.template = tmpl;
+    }
+
+    closeTab() {
+        this.vc.remove(0);
     }
 }

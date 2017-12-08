@@ -4,5 +4,6 @@ export interface IShState {
     from: IAddress,
     to: IAddress,
     weight: number,
-    shippingOption: ShippingOption
+    option: ShippingOption,
+    cost: Number
 }

@@ -6,6 +6,7 @@ import SharedModule from '../shared/shared.module';
 import { ShMakerComponent } from './sh-maker/sh-maker.component';
 import { ShFromComponent } from './steps/sh-from/sh-from.component';
 import { ShToComponent } from './steps/sh-to/sh-to.component'
+import { ShLabelComponent } from './sh-label/sh-label.component';
 
 import ShUtilityService from './services/sh-utility.service';
 
@@ -18,7 +19,8 @@ import ShUtilityService from './services/sh-utility.service';
     declarations: [
         ShMakerComponent,
         ShFromComponent,
-        ShToComponent
+        ShToComponent,
+        ShLabelComponent
     ],
     exports: [
         CommonModule,
