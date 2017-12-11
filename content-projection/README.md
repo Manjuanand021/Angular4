@@ -4,6 +4,12 @@ Referred - https://juristr.com/blog/2017/07/ng2-dynamic-tab-component/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
+
+```
+$ This projects talks about content projection and alternatives build re-usable components
+$ And run piece of code outside angular - using NgZone
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

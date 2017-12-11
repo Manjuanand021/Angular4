@@ -1,0 +1,6 @@
+<h2>Change detector ref</h2>
+name: {{manju?.name}}
+<app-cd-child [other-info]="other"></app-cd-child>
+compnay: {{this.company}}
+<br><br>
+<button type="button" (outSideEventHandler)="changeCompnay()">trigger change detection</button>

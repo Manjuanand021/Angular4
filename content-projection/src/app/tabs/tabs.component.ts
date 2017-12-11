@@ -9,7 +9,7 @@ import {
     ComponentFactoryResolver
 } from '@angular/core';
 import { TabComponent } from '../tab/tab.component';
-import { Input } from '@angular/core';
+import { Input, ChangeDetectorRef } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -20,7 +20,7 @@ import { Input } from '@angular/core';
 export class TabsComponent implements OnInit, AfterContentInit {
     @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
     @ViewChild('vc', { read: ViewContainerRef }) vc;
-    constructor(private _componentFactoryResolver: ComponentFactoryResolver) {
+    constructor(private _componentFactoryResolver: ComponentFactoryResolver, _changeDetRef: ChangeDetectorRef) {
 
     }
 

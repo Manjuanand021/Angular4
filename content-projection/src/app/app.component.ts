@@ -10,23 +10,28 @@ import {
 } from '@angular/core';
 import { TabComponent } from './tab/tab.component';
 import { TabsComponent } from './tabs/tabs.component';
-import { TemplateRef } from '@angular/core';
+import { TemplateRef, ChangeDetectorRef, DoCheck, AfterViewChecked } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit, DoCheck, AfterViewInit, AfterViewChecked {
   @ViewChild('tmpl', { read: TemplateRef }) tmpl;
   // @ViewChild('hook', { read: ViewContainerRef }) hook;
   @ViewChild(TabsComponent) tabsComponent: TabsComponent;
   content: string;
-  constructor(private vc: ViewContainerRef, private resolver: ComponentFactoryResolver) { }
+  manju;
+  constructor(private vc: ViewContainerRef, private resolver: ComponentFactoryResolver, private _changeDetectorRef: ChangeDetectorRef) {
+  }
 
   ngOnInit() {
     // console.log(this.tabsComponent);
     this.content = 'this is dynamic content';
+    this.manju = {
+      name: 'Manjuanand'
+    };
   }
 
   ngAfterViewInit() {
@@ -43,6 +48,15 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
   closeTab() {
     this.tabsComponent.closeTab();
+  }
+
+  ngDoCheck() {
+    console.log('app do check');
+    // this._changeDetRef.markForCheck();
+  }
+
+  ngAfterViewChecked() {
+    console.log('app view checked');
   }
 }
 
