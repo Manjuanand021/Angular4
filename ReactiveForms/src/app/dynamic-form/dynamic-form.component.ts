@@ -1,32 +1,28 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-    // tslint:disable-next-line:component-selector
-    selector: 'dnm-form',
-    templateUrl: 'dynamic-form.template.html',
-    styleUrls: ['./dynamic-form.style.css']
+  selector: 'app-dynamic-form',
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.css']
 })
-
 export class DynamicFormComponent implements OnInit {
-    @Input()
-    config: any[] = [];
+  @Input()
+  config: any[] = [];
 
-    @Output()
-    submitted: EventEmitter<any> = new EventEmitter<any>();
+  dnmForm: FormGroup;
 
-    form: FormGroup;
-    constructor(private _fb: FormBuilder) { }
+  constructor(private _fb: FormBuilder) { }
 
-    ngOnInit() {
-        this.form = this.createGroup();
-    }
+  ngOnInit() {
+    this.dnmForm = this.createFormGroup();
+  }
 
-    createGroup() {
-        const group = this._fb.group({});
-        this.config.forEach(ctrl => {
-            group.addControl(ctrl.name, this._fb.control(''));
-        });
-        return group;
-    }
+  private createFormGroup() {
+    const group = this._fb.group({});
+    this.config.forEach(control => {
+      group.addControl(control.name, this._fb.control(''));
+    });
+    return group;
+  }
 }

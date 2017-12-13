@@ -1,43 +1,31 @@
-import {
-  Directive,
-  Input,
-  ViewContainerRef,
-  ComponentFactoryResolver
-} from '@angular/core';
-import { FormGroup } from '@angular/forms';
-
+import { Directive, Input, ViewContainerRef, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { FormInputComponent } from '../form-input/form-input.component';
 import { FormSelectComponent } from '../form-select/form-select.component';
 import { FormButtonComponent } from '../form-button/form-button.component';
-import { OnInit } from '@angular/core';
 
 const components = {
-  button: FormButtonComponent,
   input: FormInputComponent,
-  select: FormSelectComponent
+  select: FormSelectComponent,
+  button: FormButtonComponent
 };
 
 @Directive({
-  // tslint:disable-next-line:directive-selector
-  selector: '[dynamic-field]'
+  selector: '[appDinamicField]'
 })
-export class DynamicFieldDirective implements OnInit {
+export class DinamicFieldDirective implements OnInit {
   @Input()
   config;
-
   @Input()
-  group: FormGroup;
-
-  component;
+  group;
 
   constructor(private _vcRef: ViewContainerRef, private _resolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
+    this._vcRef.clear();
     const component = components[this.config.type];
     const factory = this._resolver.resolveComponentFactory<any>(component);
-    this.component = this._vcRef.createComponent(factory);
-    this.component.instance.config = this.config;
-    this.component.instance.group = this.group;
+    const componentRef = this._vcRef.createComponent(factory);
+    componentRef.instance.group = this.group;
+    componentRef.instance.config = this.config;
   }
-
 }

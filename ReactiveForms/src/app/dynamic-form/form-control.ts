@@ -1,5 +1,8 @@
-import { FormGroup } from '@angular/forms';
-export class CustomControl {
+import { Input } from '@angular/core';
+export class FormControlBase {
+    @Input()
     config;
-    group: FormGroup;
+
+    @Input()
+    group;
 }
