@@ -1,0 +1,39 @@
+<section class="preview">
+    <div>
+        <p class="header">
+            Sender's address:
+        </p>
+        <p class="dt-lead">
+            <!--Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
+            {{shippingInfo.from?.name}},<br>{{shippingInfo.from?.street}},<br> {{shippingInfo.from?.city}},{{shippingInfo.from?.state}}
+            -{{shippingInfo.from?.zip}}
+        </p>
+
+    </div>
+    <div>
+        <p class="header">
+            Receiver's address:
+        </p>
+        <p class="dt-lead">
+            <!--Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
+            {{shippingInfo.to?.name}},<br>{{shippingInfo.to?.street}},<br> {{shippingInfo.to?.city}},{{shippingInfo.to?.state}}
+            -{{shippingInfo.to?.zip}}
+        </p>
+    </div>
+    <div>
+        <p class="header">
+            Weight:
+        </p>
+        <p class="dt-lead">
+            {{shippingInfo.weight}}
+        </p>
+    </div>
+    <div>
+        <p class="header">
+            Shipping Option:
+        </p>
+        <p class="dt-lead">
+            {{shippingInfo?.option}}
+        </p>
+    </div>
+</section>

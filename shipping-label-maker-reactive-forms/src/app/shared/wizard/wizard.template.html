@@ -1,0 +1,12 @@
+<!--<h1>I am wizard component</h1>-->
+<header>
+    <sh-header></sh-header>
+</header>
+<main>
+    <ng-content></ng-content>
+</main>
+<footer>
+    <!--<sh-footer></sh-footer>-->
+    <button class="btn btn-primary" type="button" (click)="navigate(1)" [disabled]="parent.invalid">Previous</button>
+    <button class="btn btn-primary" type="button" (click)="navigate(2)" [disabled]="parent.invalid">Next</button>
+</footer>

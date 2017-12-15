@@ -1,3 +1,11 @@
 <h1>{{title}}</h1>
 <!--<signup-form></signup-form>-->
-<app-dynamic-form [config]="config"></app-dynamic-form>
+<!--<app-dynamic-form [config]="config"></app-dynamic-form>-->
+<app-wizard [parent]="wzForm" (hideOrShow)="hideOrShow($event)">
+  <app-wizard-step *ngIf="showFrom">
+    <app-from [parent]="wzForm"></app-from>
+  </app-wizard-step>
+  <app-wizard-step *ngIf="!showFrom">
+    <app-to [parent]="wzForm"></app-to>
+  </app-wizard-step>
+</app-wizard>

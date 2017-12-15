@@ -1,0 +1,24 @@
+header {
+    margin-bottom: 1em;
+}
+
+footer {
+    margin-left: 3em;
+}
+
+nav {
+    @extend %center-items;
+    height: 4.5em;
+}
+
+main {
+    height: 12em;
+}
+
+article {}
+
+section {
+    // margin-bottom: 3em;
+}
+
+aside {}

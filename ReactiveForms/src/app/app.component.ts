@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'Reactive forms tutorial';
   config: any[] = [];
-  constructor() { }
+  wzForm: FormGroup;
+  showFrom = true;
+  constructor(private _fb: FormBuilder) { }
 
   ngOnInit() {
     this.config = [
@@ -31,9 +34,30 @@ export class AppComponent implements OnInit {
         type: 'button'
       }
     ];
+    this.wzForm = this._fb.group({
+      from: this._fb.group({
+        name: this._fb.control(''),
+        street: this._fb.control(''),
+        city: this._fb.control(''),
+        state: this._fb.control(''),
+        zip: this._fb.control('')
+      }),
+      to: this._fb.group({
+        name: this._fb.control(''),
+        street: this._fb.control(''),
+        city: this._fb.control(''),
+        state: this._fb.control(''),
+        zip: this._fb.control('')
+      })
+    });
   }
 
   formSubmitted(form) {
     console.log('form', form);
+  }
+
+  hideOrShow(flag) {
+    console.log('flag', flag);
+    this.showFrom = flag;
   }
 }

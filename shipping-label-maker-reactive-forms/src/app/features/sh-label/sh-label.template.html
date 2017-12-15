@@ -1,0 +1,25 @@
+<div class="lbl-cover">
+    <div class="lbl-header">
+        <div class="lbl-logo">
+            <i class="ion-ios-cart-outline"></i>
+        </div>
+        <div class="lbl-date">
+            Total shipping cost - {{shippingInfo?.cost}} INR
+        </div>
+    </div>
+    <div class="addr-content">
+        <div class="dt-lead">
+            <!--From:<br> Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
+            From:<br> {{shippingInfo.from?.name}},<br>{{shippingInfo.from?.street}},<br> {{shippingInfo.from?.city}},{{shippingInfo.from?.state}}
+            -{{shippingInfo.from?.zip}}
+        </div>
+        <div class="dt-lead">
+            <!--To: <br> Manju anand Toladinni,<br> #679, Sankranti circle,<br> Mysore, Karnataka - 570017-->
+            To: <br>{{shippingInfo.to?.name}},<br>{{shippingInfo.to?.street}},<br> {{shippingInfo.to?.city}},{{shippingInfo.to?.state}}
+            -{{shippingInfo.to?.zip}}
+        </div>
+    </div>
+    <p class="bar-code">
+        <i class="ion-ios-barcode-outline"></i>
+    </p>
+</div>

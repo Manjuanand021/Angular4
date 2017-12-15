@@ -1,0 +1,27 @@
+<div [formGroup]="parent">
+    <div formGroupName="from">
+        <div class="control-group">
+            <label for="txtName">Name</label>
+            <input class="text-input" type="text" id="txtName" formControlName="name" placeholder="enter sender's address" required>
+        </div>
+        <div class="control-group">
+            <label for="txtStreet">Street</label>
+            <input class="text-input" type="text" id="txtStreet" formControlName="street" placeholder="enter street" required>
+        </div>
+
+        <div class="horizontal">
+            <div class="control-group">
+                <label for="txtCity">City</label>
+                <input class="text-input txt-small" type="text" id="txtCity" formControlName="city" placeholder="enter city" required>
+            </div>
+            <div class="control-group">
+                <label for="txtState">State</label>
+                <input class="text-input txt-small" type="text" id="txtState" formControlName="state" placeholder="enter state" required>
+            </div>
+            <div class="control-group">
+                <label for="txtZip">Zip</label>
+                <input class="text-input txt-small" type="text" id="txtZip" formControlName="zip" placeholder="enter zip code" required>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<section id="headerInfo">
+    <h1>Shipping Label Maker</h1>
+    <p class="lead">Shipping Label Maker is an application that collects shipping information from the user and prints a shipping label.</p>
+</section>
+<section id="content">
+    <!--<sh-wizard [shipping-info]="shippingInfo" (step-change)="changeStep($event)" *ngIf="!showLblInfo; else lblInfo">-->
+    <sh-wizard [parent]="form" (step-change)="changeStep($event)" *ngIf="!showLblInfo; else lblInfo">
+        <ng-container [ngSwitch]="step">
+            <sh-wz-step *ngSwitchCase="1">
+                <sh-from [parent]="form"></sh-from>
+            </sh-wz-step>
+            <sh-wz-step *ngSwitchCase="2">
+                <sh-to [parent]="form"></sh-to>
+            </sh-wz-step>
+            <sh-wz-step *ngSwitchCase="3">
+                <app-weight [parent]="form"></app-weight>
+            </sh-wz-step>
+            <sh-wz-step *ngSwitchCase="4">
+                <app-option [parent]="form"></app-option>
+            </sh-wz-step>
+        </ng-container>
+    </sh-wizard>
+    <ng-template #lblInfo>
+        <sh-label [shipping-info]="shippingInfo"></sh-label>
+    </ng-template>
+</section>

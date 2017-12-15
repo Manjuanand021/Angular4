@@ -1,0 +1,26 @@
+/* Buttons
+============================================= */
+
+.btn {
+    display: inline-block;
+    margin-right: 10px;
+    padding: .6em 1em;
+    @include rounded-corner(.6em);
+    color: $white;
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: $rolling-stone; // color: $secondary-color;    
+    &:hover {
+        color: $rolling-stone;
+        background-color: $porcelain;
+    }
+}
+
+button:disabled {
+    color: $rolling-stone;
+    background-color: $porcelain;
+}
