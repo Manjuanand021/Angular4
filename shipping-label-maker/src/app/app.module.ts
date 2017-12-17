@@ -15,6 +15,8 @@ import {
     StoreModule
 } from '@ngrx/store';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 // Import feature modules
 import ShippingModule from './features/feaure.module';
 
@@ -24,6 +26,7 @@ import AppComponent from './root/app.component';
 
 // Import reducers
 import { reducers } from './store/app.reduce';
+import { environment } from '../environments/environment.prod';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { reducers } from './store/app.reduce';
         FormsModule,
         HttpClientModule,
         ShippingModule,
-        StoreModule.forRoot(reducers)
+        StoreModule.forRoot(reducers),
+        StoreDevtoolsModule.instrument({
+            maxAge: 10
+        })
     ],
     providers: [],
     bootstrap: [AppComponent]

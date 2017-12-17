@@ -48,6 +48,14 @@ export function ShppingListReducer(state = initialState, action: ShoppingListAct
                 editedIngredient: editedIngredient,
                 editedIngredientIndex: action.payLoad
             }
+        case ShoppingListActions.GET_TODOS_SUCCESS:
+            return {
+                ...state,
+                ingredients: [
+                    ...state.ingredients,
+                    ...action.payLoad
+                ]
+            }
         default:
             return state;
     }

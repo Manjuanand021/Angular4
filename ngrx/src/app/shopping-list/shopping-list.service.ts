@@ -1,5 +1,7 @@
 import { Ingredient } from '../shared/ingredient.model';
 import { Subject } from 'rxjs/Subject';
+import * as Rx from "rxjs/Rx";
+import 'rxjs';
 
 export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredient[]>();
@@ -29,5 +31,12 @@ export class ShoppingListService {
   deleteIngredient(index: number) {
     this.ingredients.splice(index, 1);
     this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  getInitialState() {
+    return Rx.Observable.of([[
+      new Ingredient('Orange', 10),
+      new Ingredient('Onion', 20),
+    ]]).delay(5000);
   }
 }

@@ -1,17 +1,17 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { NgForm, FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from "@angular/core";
+import { NgForm, FormBuilder, FormGroup } from "@angular/forms";
 
-import { ShStep } from '../contracts/sh-step.enum';
-import { WizardAction } from '../../shared/models/wz-action';
-import { IShippingInfo } from '../contracts/sh-info.interface';
-import { IAddress } from '../contracts/address.interface';
-import { Address } from '../models/address.model';
-import { ShippingOption } from '../contracts/sh-option.enum';
+import { ShStep } from "../contracts/sh-step.enum";
+import { WizardAction } from "../../shared/models/wz-action";
+import { IShippingInfo } from "../contracts/sh-info.interface";
+import { IAddress } from "../contracts/address.interface";
+import { Address } from "../models/address.model";
+import { ShippingOption } from "../contracts/sh-option.enum";
 
 let instance = 0;
 @Component({
-  selector: 'sh-maker',
-  templateUrl: './sh-maker.template.html',
+  selector: "sh-maker",
+  templateUrl: "./sh-maker.template.html",
   encapsulation: ViewEncapsulation.None
 })
 export class ShMakerComponent implements OnInit {
@@ -32,28 +32,27 @@ export class ShMakerComponent implements OnInit {
 
     this.form = this.createGroup();
 
-
-    console.log('sh-maker', instance);
+    console.log("sh-maker", instance);
   }
 
   createGroup() {
     const group = this._fb.group({
       from: this._fb.group({
-        name: this._fb.control(''),
-        street: this._fb.control(''),
-        city: this._fb.control(''),
-        state: this._fb.control(''),
-        zip: this._fb.control('')
+        name: this._fb.control(""),
+        street: this._fb.control(""),
+        city: this._fb.control(""),
+        state: this._fb.control(""),
+        zip: this._fb.control("")
       }),
       to: this._fb.group({
-        name: this._fb.control(''),
-        street: this._fb.control(''),
-        city: this._fb.control(''),
-        state: this._fb.control(''),
-        zip: this._fb.control('')
+        name: this._fb.control(""),
+        street: this._fb.control(""),
+        city: this._fb.control(""),
+        state: this._fb.control(""),
+        zip: this._fb.control("")
       }),
-      weight: this._fb.control(''),
-      option: this._fb.control('')
+      weight: this._fb.control(""),
+      option: this._fb.control("")
     });
     return group;
   }
@@ -63,8 +62,7 @@ export class ShMakerComponent implements OnInit {
   }
 
   private updateShippingInfo(action: WizardAction): void {
-
-    console.log('updated form', this.form);
+    console.log("updated form", this.form);
 
     //hide sh-label component until we reach confirm step
     this.showLblInfo = false;
@@ -104,13 +102,12 @@ export class ShMakerComponent implements OnInit {
           ...this.shippingInfo,
           option: this.form.value.option
         };
-        if (action === WizardAction.Prev)
-          this.step = ShStep.WEIGHT;
+        if (action === WizardAction.Prev) this.step = ShStep.WEIGHT;
         else {
           this.shippingInfo = {
             ...this.shippingInfo,
             cost: this.calculateShippingCost()
-          }
+          };
           this.showLblInfo = true;
         }
         break;
@@ -128,10 +125,13 @@ export class ShMakerComponent implements OnInit {
   }
 
   private calculateShippingCost(): number {
-    const shippingRate = 0.40;
+    const shippingRate = 0.4;
     console.log(typeof this.shippingInfo.option);
     console.log(typeof ShippingOption[ShippingOption.Ground]);
-    return this.shippingInfo.weight * shippingRate *
-      (this.shippingInfo.option === ShippingOption.Ground ? 1 : 1.5);
+    return (
+      this.shippingInfo.weight *
+      shippingRate *
+      (this.shippingInfo.option === ShippingOption.Ground ? 1 : 1.5)
+    );
   }
 }

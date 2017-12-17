@@ -20,6 +20,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   constructor(private slService: ShoppingListService, private store: Store<any>) { }
 
   ngOnInit() {
+    this.store.dispatch(new ShoppingListActions.GetTodos());
     this.shoppingListState = this.store.select('shoppingList');
   }
 

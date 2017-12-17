@@ -3,9 +3,12 @@ import { IShippingLabelState } from '../models/shippingLableState';
 import { ProgressSteps } from '../models/progress-step';
 import { UPDATE_WEIGHT } from './shipping.actions';
 import { ShippingOption } from '../models/shipping-option';
+// import json
+import * as customRoutes from '../data/routes.json';
+const definedRoutes = <any>customRoutes;
 
 const initialState: IShippingLabelState = {
-    nextRoute: '/receiver-route',
+    nextRoute: `/${definedRoutes.receiver}`,
     previousRoute: null,
     currentStep: ProgressSteps.none,
     senderAddress: null,
