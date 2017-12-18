@@ -3,6 +3,7 @@
 #### Setup
 ```
 $ npm i
+$ Reference https://scotch.io/tutorials/using-sass-with-the-angular-cli for setting up scss
 ```
 #### Run
 ```
