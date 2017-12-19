@@ -18,9 +18,10 @@ export function reducers(
   action: fromPizzaActions.PizzaActions
 ): PizzasState {
   switch (action.type) {
-    case fromPizzaActions.LOAD_PIZZAS:
+    case fromPizzaActions.LOAD_PIZZAS: {
       return { ...state, loading: true };
-    case fromPizzaActions.LOAD_PIZZAS_SUCCESS:
+    }
+    case fromPizzaActions.LOAD_PIZZAS_SUCCESS: {
       // [{ id: 1 }, { id: 2 }]
       // const pizza = {
       //   1:{
@@ -47,10 +48,13 @@ export function reducers(
         loading: false,
         entities
       };
-    case fromPizzaActions.LOAD_PIZZAS_FAIL:
+    }
+    case fromPizzaActions.LOAD_PIZZAS_FAIL: {
       return { ...state, loaded: false, loading: false };
-    default:
+    }
+    default: {
       return state;
+    }
   }
 }
 

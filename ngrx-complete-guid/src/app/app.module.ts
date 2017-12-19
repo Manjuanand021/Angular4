@@ -36,7 +36,7 @@ export const ROUTES: Routes = [
 ];
 
 //reducers
-import { reducers, CustomSerializer } from "./store";
+import { reducers, effects, CustomSerializer } from "./store";
 
 @NgModule({
   imports: [
@@ -44,7 +44,7 @@ import { reducers, CustomSerializer } from "./store";
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot(effects),
     StoreRouterConnectingModule,
     environment.development ? StoreDevtoolsModule.instrument() : []
   ],
