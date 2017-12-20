@@ -1,0 +1,156 @@
+{
+  "contacts": [
+    {
+      "name": "Cassio Zen",
+      "email": "cassiozen@gmail.com",
+      "phone": "+1(879) 527-5735",
+      "city": "Agidaed",
+      "street": "807 Jefe Trail",
+      "avatar": "",
+      "zipCode": "34154",
+      "country": "Palestinian Territories",
+      "hobbies": [3, 10, 4, 9, 3]
+    },
+    {
+      "name": "Dan Abramov",
+      "email": "gaearon@somewhere.com",
+      "phone": "+1(602) 507-6144",
+      "city": "Wuhegeze",
+      "street": "74 Ohid Center",
+      "avatar": "",
+      "zipCode": "14441",
+      "country": "Sierra Leone",
+      "hobbies": [6, 3, 1, 7, 2]
+    },
+    {
+      "name": "Pete Hunt",
+      "email": "floydophone@somewhere.com",
+      "phone": "+1(469) 284-1006",
+      "city": "Neniwa",
+      "street": "828 Likwu Trail",
+      "avatar": "",
+      "zipCode": "53134",
+      "country": "Wallis & Futuna",
+      "hobbies": [8, 3, 7, 9, 4]
+    },
+    {
+      "name": "Paul O’Shannessy",
+      "email": "zpao@somewhere.com",
+      "phone": "+1(363) 719-9139",
+      "city": "Vomolefaf",
+      "street": "1585 Geptel Grove",
+      "avatar": "",
+      "zipCode": "15243",
+      "country": "China",
+      "hobbies": [5, 9, 6, 2, 1]
+    },
+    {
+      "name": "Ryan Florence",
+      "email": "rpflorence@somewhere.com",
+      "phone": "+1(963) 230-1999",
+      "city": "Fawcogwuk",
+      "street": "527 Gozej Point",
+      "avatar": "",
+      "zipCode": "41253",
+      "country": "Equatorial Guinea",
+      "hobbies": [1, 8, 3, 2, 7]
+    },
+    {
+      "name": "Pearl Goodman",
+      "email": "rewoca@oheodko.zm",
+      "phone": "+1(666) 855-2616",
+      "city": "Secotawa",
+      "street": "697 Hillo View",
+      "avatar": "",
+      "zipCode": "24331",
+      "country": "Ethiopia",
+      "hobbies": [5, 10, 3, 6, 7]
+    },
+    {
+      "name": "Scott Bell",
+      "email": "ibotanic@nuphod.jo",
+      "phone": "+1(822) 614-2685",
+      "city": "Upotumhek",
+      "street": "1034 Helol River",
+      "avatar": "",
+      "zipCode": "21152",
+      "country": "Thailand",
+      "hobbies": [3, 10, 4, 5, 8]
+    },
+    {
+      "name": "Kate Daniels",
+      "email": "ib@wico.pn",
+      "phone": "+1(343) 656-9189",
+      "city": "Lezcejub",
+      "street": "589 Vejraf Avenue",
+      "avatar": "",
+      "zipCode": "34215",
+      "country": "Swaziland",
+      "hobbies": [7, 5, 3, 2, 8]
+    },
+    {
+      "name": "Minerva Frank",
+      "email": "ipufed@de.et",
+      "phone": "+1(504) 339-8242",
+      "city": "Wofkuiwu",
+      "street": "167 Maobu Mill",
+      "avatar": "",
+      "zipCode": "33415",
+      "country": "Andorra",
+      "hobbies": [1, 6, 8, 9, 3]
+    },
+    {
+      "name": "Sebastian Markbage",
+      "email": "sebmarkbage@here.com",
+      "phone": "+1(421) 587-1432",
+      "city": "Hogogum",
+      "street": "1507 Pofpo Court",
+      "avatar": "",
+      "zipCode": "15254",
+      "country": "South Georgia & South Sandwich Islands",
+      "hobbies": [7, 5, 1, 4, 10]
+    }
+  ],
+  "hobbies": [
+    {
+      "id": "1",
+      "name": "Archery"
+    },
+    {
+      "id": "2",
+      "name": "Astronomy"
+    },
+    {
+      "id": "3",
+      "name": "Barbecuing, Grilling & Smoking"
+    },
+    {
+      "id": "4",
+      "name": "Blogging"
+    },
+    {
+      "id": "5",
+      "name": "Camping"
+    },
+    {
+      "id": "6",
+      "name": "Dancing"
+    },
+    {
+      "id": "7",
+      "name": "Dog Training"
+    },
+    {
+      "id": "8",
+      "name": "Fishing"
+    },
+    {
+      "id": "9",
+      "name": "Travelling"
+    },
+    {
+      "id": "10",
+      "name": "SPorts"
+    }
+  ]
+}

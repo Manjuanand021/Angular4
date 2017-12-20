@@ -1,0 +1,24 @@
+/* Import styles
+********************************************/
+@import "./modules/variables.scss";
+
+/* Applies to all elements on page
+********************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* root element
+********************************************/
+html,
+body {
+  //   font-family: $font-stack;
+  //   font-size: $font-size;
+  //   font-weight: $font-weight;
+  //   line-height: $line-height;
+  //   letter-spacing: 1px;
+  //   color: $oslo-grey;
+  //   text-rendering: optimizeLegibility;
+}
