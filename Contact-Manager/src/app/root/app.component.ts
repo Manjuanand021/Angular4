@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { ContactsService } from "../services/contacts.service";
+import { Store } from "@ngrx/store";
+
+import { ContactsState } from "../store/reducers/contacts.reducers";
 
 @Component({
   selector: "app-root",
@@ -9,11 +11,7 @@ import { ContactsService } from "../services/contacts.service";
 export class AppComponent implements OnInit {
   title = "Contact Manager";
 
-  constructor(private contactsService: ContactsService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.contactsService.getAllContacts().subscribe(data => {
-      console.log("data", data);
-    });
-  }
+  ngOnInit() {}
 }

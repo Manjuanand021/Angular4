@@ -1,0 +1,4 @@
+<h1>Contact List</h1>
+<div *ngFor="let cnct of contacts | async">
+    <cm-contact-tile [contact]="cnct"></cm-contact-tile>
+</div>

@@ -1,6 +1,9 @@
 /* Import styles
 ********************************************/
+@import "./modules/font-face.scss";
 @import "./modules/variables.scss";
+@import "./modules/mixins.scss";
+@import "./modules/headers.scss";
 
 /* Applies to all elements on page
 ********************************************/
@@ -14,11 +17,80 @@
 ********************************************/
 html,
 body {
-  //   font-family: $font-stack;
-  //   font-size: $font-size;
-  //   font-weight: $font-weight;
-  //   line-height: $line-height;
-  //   letter-spacing: 1px;
-  //   color: $oslo-grey;
-  //   text-rendering: optimizeLegibility;
+  font-family: $font-stack;
+  font-size: $font-size;
+  font-weight: $font-weight-normal;
+  line-height: $line-height;
+  // letter-spacing: 1px;
+  color: $oslo-gray;
+  text-rendering: optimizeLegibility;
+}
+
+/* wrapper
+********************************************/
+.c-wrapper {
+  display: grid;
+  grid-template-columns: 4em 1fr 1fr 1fr;
+  grid-template-rows: 4em 1fr 2em;
+  // grid-column-gap: 1em;
+  // grid-row-gap: 1em;
+  height: 100vh;
+}
+
+nav {
+  grid-column: 1 / 2;
+  grid-row: 1/4;
+  background-color: $black-haze;
+  box-shadow: 0 0 1px rgba(0, 65, 94, 0.2);
+}
+header {
+  grid-column: 2 / 5;
+  grid-row: 1/2;
+
+  display: flex;
+  justify-content: space-between;
+  background-color: $curious-blue;
+  color: $black-haze;
+}
+main {
+  grid-column: 2 / 5;
+  grid-row: 2/3;
+  background-color: $porcelain;
+}
+footer {
+  grid-column: 2 / 5;
+  grid-row: 3/4;
+  background-color: $porcelain;
+}
+
+.grid-item--pad {
+  padding: 1em;
+}
+
+/* top header style
+********************************************/
+.c-srh-section {
+  position: relative;
+}
+.c-utility-links {
+}
+.o-srh-input {
+  width: 30em;
+  padding: 0.5em 1em;
+  color: $porcelain;
+  background-color: $piction-blue;
+  border: 0;
+  outline: none;
+  // transition: 0.2s;
+  box-shadow: 0;
+  @include rounded-corner(.1em);
+  &::placeholder {
+    color: $porcelain;
+    font-weight: $font-weight-small;
+    letter-spacing: 0.2em;
+  }
+}
+.o-icon-medium {
+  position: absolute;
+  font-size: 1.2em;
 }
