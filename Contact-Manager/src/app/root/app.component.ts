@@ -10,7 +10,6 @@ import { ContactsState } from "../store/reducers/contacts.reducers";
 })
 export class AppComponent implements OnInit {
   title = "Contact Manager";
-
   constructor() {}
 
   ngOnInit() {}

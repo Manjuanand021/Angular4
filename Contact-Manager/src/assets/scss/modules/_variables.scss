@@ -1,11 +1,14 @@
 /* Fonts releated
 ********************************************/
-$font-stack: Manuale, serif;
+
+$font-stack: Manuale,
+serif;
 $font-size: 16px;
 $line-height: 150%;
 
 /* Colors
 ********************************************/
+
 $bright-gray: #384047;
 $oslo-gray: #7b8b8e;
 $abbey: #4b5658;
@@ -16,9 +19,40 @@ $piction-blue: #309fe8;
 $wet-asphalt: #34495e;
 $porcelain: #edeff0;
 $black-haze: #f9fafa;
+// Colors
+$blue: #3d6bda;
+$turquoise: #0acca6;
+$green: #7ecc69;
+$yellow: #ffc033;
+$orange: #f77b00;
+$red: #ed594a;
+$purple: #9c72b7;
+$offWhite: #f5f7f7;
+$border-gray: #d9dfe0;
+$primaryColor: $blue;
+$primaryColorLight: lighten($primaryColor, 3%);
+$primaryColorDark: darken($primaryColor, 5%);
+$secondaryColor: $orange;
+$secondaryColorLight: lighten($secondaryColor, 3%);
+$secondaryColorDark: darken($secondaryColor, 5%);
+$gray-darker: #193048;
+$gray-dark: #243c54;
+$gray: #24405d;
+$gray-light: #eff3f4;
+$gray-lighter: #f4f6f6;
+$brand-primary: $blue !default;
+$brand-success: $green !default;
+$brand-info: $purple !default;
+$brand-warning: $yellow !default;
+$brand-danger: $red !default;
+$bodyBgColor: #eaeaea;
+$navBgColor: $blue;
+$appbarColor: white;
+$toolbarColor: #3d6bda;
 
 /* Font weight
 ********************************************/
+
 $font-weight-small: 300;
 $font-weight-normal: 400;
 $font-weight-medium: 500;

@@ -1,5 +1,6 @@
 /* Import styles
 ********************************************/
+
 @import "./modules/font-face.scss";
 @import "./modules/variables.scss";
 @import "./modules/mixins.scss";
@@ -7,90 +8,203 @@
 
 /* Applies to all elements on page
 ********************************************/
+
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
 
 /* root element
 ********************************************/
+
 html,
 body {
-  font-family: $font-stack;
-  font-size: $font-size;
-  font-weight: $font-weight-normal;
-  line-height: $line-height;
-  // letter-spacing: 1px;
-  color: $oslo-gray;
-  text-rendering: optimizeLegibility;
+    font-family: $font-stack;
+    font-size: $font-size;
+    font-weight: $font-weight-normal;
+    line-height: $line-height;
+    // letter-spacing: 1px;
+    color: $oslo-gray;
+    text-rendering: optimizeLegibility;
 }
+
 
 /* wrapper
 ********************************************/
+
 .c-wrapper {
-  display: grid;
-  grid-template-columns: 4em 1fr 1fr 1fr;
-  grid-template-rows: 4em 1fr 2em;
-  // grid-column-gap: 1em;
-  // grid-row-gap: 1em;
-  height: 100vh;
+    display: grid;
+    grid-template-columns: 4em 1fr 1fr 1fr;
+    grid-template-rows: 4em 1fr 2em;
+    // grid-column-gap: 1em;
+    // grid-row-gap: 1em;
+    height: 100vh;
 }
 
-nav {
-  grid-column: 1 / 2;
-  grid-row: 1/4;
-  background-color: $black-haze;
-  box-shadow: 0 0 1px rgba(0, 65, 94, 0.2);
+.c-side-nav {
+    grid-column: 1 / 2;
+    grid-row: 1/4;
+    background-color: $black-haze;
+    box-shadow: 0 0 1px rgba(0, 65, 94, 0.2);
 }
+
 header {
-  grid-column: 2 / 5;
-  grid-row: 1/2;
-
-  display: flex;
-  justify-content: space-between;
-  background-color: $curious-blue;
-  color: $black-haze;
+    grid-column: 2 / 5;
+    grid-row: 1/2;
+    background-color: $primaryColorLight;
+    color: $black-haze;
 }
+
 main {
-  grid-column: 2 / 5;
-  grid-row: 2/3;
-  background-color: $porcelain;
-}
-footer {
-  grid-column: 2 / 5;
-  grid-row: 3/4;
-  background-color: $porcelain;
+    grid-column: 2 / 5;
+    grid-row: 2/3;
 }
 
-.grid-item--pad {
-  padding: 1em;
+footer {
+    grid-column: 2 / 5;
+    grid-row: 3/4;
 }
+
+.grd-pad {
+    padding: 1em;
+}
+
 
 /* top header style
 ********************************************/
+
+.o-contact-header {
+    flex: 1;
+}
+
+.c-header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .c-srh-section {
-  position: relative;
+    position: relative;
+    flex: 2;
 }
-.c-utility-links {
-}
+
 .o-srh-input {
-  width: 30em;
-  padding: 0.5em 1em;
-  color: $porcelain;
-  background-color: $piction-blue;
-  border: 0;
-  outline: none;
-  // transition: 0.2s;
-  box-shadow: 0;
-  @include rounded-corner(.1em);
-  &::placeholder {
-    color: $porcelain;
-    font-weight: $font-weight-small;
-    letter-spacing: 0.2em;
-  }
+    width: 100%;
+    height: 3.5em;
+    padding: 0.5em 3em;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 0;
+    outline: none;
+    transition: 0.2s;
+    box-shadow: 0;
+    @include rounded-corner(0.2em);
+    &::placeholder {
+        color: $porcelain;
+        font-weight: $font-weight-small;
+        letter-spacing: 0.2em;
+    }
+    &:focus {
+        color: $oslo-gray;
+        background-color: $offWhite;
+    }
 }
-.o-icon-medium {
-  position: absolute;
-  font-size: 1.2em;
+
+.o-icn {
+    position: absolute;
+    &--medium {
+        position: absolute;
+        top: 0.5em;
+        left: 0.5em;
+        font-size: 1.2em;
+    }
+    &--dark {
+        color: $oslo-gray;
+    }
+}
+
+.c-actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    color: $offWhite;
+    background: 0 0;
+    background-repeat: no-repeat no-repeat;
+    fill: currentColor;
+    border: 0;
+    cursor: pointer;
+    @include rounded-corner(50%);
+    &--icon {
+        height: 2em;
+        width: 2em;
+        margin-left: 2.5em;
+    }
+}
+
+.o-logo {
+    text-align: center;
+    transition: 0.5s;
+}
+
+.o-logo-inside {
+    position: relative;
+    top: 0.7em;
+    display: block;
+    width: 100%;
+    >img {
+        width: 1.7em;
+    }
+}
+
+
+/* main content
+***************************/
+
+.c-contacts-wrap {
+    display: flex;
+    font-size: 0.8em;
+}
+
+.c-contact-lst {
+    flex: 1;
+}
+
+.c-contact-details {
+    background-color: lightcyan;
+}
+
+.c-lst-header {
+    background-color: $porcelain;
+}
+
+.c-tr {
+    display: flex;
+    flex: column wrap;
+    align-items: center;
+}
+
+.c-td {
+    flex: 1;
+    &--standout {
+        text-transform: uppercase;
+        font-weight: $font-weight-medium;
+    }
+}
+
+.c-phone,
+.c-email,
+.c-country {
+    flex: 2;
+}
+
+.o-contact-avatar {
+    >img {
+        height: 3em;
+        width: 3em;
+        @include rounded-corner(50%);
+    }
 }

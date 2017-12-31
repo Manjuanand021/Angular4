@@ -1,4 +1,20 @@
-<h1>Contact List</h1>
-<div *ngFor="let cnct of contacts | async">
-    <cm-contact-tile [contact]="cnct"></cm-contact-tile>
+<div class="c-contacts-wrap">
+    <section class="c-contact-lst">
+        <div class="c-lst-header">
+            <div class="c-tr grd-pad">
+                <div class="c-td c-td--standout c-avatar">photo</div>
+                <div class="c-td c-td--standout c-name">name</div>
+                <div class="c-td c-td--standout c-email">email</div>
+                <div class="c-td c-td--standout c-phone">phone</div>
+                <div class="c-td c-td--standout c-city">city</div>
+                <div class="c-td c-td--standout c-country">country</div>
+            </div>
+        </div>
+        <div class="c-lst-body">
+            <cm-contact-tile></cm-contact-tile>
+        </div>
+    </section>
+    <section class="c-contact-details">
+        <cm-contact-display></cm-contact-display>
+    </section>
 </div>

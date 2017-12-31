@@ -1,6 +1,6 @@
-import { ContactDisplayComponent } from "./contact-display/contact-display.component";
-import { ContactTileComponent } from "./contact-tile/contact-tile.component";
-import { ContactListComponent } from "./contacts-list/contacts-list.component";
+import { ContactDisplayComponent } from "./contact-display";
+import { ContactTileComponent } from "./contact-tile";
+import { ContactListComponent } from "./contacts-list";
 
 export const contactComponents: any[] = [
   ContactDisplayComponent,

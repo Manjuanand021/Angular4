@@ -1,16 +1,21 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
 
 // components
-import { contactComponents } from "./contacts";
+import { SharedModule, SearchInputComponent } from "../shared";
+import {
+  contactComponents,
+  ContactListComponent,
+  ContactDisplayComponent
+} from "./contacts";
+import { HeaderBarComponent } from "./header-bar";
 
 // services
 import { services } from "./services";
 
 @NgModule({
-  imports: [CommonModule],
-  exports: [...contactComponents],
-  declarations: [...contactComponents],
+  imports: [SharedModule],
+  exports: [HeaderBarComponent, ContactListComponent],
+  declarations: [HeaderBarComponent, ...contactComponents],
   providers: [...services]
 })
 export class FeaturesModule {}
