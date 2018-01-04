@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="c-lst-body">
-            <cm-contact-tile></cm-contact-tile>
+            <cm-contact-tile *ngFor="let contact of contacts$ | async" [contact]="contact"></cm-contact-tile>
         </div>
     </section>
     <section class="c-contact-details">

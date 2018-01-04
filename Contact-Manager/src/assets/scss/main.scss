@@ -119,6 +119,10 @@ footer {
         left: 0.5em;
         font-size: 1.2em;
     }
+    &--large {
+        font-size: 2em;
+        fill: currentColor;
+    }
     &--dark {
         color: $oslo-gray;
     }
@@ -206,5 +210,27 @@ footer {
         height: 3em;
         width: 3em;
         @include rounded-corner(50%);
+    }
+}
+
+
+/* Main navigations style
+*******************************************/
+
+.c-main-nav {
+    margin-top: 2em;
+    list-style-type: none;
+}
+
+.c-nav-item {
+    padding: 0.5em;
+    text-align: center;
+    & a {
+        color: $oslo-gray;
+        cursor: pointer;
+        &:hover,
+        .active {
+            color: $primaryColor;
+        }
     }
 }

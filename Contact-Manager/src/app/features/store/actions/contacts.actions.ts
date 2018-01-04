@@ -1,5 +1,5 @@
 import { Action } from "@ngrx/store";
-import { Contact } from "../../features/models";
+import { Contact } from "../../models/contact.model";
 
 // export enum ContactsActionTypes {
 //   LOAD_CONTACTS = "[CONTACTS] Load Contacts",

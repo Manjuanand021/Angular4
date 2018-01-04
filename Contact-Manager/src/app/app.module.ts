@@ -10,6 +10,7 @@ import { FeaturesModule } from "./features/features.module";
 import { AppComponent } from "./root/app.component";
 
 // not used in production
+import { EffectsModule } from "@ngrx/effects";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { storeFreeze } from "ngrx-store-freeze";
 import { storeLogger } from "ngrx-store-logger";
@@ -38,6 +39,7 @@ import { environment } from "../environments/environment";
     HttpModule,
     FeaturesModule,
     StoreModule.forRoot(fromStore.reducers, { metaReducers }),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25 })
   ],
   providers: [],

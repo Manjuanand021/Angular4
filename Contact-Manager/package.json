@@ -1,42 +1,42 @@
 {
-  "name": "contact-manager",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --extract-css",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "^5.0.0",
-    "@angular/common": "^5.0.0",
-    "@angular/compiler": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/forms": "^5.0.0",
-    "@angular/http": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
-    "@angular/platform-browser-dynamic": "^5.0.0",
-    "@angular/router": "^5.0.0",
-    "@ngrx/effects": "^4.1.1",
-    "@ngrx/entity": "^4.1.1",
-    "@ngrx/router-store": "^4.1.1",
-    "@ngrx/store": "^4.1.1",
-    "@ngrx/store-devtools": "^4.1.1",
-    "bootstrap": "^4.0.0-beta",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.5.2",
-    "zone.js": "^0.8.14"
-  },
-  "devDependencies": {
-    "@angular/cli": "1.5.0",
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/language-service": "^5.0.0",
-    "ngrx-store-freeze": "^0.2.0",
-    "ngrx-store-logger": "^0.2.0",
-    "typescript": "^2.6.2"
-  }
+    "name": "contact-manager",
+    "version": "0.0.0",
+    "license": "MIT",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng build --extract-css",
+        "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e"
+    },
+    "private": true,
+    "dependencies": {
+        "@angular/animations": "^5.0.0",
+        "@angular/common": "^5.0.0",
+        "@angular/compiler": "^5.0.0",
+        "@angular/core": "^5.0.0",
+        "@angular/forms": "^5.0.0",
+        "@angular/http": "^5.0.0",
+        "@angular/platform-browser": "^5.0.0",
+        "@angular/platform-browser-dynamic": "^5.0.0",
+        "@angular/router": "^5.0.0",
+        "@ngrx/effects": "^4.1.1",
+        "@ngrx/entity": "^4.1.1",
+        "@ngrx/router-store": "^4.1.1",
+        "@ngrx/store": "^4.1.1",
+        "@ngrx/store-devtools": "^4.1.1",
+        "bootstrap": "^4.0.0-beta",
+        "core-js": "^2.4.1",
+        "rxjs": "^5.5.2",
+        "zone.js": "^0.8.14"
+    },
+    "devDependencies": {
+        "@angular/cli": "1.5.0",
+        "@angular/compiler-cli": "^5.0.0",
+        "@angular/language-service": "^5.0.0",
+        "ngrx-store-freeze": "^0.2.0",
+        "ngrx-store-logger": "^0.2.0",
+        "typescript": "^2.6.2"
+    }
 }
