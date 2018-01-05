@@ -1,5 +1,6 @@
 import { createSelector } from "@ngrx/store";
 import * as fromReducers from "../reducers";
+import { Contact } from "../../models/index";
 
 const getContactsEntities = createSelector(
   fromReducers.getContactsState,
@@ -9,6 +10,13 @@ const getContactsEntities = createSelector(
 export const getAllContacts = createSelector(getContactsEntities, entities => {
   return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
 });
+
+export const getSelectedContact = id => {
+  return createSelector(getContactsEntities, entities => {
+    return entities[id];
+  });
+};
+// export const getSelectedContact = createSelector(selecotrEntity());
 
 export const getContactsLoading = createSelector(
   fromReducers.getContactsState,

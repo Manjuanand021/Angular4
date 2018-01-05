@@ -1,12 +1,26 @@
 <div class="c-contact-cover">
-    <section class="c-contact-summary">
-        <cm-avatar url="https://randomuser.me/api/portraits/men/43.jpg" [is-contact-details]="true"></cm-avatar>
+    <section class="c-contact-header">
+        <cm-avatar [url]="contact?.avatar" [is-contact-details]="true"></cm-avatar>
         <div class="c-contact-info">
-            <h2>Paul O’Shannessy</h2>
-            <p>zpao@somewhere.com</p>
+            <h2>{{contact?.name}}</h2>
+            <p>{{contact?.email}}</p>
         </div>
     </section>
-    <section>
+    <div class="c-contact-summary">
+        <cm-display-item label="full name" [value]="contact?.name" [editing]="isEditing"></cm-display-item>
+        <cm-display-item label="email" [value]="contact?.email" [editing]="isEditing"></cm-display-item>
+        <cm-display-item label="phone" [value]="contact?.phone" [editing]="isEditing"></cm-display-item>
+        <cm-display-item label="city" [value]="contact?.city" [editing]="isEditing"></cm-display-item>
+        <cm-display-item label="street" [value]="contact?.street" [editing]="isEditing"></cm-display-item>
+        <cm-display-item label="zip code" [value]="contact?.zipCode" [editing]="isEditing"></cm-display-item>
+        <cm-display-item label="country" [value]="contact?.country" [editing]="isEditing"></cm-display-item>
+    </div>
+    <div class="c-hobbies">
 
-    </section>
+    </div>
+    <div class="c-contact-action">
+        <button class="o-btn o-btn--large" type="submit" (click)="onEdit()">
+            {{isEditing ? 'save' : 'edit contact'}}
+        </button>
+    </div>
 </div>

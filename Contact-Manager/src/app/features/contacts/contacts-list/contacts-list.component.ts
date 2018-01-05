@@ -12,13 +12,17 @@ import { Contact } from "../../models/contact.model";
 })
 export class ContactListComponent implements OnInit {
   contacts$: Observable<Contact[]>;
-
+  selectedContact$: Observable<Contact>;
   constructor(private _store: Store<fromStore.AppState>) {}
 
   ngOnInit() {
     this.contacts$ = this._store.select<Contact[]>(
       fromContactStore.getAllContacts
     );
-    this._store.dispatch(new fromContactStore.LoadContacts());
+  }
+  onContactRowClick(contactId: number) {
+    this.selectedContact$ = this._store.select<Contact>(
+      fromContactStore.getSelectedContact(contactId)
+    );
   }
 }

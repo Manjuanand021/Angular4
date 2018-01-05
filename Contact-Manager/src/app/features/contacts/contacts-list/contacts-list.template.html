@@ -11,10 +11,10 @@
             </div>
         </div>
         <div class="c-lst-body">
-            <cm-contact-tile *ngFor="let contact of contacts$ | async" [contact]="contact"></cm-contact-tile>
+            <cm-contact-tile *ngFor="let contact of contacts$ | async" [contact]="contact" (onContactClick)="onContactRowClick($event)"></cm-contact-tile>
         </div>
     </section>
     <section class="c-contact-details">
-        <cm-contact-display></cm-contact-display>
+        <cm-contact-display [contact]="selectedContact$ | async"></cm-contact-display>
     </section>
 </div>

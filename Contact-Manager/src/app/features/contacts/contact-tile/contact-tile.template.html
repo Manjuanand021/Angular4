@@ -1,4 +1,4 @@
-<div class="c-tr grd-pad">
+<a class="c-tr grd-pad" (click)="onContactSelect(contact.id)">
     <cm-avatar class="c-td" [url]="contact.avatar"></cm-avatar>
     <div class="c-td c-name">
         {{contact.name}}
@@ -15,4 +15,4 @@
     <div class="c-td c-country">
         {{contact.country}}
     </div>
-</div>
+</a>

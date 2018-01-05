@@ -248,20 +248,78 @@ footer {
 .c-contact-details {
     flex-basis: 25%;
     background-color: $wet-asphalt;
-    border-bottom: 1px solid $offWhite;
 }
 
 .c-contact-cover {
-    background-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.c-contact-summary {
-    padding: 1em;
+.c-contact-header {
     display: flex;
     justify-content: center;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid $offWhite;
 }
 
 .c-contact-info {
     margin-left: 1em;
-    color: rgba(255, 255, 255, 0.7);
+}
+
+.c-contact-summary {
+    padding: 2em;
+    font-size: 1.2em;
+}
+
+.c-data-row {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    padding-bottom: 2em;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.c-data-label {
+    // padding-right: 1em;
+    flex-basis: 35%;
+    text-transform: capitalize;
+}
+
+.c-data-value {
+    flex: 1;
+}
+
+.o-input {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.85);
+    background-color: $wet-asphalt;
+    border: 0;
+    outline: none;
+    transition: 0.5s;
+    &--editable {
+        padding: 1em 0.5em;
+        color: $oslo-gray;
+        background-color: $offWhite;
+        @include rounded-corner(0.2em);
+    }
+}
+
+.c-contact-action {
+    text-align: center;
+}
+
+.o-btn {
+    padding: 0.7em 2em;
+    font-size: 1.1em;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.85);
+    background-color: $blue;
+    border: 0;
+    @include rounded-corner(0.2em);
+    &:focus {
+        border: 0;
+    }
+    &--large {
+        padding: 0.7em 7em;
+    }
 }

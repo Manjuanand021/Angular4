@@ -6,6 +6,7 @@ import { SearchInputComponent } from "./search-input";
 import { ButtonComponent } from "./button";
 import { AvatarComponent } from "./avatar";
 import { NavItemComponent } from "./nav-item";
+import { DisplayItemComponent } from "./display-item/display-item.component";
 
 @NgModule({
   imports: [CommonModule, RouterModule],
@@ -13,14 +14,16 @@ import { NavItemComponent } from "./nav-item";
     SearchInputComponent,
     ButtonComponent,
     AvatarComponent,
-    NavItemComponent
+    NavItemComponent,
+    DisplayItemComponent
   ],
   exports: [
     CommonModule,
     SearchInputComponent,
     ButtonComponent,
     AvatarComponent,
-    NavItemComponent
+    NavItemComponent,
+    DisplayItemComponent
   ]
 })
 export class SharedModule {}
