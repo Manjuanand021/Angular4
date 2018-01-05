@@ -4,6 +4,7 @@ import { NgModule } from "@angular/core";
 import { StoreModule, MetaReducer, ActionReducer } from "@ngrx/store";
 
 // modules
+import { AppRoutingModule } from "./app.routing";
 import { FeaturesModule } from "./features/features.module";
 
 // components
@@ -37,6 +38,7 @@ import { environment } from "../environments/environment";
   imports: [
     BrowserModule,
     HttpModule,
+    AppRoutingModule,
     FeaturesModule,
     StoreModule.forRoot(fromStore.reducers, { metaReducers }),
     EffectsModule.forRoot([]),

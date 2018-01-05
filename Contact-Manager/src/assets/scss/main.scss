@@ -177,10 +177,6 @@ footer {
     flex: 1;
 }
 
-.c-contact-details {
-    background-color: lightcyan;
-}
-
 .c-lst-header {
     background-color: $porcelain;
 }
@@ -189,6 +185,13 @@ footer {
     display: flex;
     flex: column wrap;
     align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover,
+    &.active {
+        color: $offWhite;
+        background-color: $orange;
+    }
 }
 
 .c-td {
@@ -210,6 +213,9 @@ footer {
         height: 3em;
         width: 3em;
         @include rounded-corner(50%);
+        &.round-border {
+            border: 2px solid $offWhite;
+        }
     }
 }
 
@@ -229,8 +235,33 @@ footer {
         color: $oslo-gray;
         cursor: pointer;
         &:hover,
-        .active {
+        &.active {
             color: $primaryColor;
         }
     }
+}
+
+
+/* Contact Display style
+*******************************************/
+
+.c-contact-details {
+    flex-basis: 25%;
+    background-color: $wet-asphalt;
+    border-bottom: 1px solid $offWhite;
+}
+
+.c-contact-cover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.c-contact-summary {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.c-contact-info {
+    margin-left: 1em;
+    color: rgba(255, 255, 255, 0.7);
 }

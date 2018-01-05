@@ -12,6 +12,7 @@ import {
 })
 export class AvatarComponent implements OnInit {
   @Input() url: string;
+  @Input("is-contact-details") isContactDetails: Boolean;
   constructor() {}
 
   ngOnInit() {}
