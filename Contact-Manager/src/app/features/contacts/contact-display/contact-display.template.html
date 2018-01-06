@@ -1,26 +1,28 @@
-<div class="c-contact-cover">
-    <section class="c-contact-header">
-        <cm-avatar [url]="contact?.avatar" [is-contact-details]="true"></cm-avatar>
-        <div class="c-contact-info">
-            <h2>{{contact?.name}}</h2>
-            <p>{{contact?.email}}</p>
+<form novalidate [formGroup]="contactForm">
+    <div class="c-contact-cover">
+        <section class="c-contact-header">
+            <cm-avatar [url]="contact?.avatar" [is-contact-details]="true"></cm-avatar>
+            <div class="c-contact-info">
+                <h2>{{contact?.name}}</h2>
+                <p>{{contact?.email}}</p>
+            </div>
+        </section>
+        <div class="c-contact-summary">
+            <cm-display-item label="name" [value]="contact?.name" [editing]="isEditing" [parent]="contactForm"></cm-display-item>
+            <cm-display-item label="email" [value]="contact?.email" [editing]="isEditing" [parent]="contactForm"></cm-display-item>
+            <cm-display-item label="phone" [value]="contact?.phone" [editing]="isEditing" [parent]="contactForm"></cm-display-item>
+            <cm-display-item label="city" [value]="contact?.city" [editing]="isEditing" [parent]="contactForm"></cm-display-item>
+            <cm-display-item label="street" [value]="contact?.street" [editing]="isEditing" [parent]="contactForm"></cm-display-item>
+            <cm-display-item label="zipCode" [value]="contact?.zipCode" [editing]="isEditing" [parent]="contactForm"></cm-display-item>
+            <cm-display-item label="country" [value]="contact?.country" [editing]="isEditing" [parent]="contactForm"></cm-display-item>
         </div>
-    </section>
-    <div class="c-contact-summary">
-        <cm-display-item label="full name" [value]="contact?.name" [editing]="isEditing"></cm-display-item>
-        <cm-display-item label="email" [value]="contact?.email" [editing]="isEditing"></cm-display-item>
-        <cm-display-item label="phone" [value]="contact?.phone" [editing]="isEditing"></cm-display-item>
-        <cm-display-item label="city" [value]="contact?.city" [editing]="isEditing"></cm-display-item>
-        <cm-display-item label="street" [value]="contact?.street" [editing]="isEditing"></cm-display-item>
-        <cm-display-item label="zip code" [value]="contact?.zipCode" [editing]="isEditing"></cm-display-item>
-        <cm-display-item label="country" [value]="contact?.country" [editing]="isEditing"></cm-display-item>
-    </div>
-    <div class="c-hobbies">
+        <div class="c-hobbies">
 
-    </div>
-    <div class="c-contact-action">
-        <button class="o-btn o-btn--large" type="submit" (click)="onEdit()">
+        </div>
+        <div class="c-contact-action">
+            <button class="o-btn o-btn--large" type="submit" (click)="onEdit()">
             {{isEditing ? 'save' : 'edit contact'}}
         </button>
+        </div>
     </div>
-</div>
+</form>

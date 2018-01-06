@@ -10,6 +10,10 @@ export const LOAD_CONTACTS = "[CONTACTS] Load Contacts";
 export const LOAD_CONTACTS_SUCCESS = "[CONTACTS] Load Contacts success";
 export const LOAD_CONTACTS_FAIL = "[CONTACTS] Load Contacts fail";
 
+export const UPDATE_CONTACT = "[CONTACTS] Update Contact";
+export const UPDATE_CONTACT_SUCCESS = "[CONTACTS] Update Contact success";
+export const UPDATE_CONTACT_FAIL = "[CONTACTS] Update Contact fail";
+
 export class LoadContacts implements Action {
   readonly type = LOAD_CONTACTS;
 }
@@ -21,7 +25,21 @@ export class LoadContactsFail implements Action {
   readonly type = LOAD_CONTACTS_FAIL;
 }
 
+export class UpdateContact implements Action {
+  readonly type = UPDATE_CONTACT;
+  constructor(public payLoad: Contact) {}
+}
+export class UpdateContactSuccess implements Action {
+  readonly type = UPDATE_CONTACT_SUCCESS;
+}
+export class UpdateContactFail implements Action {
+  readonly type = UPDATE_CONTACT_FAIL;
+}
+
 export type ContactsActions =
   | LoadContacts
   | LoadContactssuccess
-  | LoadContactsFail;
+  | LoadContactsFail
+  | UpdateContact
+  | UpdateContactSuccess
+  | UpdateContactFail;

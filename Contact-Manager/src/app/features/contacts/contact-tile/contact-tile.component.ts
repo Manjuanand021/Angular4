@@ -23,4 +23,7 @@ export class ContactTileComponent implements OnInit {
   onContactSelect(contactId: number) {
     this.onContactClick.emit(contactId);
   }
+  trackByContactId(index, contact: Contact) {
+    return contact.id;
+  }
 }

@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 
@@ -9,7 +10,7 @@ import { NavItemComponent } from "./nav-item";
 import { DisplayItemComponent } from "./display-item/display-item.component";
 
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   declarations: [
     SearchInputComponent,
     ButtonComponent,
@@ -18,6 +19,8 @@ import { DisplayItemComponent } from "./display-item/display-item.component";
     DisplayItemComponent
   ],
   exports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     SearchInputComponent,
     ButtonComponent,

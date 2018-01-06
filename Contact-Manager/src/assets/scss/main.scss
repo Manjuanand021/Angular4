@@ -229,13 +229,15 @@ footer {
 }
 
 .c-nav-item {
-    padding: 0.5em;
+    padding: 0.5em 0;
     text-align: center;
     & a {
+        display: block;
         color: $oslo-gray;
         cursor: pointer;
         &:hover,
         &.active {
+            border-right: 0.15em solid $primaryColor;
             color: $primaryColor;
         }
     }
@@ -322,4 +324,12 @@ footer {
     &--large {
         padding: 0.7em 7em;
     }
+}
+
+
+/* Footer style
+*******************************************/
+
+footer {
+    background-color: $porcelain;
 }

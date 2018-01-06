@@ -19,10 +19,16 @@ export class ContactListComponent implements OnInit {
     this.contacts$ = this._store.select<Contact[]>(
       fromContactStore.getAllContacts
     );
+    this._store.dispatch(new fromContactStore.LoadContacts());
   }
   onContactRowClick(contactId: number) {
     this.selectedContact$ = this._store.select<Contact>(
       fromContactStore.getSelectedContact(contactId)
     );
+  }
+
+  updateContact(value: { id: number; contact: Contact }) {
+    value.contact.id = value.id;
+    this._store.dispatch(new fromContactStore.UpdateContact(value.contact));
   }
 }

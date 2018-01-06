@@ -4,10 +4,14 @@ import { Contact } from "../../models/index";
 
 const getContactsEntities = createSelector(
   fromReducers.getContactsState,
-  (state: fromReducers.ContactsState) => state.entities
+  (state: fromReducers.ContactsState) => {
+    console.log("lo", state.entities);
+    return state.entities;
+  }
 );
 
 export const getAllContacts = createSelector(getContactsEntities, entities => {
+  console.log("entities", entities);
   return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
 });
 
